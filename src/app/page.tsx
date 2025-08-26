@@ -276,30 +276,9 @@ export default function Home() {
         <div className="container mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div className="space-y-8">
-                    <div className="relative p-8 bg-background rounded-lg shadow-md">
-                        <Image
-                            src="https://picsum.photos/800/600?random=10"
-                            alt="Patent design software interface on a tablet"
-                            width={800}
-                            height={600}
-                            className="rounded-lg"
-                            data-ai-hint="design software"
-                        />
-                    </div>
-                    <Card className="shadow-lg">
-                        <CardHeader>
-                            <CardTitle className="font-headline text-xl">Budget-friendly Prices or We Match</CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                            <p className="text-muted-foreground">Find lower prices for patent drawings? We'll match them to ensure the best value.</p>
-                        </CardContent>
-                    </Card>
-                </div>
-
-                <div className="space-y-8">
-                    <h2 className="font-headline text-4xl font-bold">Why Choose Us?</h2>
+                    <h2 className="font-headline text-4xl font-bold">Why Choose Kashi Patent?</h2>
                     <p className="text-muted-foreground text-lg">
-                        We deliver patent drawings and services that exceed expectations, backed by experience and a proven track record.
+                        We deliver patent drawings and services that exceed expectations, backed by experience and a proven track record of success.
                     </p>
                     <ul className="space-y-6">
                         {whyChooseUsFeatures.map((feature) => (
@@ -314,6 +293,26 @@ export default function Home() {
                             </li>
                         ))}
                     </ul>
+                </div>
+                <div className="space-y-8">
+                    <div className="relative">
+                        <Image
+                            src="https://picsum.photos/800/600?random=10"
+                            alt="Patent design software interface on a tablet"
+                            width={800}
+                            height={600}
+                            className="rounded-lg shadow-xl"
+                            data-ai-hint="design software"
+                        />
+                    </div>
+                    <Card className="bg-background shadow-lg">
+                        <CardHeader>
+                            <CardTitle className="font-headline text-xl">Budget-Friendly Prices or We Match</CardTitle>
+                        </CardHeader>
+                        <CardContent>
+                            <p className="text-muted-foreground">Find lower prices for comparable patent drawing services? We'll match them to ensure you receive the best value for expert-quality work.</p>
+                        </CardContent>
+                    </Card>
                 </div>
             </div>
         </div>
