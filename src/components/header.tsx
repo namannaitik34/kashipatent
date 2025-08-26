@@ -3,25 +3,67 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
 import { Logo } from '@/components/logo';
 import { cn } from '@/lib/utils';
 import { services } from '@/lib/services';
 
 const mainNavLinks = [
   { href: '/', label: 'Home' },
-  { href: '/services', label: 'Services' },
+  { href: '/services', label: 'Services', isDropdown: true },
   { href: '/contact', label: 'Contact' },
 ];
 
 export default function Header() {
   const pathname = usePathname();
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isServicesMenuOpen, setServicesMenuOpen] = useState(false);
 
-  const NavLink = ({ href, children }: { href: string; children: React.ReactNode }) => {
+
+  const NavLink = ({ href, children, isDropdown }: { href: string; children: React.ReactNode, isDropdown?: boolean }) => {
     const isActive = href === '/' ? pathname === href : pathname.startsWith(href);
+    
+    if (isDropdown) {
+        return (
+            <DropdownMenu open={isServicesMenuOpen} onOpenChange={setServicesMenuOpen}>
+                <DropdownMenuTrigger asChild>
+                     <button
+                        onMouseEnter={() => setServicesMenuOpen(true)}
+                        className={cn(
+                            'flex items-center gap-1 transition-colors hover:text-primary pb-2 text-base font-medium',
+                            isActive ? 'text-primary border-b-2 border-primary' : 'text-foreground/60'
+                        )}
+                    >
+                        {children}
+                        <ChevronDown className={cn('h-4 w-4 transition-transform duration-200', isServicesMenuOpen && 'rotate-180')} />
+                    </button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent 
+                    align="start" 
+                    className="w-56"
+                    onMouseLeave={() => setServicesMenuOpen(false)}
+                >
+                    <DropdownMenuItem asChild>
+                         <Link href="/services" className="font-bold">All Services</Link>
+                    </DropdownMenuItem>
+                    {services.map((service) => (
+                        <DropdownMenuItem key={service.slug} asChild>
+                            <Link href={`/services/${service.slug}`}>{service.title}</Link>
+                        </DropdownMenuItem>
+                    ))}
+                </DropdownMenuContent>
+            </DropdownMenu>
+        )
+    }
+
     return (
       <Link
         href={href}
@@ -59,7 +101,7 @@ export default function Header() {
         <Logo />
         <nav className="hidden md:flex items-center space-x-8 ml-10">
           {mainNavLinks.map((link) => (
-            <NavLink key={link.href} href={link.href}>{link.label}</NavLink>
+            <NavLink key={link.href} href={link.href} isDropdown={link.isDropdown}>{link.label}</NavLink>
           ))}
         </nav>
         <div className="flex flex-1 items-center justify-end space-x-4">
