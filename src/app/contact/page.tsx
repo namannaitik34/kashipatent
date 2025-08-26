@@ -32,8 +32,8 @@ export default function ContactPage() {
             <div>
               <h3 className="text-xl font-semibold">Email</h3>
               <p className="text-muted-foreground">Send us an email for inquiries.</p>
-              <a href="mailto:contact@kashipatent.com" className="text-primary font-medium hover:underline">
-                contact@kashipatent.com
+              <a href="mailto:Amy.moore@kashipatent.com" className="text-primary font-medium hover:underline">
+                Amy.moore@kashipatent.com
               </a>
             </div>
           </div>
@@ -44,8 +44,8 @@ export default function ContactPage() {
             <div>
               <h3 className="text-xl font-semibold">Phone</h3>
               <p className="text-muted-foreground">Speak with our team directly.</p>
-              <a href="tel:+1234567890" className="text-primary font-medium hover:underline">
-                +1 (234) 567-890
+              <a href="tel:9140024107" className="text-primary font-medium hover:underline">
+                9140024107
               </a>
             </div>
           </div>

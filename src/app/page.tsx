@@ -163,7 +163,7 @@ const faqs = [
   },
   {
     question: "How do I contact your support team?",
-    answer: "You can reach our dedicated support team via email at contact@kashipatent.com, by phone at +1 (234) 567-890, or by filling out the contact form on our website. We're here to assist you with any questions."
+    answer: "You can reach our dedicated support team via email at Amy.moore@kashipatent.com, by phone at 9140024107, or by filling out the contact form on our website. We're here to assist you with any questions."
   }
 ];
 

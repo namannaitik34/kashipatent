@@ -44,14 +44,14 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-primary shrink-0" />
-                <a href="mailto:contact@kashipatent.com" className="text-muted-foreground hover:text-primary transition-colors">
-                  contact@kashipatent.com
+                <a href="mailto:Amy.moore@kashipatent.com" className="text-muted-foreground hover:text-primary transition-colors">
+                  Amy.moore@kashipatent.com
                 </a>
               </li>
               <li className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-primary shrink-0" />
-                <a href="tel:+1234567890" className="text-muted-foreground hover:text-primary transition-colors">
-                  +1 (234) 567-890
+                <a href="tel:9140024107" className="text-muted-foreground hover:text-primary transition-colors">
+                  9140024107
                 </a>
               </li>
             </ul>

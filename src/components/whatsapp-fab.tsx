@@ -30,7 +30,7 @@ export default function WhatsAppFab() {
       className="fixed bottom-5 right-5 z-40 h-14 w-14 rounded-full shadow-lg bg-green-500 hover:bg-green-600"
       aria-label="Chat on WhatsApp"
     >
-      <Link href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer">
+      <Link href="https://wa.me/9140024107" target="_blank" rel="noopener noreferrer">
          <svg
             width="28"
             height="28"
