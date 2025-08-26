@@ -10,7 +10,7 @@ import {
   CarouselPrevious,
 } from '@/components/ui/carousel';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { FileUp, ClipboardList, Cog, Mail, RefreshCcw, PenTool, Palette, Copyright, Box, ArrowRight, CheckCircle, ShieldCheck, HeartHandshake, Zap } from 'lucide-react';
+import { FileUp, ClipboardList, Cog, Mail, RefreshCcw, PenTool, Palette, Copyright, Box, ArrowRight, CheckCircle, ShieldCheck, HeartHandshake, Zap, Wallet, Star, Files, Clock } from 'lucide-react';
 import { services } from '@/lib/services';
 import { Badge } from '@/components/ui/badge';
 
@@ -109,6 +109,29 @@ const whyChooseUsFeatures = [
         description: 'Dependable service for inventors, attorneys, and businesses worldwide.',
     },
 ];
+
+const extraFeatures = [
+    {
+        icon: <Wallet className="w-6 h-6 text-primary" />,
+        title: 'Budget-friendly Prices or We Match',
+        description: "Find lower prices for patent drawings? We'll match them to ensure the best value.",
+    },
+    {
+        icon: <Star className="w-6 h-6 text-primary" />,
+        title: '100% Satisfaction Guarantee',
+        description: 'Unlimited revisions at no extra cost. Complete satisfaction or you don\'t pay.',
+    },
+    {
+        icon: <Files className="w-6 h-6 text-primary" />,
+        title: 'Most Flexible Output Formats',
+        description: 'We deliver in PDF, DWG, Word, PPT, Visio, CorelDRAW, JPG, TIFF, PNG, and more.',
+    },
+    {
+        icon: <Clock className="w-6 h-6 text-primary" />,
+        title: 'Easy Ordering, Quick Delivery',
+        description: 'Order in minutes and receive high-quality outputs in just a few hours. Super-expedited options available.',
+    },
+]
 
 export default function Home() {
   return (
@@ -280,6 +303,16 @@ export default function Home() {
                     <p className="text-muted-foreground text-lg">
                         We deliver patent drawings and services that exceed expectations, backed by experience and a proven track record of success.
                     </p>
+                    <Image
+                        src="https://picsum.photos/800/600?random=10"
+                        alt="Patent design software interface on a tablet"
+                        width={800}
+                        height={600}
+                        className="rounded-lg shadow-xl"
+                        data-ai-hint="design software"
+                    />
+                </div>
+                <div className="space-y-8">
                     <ul className="space-y-6">
                         {whyChooseUsFeatures.map((feature) => (
                             <li key={feature.title} className="flex items-start gap-4">
@@ -293,26 +326,19 @@ export default function Home() {
                             </li>
                         ))}
                     </ul>
-                </div>
-                <div className="space-y-8">
-                    <div className="relative">
-                        <Image
-                            src="https://picsum.photos/800/600?random=10"
-                            alt="Patent design software interface on a tablet"
-                            width={800}
-                            height={600}
-                            className="rounded-lg shadow-xl"
-                            data-ai-hint="design software"
-                        />
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-6 border-t">
+                        {extraFeatures.map((feature) => (
+                            <div key={feature.title} className="flex items-start gap-4">
+                                <div className="flex-shrink-0 bg-primary/10 p-3 rounded-full">
+                                    {feature.icon}
+                                </div>
+                                <div>
+                                    <h3 className="text-lg font-semibold">{feature.title}</h3>
+                                    <p className="text-sm text-muted-foreground">{feature.description}</p>
+                                </div>
+                            </div>
+                        ))}
                     </div>
-                    <Card className="bg-background shadow-lg">
-                        <CardHeader>
-                            <CardTitle className="font-headline text-xl">Budget-Friendly Prices or We Match</CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                            <p className="text-muted-foreground">Find lower prices for comparable patent drawing services? We'll match them to ensure you receive the best value for expert-quality work.</p>
-                        </CardContent>
-                    </Card>
                 </div>
             </div>
         </div>
