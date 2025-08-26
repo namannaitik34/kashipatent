@@ -23,7 +23,15 @@ export default function ServicesPage() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {services.map((service) => (
-          <Card key={service.slug} className="flex flex-col overflow-hidden group/card transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+          <Card key={service.slug} className="flex flex-col overflow-hidden group/card transition-all duration-300 hover:shadow-xl hover:-translate-y-1 relative">
+            <div className="absolute top-4 right-4 z-10">
+                <Button asChild className="group/button bg-accent hover:bg-accent/90 text-accent-foreground shadow-lg">
+                    <Link href="/order">
+                        <span className="group-hover/button:hidden">${service.price}</span>
+                        <span className="hidden group-hover/button:block">Order Now</span>
+                    </Link>
+                </Button>
+            </div>
             <CardHeader className="p-0">
               <Link href={`/services/${service.slug}`} className="block relative h-56 w-full">
                 <Image
@@ -38,10 +46,9 @@ export default function ServicesPage() {
             <CardContent className="p-6 flex flex-col flex-grow">
                 <CardTitle className="font-headline text-xl mb-2">{service.title}</CardTitle>
               <CardDescription className="flex-grow mb-4">{service.description}</CardDescription>
-              <Button asChild className="mt-auto group/button">
+              <Button asChild variant="link" className="mt-auto self-start p-0 text-primary">
                 <Link href={`/services/${service.slug}`}>
-                  <span className="group-hover/button:hidden flex items-center">Learn More <ArrowRight className="ml-2 h-4 w-4" /></span>
-                  <span className="hidden group-hover/button:block">From ${service.price}</span>
+                  Learn More <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
             </CardContent>
