@@ -226,6 +226,7 @@ export default function Home() {
                   {serviceIcons[service.slug] || <PenTool className="w-10 h-10 text-primary" />}
                 </div>
                 <CardTitle className="font-headline text-xl mb-2">{service.title}</CardTitle>
+                <div className="text-2xl font-bold text-primary mb-2">${service.price}</div>
                 <CardDescription className="flex-grow mb-4">{service.description}</CardDescription>
                 <Button asChild variant="link" className="p-0 mt-auto">
                   <Link href={`/services/${service.slug}`}>

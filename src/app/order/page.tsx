@@ -127,7 +127,7 @@ export default function OrderPage() {
                         <SelectContent>
                           {services.map((service) => (
                             <SelectItem key={service.slug} value={service.slug}>
-                              {service.title}
+                              {service.title} - ${service.price}
                             </SelectItem>
                           ))}
                         </SelectContent>

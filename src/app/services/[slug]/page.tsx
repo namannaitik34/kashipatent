@@ -87,6 +87,7 @@ export default function ServicePage({ params }: ServicePageProps) {
                 <Badge variant="secondary" className="mb-4">Service</Badge>
                 <h1 className="font-headline text-4xl md:text-6xl font-bold">{service.title}</h1>
                 <p className="mt-4 max-w-2xl mx-auto text-lg text-white/90">{service.description}</p>
+                 <div className="mt-4 text-2xl font-bold text-white/90">Starting at ${service.price}</div>
             </div>
         </div>
       </div>

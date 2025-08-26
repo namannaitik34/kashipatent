@@ -36,7 +36,10 @@ export default function ServicesPage() {
               </Link>
             </CardHeader>
             <CardContent className="p-6 flex flex-col flex-grow">
-              <CardTitle className="font-headline text-xl mb-2">{service.title}</CardTitle>
+              <div className="flex justify-between items-start mb-2">
+                <CardTitle className="font-headline text-xl">{service.title}</CardTitle>
+                <div className="text-xl font-bold text-primary whitespace-nowrap ml-4">${service.price}</div>
+              </div>
               <CardDescription className="flex-grow">{service.description}</CardDescription>
               <Button asChild variant="link" className="p-0 mt-4 self-start">
                 <Link href={`/services/${service.slug}`}>
