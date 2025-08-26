@@ -88,8 +88,6 @@ export default function ServicePage({ params }: ServicePageProps) {
   if (!service) {
     notFound();
   }
-  
-  const is3dModeling = service.slug === '3d-modeling-services';
 
   return (
     <div className="bg-background">
@@ -113,7 +111,7 @@ export default function ServicePage({ params }: ServicePageProps) {
         </div>
       </div>
       
-      {is3dModeling && (
+      {service.modelSrc && (
         <section className="py-12 md:py-20 bg-muted">
             <div className="container">
                 <div className="max-w-4xl mx-auto text-center">
@@ -124,8 +122,8 @@ export default function ServicePage({ params }: ServicePageProps) {
                 </div>
                  <div className="w-full h-96 max-w-4xl mx-auto rounded-lg shadow-xl overflow-hidden">
                     <model-viewer
-                        src="https://cdn.glitch.com/36cb8393-65c6-408d-a538-055ada20431b/Astronaut.glb?v=1542147958948"
-                        alt="A 3D model of an astronaut, related to patent drawings"
+                        src={service.modelSrc}
+                        alt={`A 3D model for ${service.title}`}
                         camera-controls
                         auto-rotate
                         style={{ width: '100%', height: '100%', backgroundColor: '#f5f5f5' }}
