@@ -5,6 +5,7 @@ import Header from '@/components/header';
 import Footer from '@/components/footer';
 import WhatsAppFab from '@/components/whatsapp-fab';
 import Chatbot from '@/components/chatbot';
+import Script from 'next/script';
 
 export const metadata: Metadata = {
   title: 'Kashi Patent - Premium Patent Design',
@@ -32,6 +33,7 @@ export default function RootLayout({
         <Chatbot />
         <WhatsAppFab />
         <Toaster />
+        <Script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js" async />
       </body>
     </html>
   );

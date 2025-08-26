@@ -426,40 +426,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* Testimonials Section */}
-      <section id="testimonials" className="py-20 bg-background">
-        <div className="container mx-auto">
-          <h2 className="font-headline text-4xl font-bold text-center mb-12">What Our Clients Say</h2>
-          <Carousel
-            opts={{ align: 'start', loop: true }}
-            className="w-full max-w-4xl mx-auto"
-          >
-            <CarouselContent>
-              {testimonials.map((testimonial, index) => (
-                <CarouselItem key={index}>
-                  <div className="p-1">
-                    <Card className="bg-card">
-                      <CardContent className="flex flex-col items-center justify-center p-8 text-center">
-                        <Avatar className="w-20 h-20 mb-4">
-                          <AvatarImage src={testimonial.avatar} alt={testimonial.name} data-ai-hint={testimonial.hint} />
-                          <AvatarFallback>{testimonial.name.charAt(0)}</AvatarFallback>
-                        </Avatar>
-                        <p className="italic text-lg mb-4">&ldquo;{testimonial.quote}&rdquo;</p>
-                        <p className="font-bold">{testimonial.name}</p>
-                        <p className="text-sm text-muted-foreground">{testimonial.title}</p>
-                      </CardContent>
-                    </Card>
-                  </div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
-          </Carousel>
-        </div>
-      </section>
-
       {/* FAQ Section */}
       <section id="faq" className="py-20 bg-card">
         <div className="container mx-auto max-w-4xl">
