@@ -10,7 +10,7 @@ import {
   CarouselPrevious,
 } from '@/components/ui/carousel';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { FileUp, ClipboardList, Cog, Mail, RefreshCcw, PenTool, Palette, Copyright, Box, ArrowRight, CheckCircle } from 'lucide-react';
+import { FileUp, ClipboardList, Cog, Mail, RefreshCcw, PenTool, Palette, Copyright, Box, ArrowRight, CheckCircle, ShieldCheck, HeartHandshake, Zap } from 'lucide-react';
 import { services } from '@/lib/services';
 import { Badge } from '@/components/ui/badge';
 
@@ -90,6 +90,24 @@ const testimonials = [
     quote:
       'The 3D models and engineering drawings were critical for our prototype and patent application. The team was a pleasure to work with.',
   },
+];
+
+const whyChooseUsFeatures = [
+    {
+        icon: <ShieldCheck className="w-6 h-6 text-primary" />,
+        title: 'Quality',
+        description: 'Expertly crafted patent drawings that meet the highest standards.',
+    },
+    {
+        icon: <HeartHandshake className="w-6 h-6 text-primary" />,
+        title: 'Support',
+        description: 'Responsive communication and guidance throughout your project.',
+    },
+    {
+        icon: <Zap className="w-6 h-6 text-primary" />,
+        title: 'Reliability',
+        description: 'Dependable service for inventors, attorneys, and businesses worldwide.',
+    },
 ];
 
 export default function Home() {
@@ -253,8 +271,57 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Why Choose Us Section */}
+      <section id="why-choose-us" className="py-20 bg-card">
+        <div className="container mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div className="space-y-8">
+                    <div className="relative p-8 bg-background rounded-lg shadow-md">
+                        <Image
+                            src="https://picsum.photos/800/600?random=10"
+                            alt="Patent design software interface on a tablet"
+                            width={800}
+                            height={600}
+                            className="rounded-lg"
+                            data-ai-hint="design software"
+                        />
+                    </div>
+                    <Card className="shadow-lg">
+                        <CardHeader>
+                            <CardTitle className="font-headline text-xl">Budget-friendly Prices or We Match</CardTitle>
+                        </CardHeader>
+                        <CardContent>
+                            <p className="text-muted-foreground">Find lower prices for patent drawings? We'll match them to ensure the best value.</p>
+                        </CardContent>
+                    </Card>
+                </div>
+
+                <div className="space-y-8">
+                    <h2 className="font-headline text-4xl font-bold">Why Choose Us?</h2>
+                    <p className="text-muted-foreground text-lg">
+                        We deliver patent drawings and services that exceed expectations, backed by experience and a proven track record.
+                    </p>
+                    <ul className="space-y-6">
+                        {whyChooseUsFeatures.map((feature) => (
+                            <li key={feature.title} className="flex items-start gap-4">
+                                <div className="flex-shrink-0 bg-primary/10 p-3 rounded-full">
+                                    {feature.icon}
+                                </div>
+                                <div>
+                                    <h3 className="text-xl font-semibold mb-1">{feature.title}</h3>
+                                    <p className="text-muted-foreground">{feature.description}</p>
+                                </div>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            </div>
+        </div>
+      </section>
+
+
       {/* How It Works Section */}
-      <section id="how-it-works" className="py-20 bg-card">
+      <section id="how-it-works" className="py-20 bg-background">
         <div className="container mx-auto">
           <div className="text-center mb-12">
             <h2 className="font-headline text-4xl font-bold">How it Works?</h2>
@@ -264,7 +331,7 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 text-center">
             {howItWorksSteps.map((step, index) => (
-              <Card key={index} className="flex flex-col items-center justify-start p-6 hover:shadow-lg transition-shadow bg-background">
+              <Card key={index} className="flex flex-col items-center justify-start p-6 hover:shadow-lg transition-shadow bg-card">
                 <div className="mb-4 bg-primary/10 p-4 rounded-full">
                   {step.icon}
                 </div>
@@ -278,7 +345,7 @@ export default function Home() {
 
 
       {/* About Us Section */}
-      <section id="about" className="py-20 bg-background">
+      <section id="about" className="py-20 bg-card">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
@@ -305,7 +372,7 @@ export default function Home() {
       </section>
 
       {/* Testimonials Section */}
-      <section id="testimonials" className="py-20 bg-card">
+      <section id="testimonials" className="py-20 bg-background">
         <div className="container mx-auto">
           <h2 className="font-headline text-4xl font-bold text-center mb-12">What Our Clients Say</h2>
           <Carousel
@@ -316,7 +383,7 @@ export default function Home() {
               {testimonials.map((testimonial, index) => (
                 <CarouselItem key={index}>
                   <div className="p-1">
-                    <Card className="bg-background">
+                    <Card className="bg-card">
                       <CardContent className="flex flex-col items-center justify-center p-8 text-center">
                         <Avatar className="w-20 h-20 mb-4">
                           <AvatarImage src={testimonial.avatar} alt={testimonial.name} data-ai-hint={testimonial.hint} />
