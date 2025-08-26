@@ -95,25 +95,15 @@ export default function ServicePage({ params }: ServicePageProps) {
     <div className="bg-background">
       {/* Hero Section */}
       <div className="relative h-[50vh] w-full">
-         {is3dModeling ? (
-             <model-viewer
-                src="https://cdn.glitch.com/36cb8393-65c6-408d-a538-055ada20431b/Astronaut.glb?v=1542147958948"
-                alt="A 3D model of a gearbox"
-                camera-controls
-                auto-rotate
-                style={{ width: '100%', height: '100%', backgroundColor: '#222' }}
-              />
-         ) : (
-             <Image
-                src={service.image}
-                alt={service.title}
-                fill
-                className="object-cover"
-                data-ai-hint={service.imageHint}
-                priority
-            />
-         )}
-        <div className={`absolute inset-0 ${is3dModeling ? 'bg-black/20' : 'bg-black/60'} flex items-center justify-center`}>
+        <Image
+            src={service.image}
+            alt={service.title}
+            fill
+            className="object-cover"
+            data-ai-hint={service.imageHint}
+            priority
+        />
+        <div className="absolute inset-0 bg-black/60 flex items-center justify-center">
             <div className="container text-center text-white">
                 <Badge variant="secondary" className="mb-4">Service</Badge>
                 <h1 className="font-headline text-4xl md:text-6xl font-bold">{service.title}</h1>
@@ -123,6 +113,28 @@ export default function ServicePage({ params }: ServicePageProps) {
         </div>
       </div>
       
+      {is3dModeling && (
+        <section className="py-12 md:py-20 bg-muted">
+            <div className="container">
+                <div className="max-w-4xl mx-auto text-center">
+                    <h2 className="font-headline text-3xl font-bold">Interactive 3D Model</h2>
+                    <p className="text-muted-foreground mt-2 mb-8">
+                        Rotate and inspect a sample of our high-quality 3D modeling work.
+                    </p>
+                </div>
+                 <div className="w-full h-96 max-w-4xl mx-auto rounded-lg shadow-xl overflow-hidden">
+                    <model-viewer
+                        src="https://cdn.glitch.com/36cb8393-65c6-408d-a538-055ada20431b/Astronaut.glb?v=1542147958948"
+                        alt="A 3D model of an astronaut, related to patent drawings"
+                        camera-controls
+                        auto-rotate
+                        style={{ width: '100%', height: '100%', backgroundColor: '#f5f5f5' }}
+                    />
+                 </div>
+            </div>
+        </section>
+      )}
+
       {/* Content Section */}
       <div className="container py-12 md:py-20">
         <div className="max-w-4xl mx-auto">
