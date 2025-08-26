@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import {
   Carousel,
   CarouselContent,
@@ -10,7 +10,8 @@ import {
   CarouselPrevious,
 } from '@/components/ui/carousel';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { CheckCircle, DraftingCompass, Lightbulb, Scale } from 'lucide-react';
+import { CheckCircle, DraftingCompass, Lightbulb, PenTool, Palette, Copyright, Cog, Box, ArrowRight } from 'lucide-react';
+import { services } from '@/lib/services';
 
 const workSamples = [
   {
@@ -29,6 +30,15 @@ const workSamples = [
     hint: '3d model',
   },
 ];
+
+const serviceIcons: { [key: string]: React.ReactNode } = {
+  'utility-drawing': <PenTool className="w-10 h-10 text-primary" />,
+  'design-patent-services': <Palette className="w-10 h-10 text-primary" />,
+  'trademark-drawing-services': <Copyright className="w-10 h-10 text-primary" />,
+  'engineering-drawing-services': <Cog className="w-10 h-10 text-primary" />,
+  '3d-modeling-services': <Box className="w-10 h-10 text-primary" />,
+};
+
 
 const howItWorksSteps = [
   {
@@ -122,9 +132,37 @@ export default function Home() {
           </div>
         </div>
       </section>
+      
+      {/* Services Section */}
+      <section id="services" className="py-20 bg-card">
+        <div className="container mx-auto">
+          <h2 className="font-headline text-4xl font-bold text-center mb-12">Our Services</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {services.slice(0, 5).map((service) => (
+              <Card key={service.slug} className="flex flex-col text-center items-center p-6 group hover:shadow-lg transition-shadow">
+                <div className="mb-4 text-primary">
+                  {serviceIcons[service.slug] || <PenTool className="w-10 h-10 text-primary" />}
+                </div>
+                <CardTitle className="font-headline text-xl mb-2">{service.title}</CardTitle>
+                <CardDescription className="flex-grow mb-4">{service.description}</CardDescription>
+                <Button asChild variant="link" className="p-0 mt-auto">
+                  <Link href={`/services/${service.slug}`}>
+                    Learn More <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              </Card>
+            ))}
+            <div className="flex md:col-span-2 lg:col-span-1 items-center justify-center">
+                 <Button asChild size="lg" variant="outline">
+                    <Link href="/services">View All Services</Link>
+                </Button>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* How It Works Section */}
-      <section id="how-it-works" className="py-20 bg-card">
+      <section id="how-it-works" className="py-20 bg-background">
         <div className="container mx-auto">
           <h2 className="font-headline text-4xl font-bold text-center mb-12">How It Works</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
@@ -140,7 +178,7 @@ export default function Home() {
       </section>
 
       {/* About Us Section */}
-      <section id="about" className="py-20 bg-background">
+      <section id="about" className="py-20 bg-card">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
@@ -167,7 +205,7 @@ export default function Home() {
       </section>
 
       {/* Testimonials Section */}
-      <section id="testimonials" className="py-20 bg-card">
+      <section id="testimonials" className="py-20 bg-background">
         <div className="container mx-auto">
           <h2 className="font-headline text-4xl font-bold text-center mb-12">What Our Clients Say</h2>
           <Carousel
