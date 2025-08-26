@@ -39,39 +39,6 @@ const workSamples = [
   },
 ];
 
-const serviceIcons: { [key: string]: React.ReactNode } = {
-  'utility-drawing': <PenTool className="w-10 h-10 text-primary" />,
-  'design-patent-services': <Palette className="w-10 h-10 text-primary" />,
-  'trademark-drawing-services': <Copyright className="w-10 h-10 text-primary" />,
-  'engineering-drawing-services': <Cog className="w-10 h-10 text-primary" />,
-  '3d-modeling-services': <Box className="w-10 h-10 text-primary" />,
-};
-
-
-const howItWorksSteps = [
-  {
-    icon: <FileUp className="w-10 h-10 text-primary" />,
-    title: 'Input Request Details and Upload Files',
-  },
-  {
-    icon: <ClipboardList className="w-10 h-10 text-primary" />,
-    title: 'Understanding your Requirements',
-  },
-  {
-    icon: <Cog className="w-10 h-10 text-primary" />,
-    title: 'Patent Drawing Experts at Work',
-  },
-  {
-    icon: <Mail className="w-10 h-10 text-primary" />,
-    title: 'Receive Formal Drawings in 2-3 Business Days',
-    description: '(*T&C Apply)',
-  },
-  {
-    icon: <RefreshCcw className="w-10 h-10 text-primary" />,
-    title: 'Unlimited Iterations - No Additional Cost',
-  },
-];
-
 const testimonials = [
   {
     name: 'John Doe',
@@ -167,6 +134,34 @@ const faqs = [
   }
 ];
 
+const howItWorksSteps = [
+  {
+    icon: <FileUp className="w-8 h-8 text-primary" />,
+    title: 'Submit Your Project',
+    description: 'Use our simple order form to upload your invention details, sketches, or reference files.',
+  },
+  {
+    icon: <ClipboardList className="w-8 h-8 text-primary" />,
+    title: 'Review & Quote',
+    description: 'Our team reviews your submission and provides a detailed quote and timeline for your approval.',
+  },
+  {
+    icon: <Cog className="w-8 h-8 text-primary" />,
+    title: 'Drafting Process',
+    description: 'Our expert drafters get to work, creating precise and compliant patent drawings.',
+  },
+  {
+    icon: <RefreshCcw className="w-8 h-8 text-primary" />,
+    title: 'Revisions & Feedback',
+    description: 'We share the drafts with you for feedback and make unlimited revisions until you are satisfied.',
+  },
+  {
+    icon: <Mail className="w-8 h-8 text-primary" />,
+    title: 'Final Delivery',
+    description: 'Receive your final, application-ready drawings in all required formats.',
+  },
+];
+
 export default function Home() {
   return (
     <div className="flex flex-col">
@@ -221,19 +216,36 @@ export default function Home() {
           <h2 className="font-headline text-4xl font-bold text-center mb-12">Our Services</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.slice(0, 5).map((service) => (
-              <Card key={service.slug} className="flex flex-col text-center items-center p-6 group hover:shadow-lg transition-shadow">
-                <div className="mb-4 text-primary">
-                  {serviceIcons[service.slug] || <PenTool className="w-10 h-10 text-primary" />}
+               <Card key={service.slug} className="flex flex-col overflow-hidden group/card transition-all duration-300 hover:shadow-xl hover:-translate-y-1 relative">
+                 <div className="absolute top-4 right-4 z-10">
+                    <Button asChild className="group/button bg-accent hover:bg-accent/90 text-accent-foreground shadow-lg">
+                        <Link href="/order">
+                            <span className="group-hover/button:hidden">${service.price}</span>
+                            <span className="hidden group-hover/button:block">Order Now</span>
+                        </Link>
+                    </Button>
                 </div>
-                <CardTitle className="font-headline text-xl mb-2">{service.title}</CardTitle>
-                <div className="text-2xl font-bold text-primary mb-2">${service.price}</div>
-                <CardDescription className="flex-grow mb-4">{service.description}</CardDescription>
-                <Button asChild variant="link" className="p-0 mt-auto">
-                  <Link href={`/services/${service.slug}`}>
-                    Learn More <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
-              </Card>
+                 <CardHeader className="p-0">
+                    <Link href={`/services/${service.slug}`} className="block relative h-56 w-full">
+                        <Image
+                        src={service.image}
+                        alt={service.title}
+                        fill
+                        className="object-cover transition-transform duration-300 group-hover/card:scale-105"
+                        data-ai-hint={service.imageHint}
+                        />
+                    </Link>
+                 </CardHeader>
+                 <CardContent className="p-6 flex flex-col flex-grow">
+                     <CardTitle className="font-headline text-xl mb-2">{service.title}</CardTitle>
+                   <CardDescription className="flex-grow mb-4">{service.description}</CardDescription>
+                   <Button asChild variant="link" className="mt-auto self-start p-0 text-primary">
+                     <Link href={`/services/${service.slug}`}>
+                       Learn More <ArrowRight className="ml-2 h-4 w-4" />
+                     </Link>
+                   </Button>
+                 </CardContent>
+               </Card>
             ))}
             <div className="flex md:col-span-2 lg:col-span-1 items-center justify-center">
                  <Button asChild size="lg" variant="outline">
