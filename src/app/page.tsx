@@ -10,8 +10,9 @@ import {
   CarouselPrevious,
 } from '@/components/ui/carousel';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { FileUp, ClipboardList, Cog, Mail, RefreshCcw, PenTool, Palette, Copyright, Box, ArrowRight } from 'lucide-react';
+import { FileUp, ClipboardList, Cog, Mail, RefreshCcw, PenTool, Palette, Copyright, Box, ArrowRight, CheckCircle } from 'lucide-react';
 import { services } from '@/lib/services';
+import { Badge } from '@/components/ui/badge';
 
 const workSamples = [
   {
@@ -167,8 +168,93 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Understanding Patent Drawings Section */}
+      <section id="design-types" className="py-20 bg-background">
+        <div className="container mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="font-headline text-4xl font-bold">Understanding Patent Drawings</h2>
+            <p className="mt-4 max-w-3xl mx-auto text-muted-foreground">
+              Different ideas require different types of protection. We specialize in both utility and design patents to best serve your invention.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+            {/* Utility Patent Card */}
+            <Card className="flex flex-col">
+              <CardHeader>
+                <Badge className="w-fit mb-2">Technical</Badge>
+                <CardTitle className="font-headline text-2xl">Utility Patents</CardTitle>
+                <CardDescription>Protecting how your invention <span className="font-semibold text-primary">works and functions</span>.</CardDescription>
+              </CardHeader>
+              <CardContent className="flex-grow flex flex-col justify-between">
+                <Image
+                  src="https://picsum.photos/600/400?random=8"
+                  alt="Utility Patent Drawing Example"
+                  width={600}
+                  height={400}
+                  className="rounded-lg mb-6 shadow-md"
+                  data-ai-hint="technical diagram"
+                />
+                <ul className="space-y-3 text-sm">
+                  <li className="flex gap-3">
+                    <CheckCircle className="w-5 h-5 text-green-500 shrink-0 mt-0.5" />
+                    <span>Focuses on the functional aspects and mechanisms.</span>
+                  </li>
+                  <li className="flex gap-3">
+                    <CheckCircle className="w-5 h-5 text-green-500 shrink-0 mt-0.5" />
+                    <span>Includes diagrams, flowcharts, and schematics.</span>
+                  </li>
+                  <li className="flex gap-3">
+                    <CheckCircle className="w-5 h-5 text-green-500 shrink-0 mt-0.5" />
+                    <span>Drawings are typically detailed and annotated with reference numbers.</span>
+                  </li>
+                </ul>
+                <Button asChild variant="outline" className="mt-6">
+                  <Link href="/services/utility-drawing">Learn More</Link>
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Design Patent Card */}
+            <Card className="flex flex-col border-primary/50 shadow-lg">
+              <CardHeader>
+                <Badge variant="secondary" className="w-fit mb-2">Aesthetic</Badge>
+                <CardTitle className="font-headline text-2xl">Design Patents</CardTitle>
+                <CardDescription>Protecting your product's <span className="font-semibold text-primary">unique visual appearance</span>.</CardDescription>
+              </CardHeader>
+              <CardContent className="flex-grow flex flex-col justify-between">
+                <Image
+                  src="https://picsum.photos/600/400?random=9"
+                  alt="Design Patent Drawing Example"
+                  width={600}
+                  height={400}
+                  className="rounded-lg mb-6 shadow-md"
+                  data-ai-hint="product photo"
+                />
+                <ul className="space-y-3 text-sm">
+                  <li className="flex gap-3">
+                    <CheckCircle className="w-5 h-5 text-green-500 shrink-0 mt-0.5" />
+                    <span>Focuses on the ornamental, non-functional design.</span>
+                  </li>
+                  <li className="flex gap-3">
+                    <CheckCircle className="w-5 h-5 text-green-500 shrink-0 mt-0.5" />
+                    <span>Requires specific views (front, back, side, perspective, etc.).</span>
+                  </li>
+                  <li className="flex gap-3">
+                    <CheckCircle className="w-5 h-5 text-green-500 shrink-0 mt-0.5" />
+                    <span>Uses shading and surface lines to define the shape and contour.</span>
+                  </li>
+                </ul>
+                <Button asChild className="mt-6">
+                  <Link href="/services/design-patent-services">Learn More</Link>
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* How It Works Section */}
-      <section id="how-it-works" className="py-20 bg-background">
+      <section id="how-it-works" className="py-20 bg-card">
         <div className="container mx-auto">
           <div className="text-center mb-12">
             <h2 className="font-headline text-4xl font-bold">How it Works?</h2>
@@ -178,7 +264,7 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 text-center">
             {howItWorksSteps.map((step, index) => (
-              <Card key={index} className="flex flex-col items-center justify-start p-6 hover:shadow-lg transition-shadow">
+              <Card key={index} className="flex flex-col items-center justify-start p-6 hover:shadow-lg transition-shadow bg-background">
                 <div className="mb-4 bg-primary/10 p-4 rounded-full">
                   {step.icon}
                 </div>
@@ -192,7 +278,7 @@ export default function Home() {
 
 
       {/* About Us Section */}
-      <section id="about" className="py-20 bg-card">
+      <section id="about" className="py-20 bg-background">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
@@ -219,7 +305,7 @@ export default function Home() {
       </section>
 
       {/* Testimonials Section */}
-      <section id="testimonials" className="py-20 bg-background">
+      <section id="testimonials" className="py-20 bg-card">
         <div className="container mx-auto">
           <h2 className="font-headline text-4xl font-bold text-center mb-12">What Our Clients Say</h2>
           <Carousel
@@ -230,7 +316,7 @@ export default function Home() {
               {testimonials.map((testimonial, index) => (
                 <CarouselItem key={index}>
                   <div className="p-1">
-                    <Card>
+                    <Card className="bg-background">
                       <CardContent className="flex flex-col items-center justify-center p-8 text-center">
                         <Avatar className="w-20 h-20 mb-4">
                           <AvatarImage src={testimonial.avatar} alt={testimonial.name} data-ai-hint={testimonial.hint} />
