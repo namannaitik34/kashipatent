@@ -23,27 +23,25 @@ export default function ServicesPage() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {services.map((service) => (
-          <Card key={service.slug} className="flex flex-col overflow-hidden group transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+          <Card key={service.slug} className="flex flex-col overflow-hidden group/card transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
             <CardHeader className="p-0">
               <Link href={`/services/${service.slug}`} className="block relative h-56 w-full">
                 <Image
                   src={service.image}
                   alt={service.title}
                   fill
-                  className="object-cover transition-transform duration-300 group-hover:scale-105"
+                  className="object-cover transition-transform duration-300 group-hover/card:scale-105"
                   data-ai-hint={service.imageHint}
                 />
               </Link>
             </CardHeader>
             <CardContent className="p-6 flex flex-col flex-grow">
-              <div className="flex justify-between items-start mb-2">
-                <CardTitle className="font-headline text-xl">{service.title}</CardTitle>
-                <div className="text-xl font-bold text-primary whitespace-nowrap ml-4">${service.price}</div>
-              </div>
-              <CardDescription className="flex-grow">{service.description}</CardDescription>
-              <Button asChild variant="link" className="p-0 mt-4 self-start">
+                <CardTitle className="font-headline text-xl mb-2">{service.title}</CardTitle>
+              <CardDescription className="flex-grow mb-4">{service.description}</CardDescription>
+              <Button asChild className="mt-auto group/button">
                 <Link href={`/services/${service.slug}`}>
-                  Learn More <ArrowRight className="ml-2 h-4 w-4" />
+                  <span className="group-hover/button:hidden flex items-center">Learn More <ArrowRight className="ml-2 h-4 w-4" /></span>
+                  <span className="hidden group-hover/button:block">From ${service.price}</span>
                 </Link>
               </Button>
             </CardContent>
