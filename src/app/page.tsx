@@ -94,42 +94,34 @@ const testimonials = [
 
 const whyChooseUsFeatures = [
     {
-        icon: <ShieldCheck className="w-6 h-6 text-primary" />,
-        title: 'Quality',
-        description: 'Expertly crafted patent drawings that meet the highest standards.',
+        icon: <ShieldCheck className="w-8 h-8 text-primary" />,
+        title: 'Impeccable Quality',
+        description: 'Expertly crafted patent drawings that meet the highest USPTO standards.',
     },
     {
-        icon: <HeartHandshake className="w-6 h-6 text-primary" />,
-        title: 'Support',
+        icon: <HeartHandshake className="w-8 h-8 text-primary" />,
+        title: 'Dedicated Support',
         description: 'Responsive communication and guidance throughout your project.',
     },
     {
-        icon: <Zap className="w-6 h-6 text-primary" />,
-        title: 'Reliability',
+        icon: <Zap className="w-8 h-8 text-primary" />,
+        title: 'Proven Reliability',
         description: 'Dependable service for inventors, attorneys, and businesses worldwide.',
     },
-];
-
-const extraFeatures = [
     {
-        icon: <Wallet className="w-6 h-6 text-primary" />,
-        title: 'Budget-friendly Prices or We Match',
-        description: "Find lower prices for patent drawings? We'll match them to ensure the best value.",
+        icon: <Wallet className="w-8 h-8 text-primary" />,
+        title: 'Budget-friendly Prices',
+        description: "Find lower prices? We'll match them to ensure the best value.",
     },
     {
-        icon: <Star className="w-6 h-6 text-primary" />,
-        title: '100% Satisfaction Guarantee',
+        icon: <Star className="w-8 h-8 text-primary" />,
+        title: 'Satisfaction Guarantee',
         description: 'Unlimited revisions at no extra cost. Complete satisfaction or you don\'t pay.',
     },
     {
-        icon: <Files className="w-6 h-6 text-primary" />,
-        title: 'Most Flexible Output Formats',
-        description: 'We deliver in PDF, DWG, Word, PPT, Visio, CorelDRAW, JPG, TIFF, PNG, and more.',
-    },
-    {
-        icon: <Clock className="w-6 h-6 text-primary" />,
-        title: 'Easy Ordering, Quick Delivery',
-        description: 'Order in minutes and receive high-quality outputs in just a few hours. Super-expedited options available.',
+        icon: <Clock className="w-8 h-8 text-primary" />,
+        title: 'Quick Delivery',
+        description: 'Receive high-quality outputs in just a few hours. Super-expedited options available.',
     },
 ]
 
@@ -298,47 +290,32 @@ export default function Home() {
       <section id="why-choose-us" className="py-20 bg-card">
         <div className="container mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div className="space-y-8">
+                <div>
                     <h2 className="font-headline text-4xl font-bold">Why Choose Kashi Patent?</h2>
-                    <p className="text-muted-foreground text-lg">
+                    <p className="mt-4 text-muted-foreground text-lg">
                         We deliver patent drawings and services that exceed expectations, backed by experience and a proven track record of success.
                     </p>
-                    <Image
+                     <Image
                         src="https://picsum.photos/800/600?random=10"
                         alt="Patent design software interface on a tablet"
                         width={800}
                         height={600}
-                        className="rounded-lg shadow-xl"
+                        className="rounded-lg shadow-xl mt-8"
                         data-ai-hint="design software"
                     />
                 </div>
                 <div className="space-y-8">
-                    <ul className="space-y-6">
-                        {whyChooseUsFeatures.map((feature) => (
-                            <li key={feature.title} className="flex items-start gap-4">
-                                <div className="flex-shrink-0 bg-primary/10 p-3 rounded-full">
-                                    {feature.icon}
-                                </div>
-                                <div>
-                                    <h3 className="text-xl font-semibold mb-1">{feature.title}</h3>
-                                    <p className="text-muted-foreground">{feature.description}</p>
-                                </div>
-                            </li>
-                        ))}
-                    </ul>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-6 border-t">
-                        {extraFeatures.map((feature) => (
-                            <div key={feature.title} className="flex items-start gap-4">
-                                <div className="flex-shrink-0 bg-primary/10 p-3 rounded-full">
-                                    {feature.icon}
-                                </div>
-                                <div>
-                                    <h3 className="text-lg font-semibold">{feature.title}</h3>
-                                    <p className="text-sm text-muted-foreground">{feature.description}</p>
-                                </div>
+                    {whyChooseUsFeatures.map((feature) => (
+                        <div key={feature.title} className="flex items-start gap-5">
+                            <div className="flex-shrink-0 bg-primary/10 p-4 rounded-full">
+                                {feature.icon}
                             </div>
-                        ))}
-                    </div>
+                            <div>
+                                <h3 className="text-xl font-semibold mb-1">{feature.title}</h3>
+                                <p className="text-muted-foreground">{feature.description}</p>
+                            </div>
+                        </div>
+                    ))}
                 </div>
             </div>
         </div>
