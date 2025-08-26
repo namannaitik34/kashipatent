@@ -10,7 +10,7 @@ import {
   CarouselPrevious,
 } from '@/components/ui/carousel';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { CheckCircle, DraftingCompass, Lightbulb, PenTool, Palette, Copyright, Cog, Box, ArrowRight } from 'lucide-react';
+import { FileUp, ClipboardList, Cog, Mail, RefreshCcw, PenTool, Palette, Copyright, Box, ArrowRight } from 'lucide-react';
 import { services } from '@/lib/services';
 
 const workSamples = [
@@ -42,19 +42,25 @@ const serviceIcons: { [key: string]: React.ReactNode } = {
 
 const howItWorksSteps = [
   {
-    icon: <Lightbulb className="w-10 h-10 text-primary" />,
-    title: 'Submit Your Idea',
-    description: 'Provide us with your invention details, sketches, or 3D models through our secure order form.',
+    icon: <FileUp className="w-10 h-10 text-primary" />,
+    title: 'Input Request Details and Upload Files',
   },
   {
-    icon: <DraftingCompass className="w-10 h-10 text-primary" />,
-    title: 'Expert Drawing & Review',
-    description: 'Our skilled drafters create precise, compliant drawings. You review and request revisions.',
+    icon: <ClipboardList className="w-10 h-10 text-primary" />,
+    title: 'Understanding your Requirements',
   },
   {
-    icon: <CheckCircle className="w-10 h-10 text-primary" />,
-    title: 'Final Delivery',
-    description: 'Receive your final patent-ready drawings in all required formats, ready for filing.',
+    icon: <Cog className="w-10 h-10 text-primary" />,
+    title: 'Patent Drawing Experts at Work',
+  },
+  {
+    icon: <Mail className="w-10 h-10 text-primary" />,
+    title: 'Receive Formal Drawings in 2-3 Business Days',
+    description: '(*T&C Apply)',
+  },
+  {
+    icon: <RefreshCcw className="w-10 h-10 text-primary" />,
+    title: 'Unlimited Iterations - No Additional Cost',
   },
 ];
 
@@ -164,18 +170,26 @@ export default function Home() {
       {/* How It Works Section */}
       <section id="how-it-works" className="py-20 bg-background">
         <div className="container mx-auto">
-          <h2 className="font-headline text-4xl font-bold text-center mb-12">How It Works</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+          <div className="text-center mb-12">
+            <h2 className="font-headline text-4xl font-bold">How it Works?</h2>
+            <p className="mt-4 max-w-3xl mx-auto text-muted-foreground">
+              Our Patent Drawing Services are designed to support patent agents, attorneys, and innovators with a simple, transparent process.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 text-center">
             {howItWorksSteps.map((step, index) => (
-              <div key={index} className="flex flex-col items-center">
-                <div className="mb-4">{step.icon}</div>
-                <h3 className="font-headline text-2xl font-semibold mb-2">{step.title}</h3>
-                <p className="text-muted-foreground">{step.description}</p>
-              </div>
+              <Card key={index} className="flex flex-col items-center justify-start p-6 hover:shadow-lg transition-shadow">
+                <div className="mb-4 bg-primary/10 p-4 rounded-full">
+                  {step.icon}
+                </div>
+                <h3 className="font-headline text-lg font-semibold mb-2 h-16 flex items-center">{step.title}</h3>
+                {step.description && <p className="text-sm text-muted-foreground">{step.description}</p>}
+              </Card>
             ))}
           </div>
         </div>
       </section>
+
 
       {/* About Us Section */}
       <section id="about" className="py-20 bg-card">
