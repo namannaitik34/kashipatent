@@ -19,7 +19,6 @@ export const services: Service[] = [
     image: 'https://picsum.photos/1200/800?random=11',
     imageHint: 'technical schematic',
     price: 20,
-    modelSrc: 'https://modelviewer.dev/shared-assets/models/glTF-Sample-Models/2.0/GearboxAssy/glTF-Binary/GearboxAssy.glb'
   },
   {
     slug: 'design-patent-services',
@@ -29,7 +28,6 @@ export const services: Service[] = [
     image: 'https://picsum.photos/1200/800?random=12',
     imageHint: 'modern product',
     price: 25,
-    modelSrc: 'https://modelviewer.dev/shared-assets/models/glTF-Sample-Models/2.0/VintageCamera/glTF-Binary/VintageCamera.glb'
   },
   {
     slug: 'trademark-drawing-services',
@@ -48,7 +46,6 @@ export const services: Service[] = [
     image: 'https://picsum.photos/1200/800?random=14',
     imageHint: 'engineering plan',
     price: 30,
-    modelSrc: 'https://modelviewer.dev/shared-assets/models/glTF-Sample-Models/2.0/2CylinderEngine/glTF-Binary/2CylinderEngine.glb'
   },
   {
     slug: '3d-modeling-services',
