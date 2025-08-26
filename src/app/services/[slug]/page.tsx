@@ -97,7 +97,7 @@ export default function ServicePage({ params }: ServicePageProps) {
       <div className="relative h-[50vh] w-full">
          {is3dModeling ? (
              <model-viewer
-                src="https://modelviewer.dev/shared-assets/models/glTF-Sample-Models/2.0/GearboxAssy/glTF-Binary/GearboxAssy.glb"
+                src="https://cdn.glitch.com/36cb8393-65c6-408d-a538-055ada20431b/Astronaut.glb?v=1542147958948"
                 alt="A 3D model of a gearbox"
                 camera-controls
                 auto-rotate
