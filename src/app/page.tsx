@@ -9,6 +9,12 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from '@/components/ui/carousel';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { FileUp, ClipboardList, Cog, Mail, RefreshCcw, PenTool, Palette, Copyright, Box, ArrowRight, CheckCircle, ShieldCheck, HeartHandshake, Zap, Wallet, Star, Files, Clock } from 'lucide-react';
 import { services } from '@/lib/services';
@@ -124,6 +130,41 @@ const whyChooseUsFeatures = [
         description: 'Receive high-quality outputs in just a few hours. Super-expedited options available.',
     },
 ]
+
+const faqs = [
+  {
+    question: "What types of patent drawings do you provide?",
+    answer: "We provide a comprehensive range of patent illustration services, including Utility patent drawings, Design patent drawings, Trademark drawings, and detailed Engineering drawings. Our team is skilled in creating illustrations that meet the strict requirements of patent offices worldwide."
+  },
+  {
+    question: "How do I submit my invention details?",
+    answer: "You can easily submit your project details through our secure online order form. We recommend providing as much information as possible, including descriptions, sketches, photos, or 3D models to help our drafters accurately capture your invention."
+  },
+  {
+    question: "How long does it take to receive my drawings?",
+    answer: "Our standard delivery time is 2-3 business days. For urgent requirements, we also offer expedited services to ensure you meet your deadlines."
+  },
+  {
+    question: "Can I request revisions to my drawings?",
+    answer: "Absolutely! We offer unlimited free revisions until you are completely satisfied with the drawings. Our goal is to ensure the final illustrations perfectly match your vision and meet all necessary standards."
+  },
+  {
+    question: "Are your drawings accepted by patent offices worldwide?",
+    answer: "Yes, our drawings are prepared to comply with the specific rules and standards of major patent offices, including the USPTO (United States Patent and Trademark Office), WIPO (World Intellectual Property Organization), EPO (European Patent Office), and many others."
+  },
+  {
+    question: "What file formats do you deliver?",
+    answer: "We deliver the final drawings in all standard formats required for filing, such as PDF, AI, DWG, and JPG, at no additional cost. We can also provide other formats upon request."
+  },
+  {
+    question: "Is my information kept confidential?",
+    answer: "Yes, we treat all client information with the utmost confidentiality. We are happy to sign a Non-Disclosure Agreement (NDA) before you share any sensitive details about your invention."
+  },
+  {
+    question: "How do I contact your support team?",
+    answer: "You can reach our dedicated support team via email at contact@kashipatent.com, by phone at +1 (234) 567-890, or by filling out the contact form on our website. We're here to assist you with any questions."
+  }
+];
 
 export default function Home() {
   return (
@@ -403,6 +444,28 @@ export default function Home() {
             <CarouselPrevious />
             <CarouselNext />
           </Carousel>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section id="faq" className="py-20 bg-card">
+        <div className="container mx-auto max-w-4xl">
+          <div className="text-center mb-12">
+            <h2 className="font-headline text-4xl font-bold">Frequently Asked Questions</h2>
+            <p className="mt-4 text-muted-foreground">
+              Have questions? We've got answers. Here are some of the most common inquiries we receive.
+            </p>
+          </div>
+          <Accordion type="single" collapsible className="w-full">
+            {faqs.map((faq, index) => (
+              <AccordionItem value={`item-${index}`} key={index}>
+                <AccordionTrigger className="text-lg text-left">{faq.question}</AccordionTrigger>
+                <AccordionContent className="text-base text-muted-foreground">
+                  {faq.answer}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
         </div>
       </section>
     </div>
