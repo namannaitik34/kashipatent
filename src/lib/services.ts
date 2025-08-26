@@ -1,3 +1,4 @@
+
 export type Service = {
   slug: string;
   title: string;
@@ -18,7 +19,7 @@ export const services: Service[] = [
     image: 'https://picsum.photos/1200/800?random=11',
     imageHint: 'technical schematic',
     price: 20,
-    modelSrc: 'https://cdn.glitch.com/36cb8393-65c6-408d-a538-055ada20431b/Gearbox.glb?v=1604011353278'
+    modelSrc: 'https://modelviewer.dev/shared-assets/models/glTF-Sample-Models/2.0/GearboxAssy/glTF-Binary/GearboxAssy.glb'
   },
   {
     slug: 'design-patent-services',
@@ -28,7 +29,7 @@ export const services: Service[] = [
     image: 'https://picsum.photos/1200/800?random=12',
     imageHint: 'modern product',
     price: 25,
-    modelSrc: 'https://cdn.glitch.global/6a815257-6587-4509-801b-3196965d1af9/vintage_camera.glb?v=1720822606822'
+    modelSrc: 'https://modelviewer.dev/shared-assets/models/glTF-Sample-Models/2.0/VintageCamera/glTF-Binary/VintageCamera.glb'
   },
   {
     slug: 'trademark-drawing-services',
@@ -38,7 +39,6 @@ export const services: Service[] = [
     image: 'https://picsum.photos/1200/800?random=13',
     imageHint: 'company logo',
     price: 30,
-    modelSrc: 'https://cdn.glitch.global/6a815257-6587-4509-801b-3196965d1af9/k_logo.glb?v=1720822986877'
   },
   {
     slug: 'engineering-drawing-services',
@@ -48,7 +48,7 @@ export const services: Service[] = [
     image: 'https://picsum.photos/1200/800?random=14',
     imageHint: 'engineering plan',
     price: 30,
-    modelSrc: 'https://cdn.glitch.global/6a815257-6587-4509-801b-3196965d1af9/engine_model.glb?v=1720823424422'
+    modelSrc: 'https://modelviewer.dev/shared-assets/models/glTF-Sample-Models/2.0/2CylinderEngine/glTF-Binary/2CylinderEngine.glb'
   },
   {
     slug: '3d-modeling-services',
@@ -58,7 +58,7 @@ export const services: Service[] = [
     image: 'https://picsum.photos/1200/800?random=15',
     imageHint: '3d rendering',
     price: 40,
-    modelSrc: 'https://cdn.glitch.com/36cb8393-65c6-408d-a538-055ada20431b/Astronaut.glb?v=1542147958948'
+    modelSrc: 'https://modelviewer.dev/shared-assets/models/Astronaut.glb'
   },
 ];
 
