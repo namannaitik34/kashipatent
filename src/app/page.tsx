@@ -400,23 +400,33 @@ export default function Home() {
       {/* About Us Section */}
       <section id="about" className="py-20 bg-background">
         <div className="container mx-auto">
-          <div className="max-w-4xl mx-auto text-center relative">
+          <div className="max-w-4xl mx-auto text-center relative px-8 py-12">
             <div className="absolute top-0 left-0 h-16 w-16 border-t-4 border-l-4 border-primary/20 rounded-tl-xl"></div>
             <div className="absolute bottom-0 right-0 h-16 w-16 border-b-4 border-r-4 border-primary/20 rounded-br-xl"></div>
-            <div className="px-8 py-12">
-              <h2 className="font-headline text-4xl font-bold mb-6">About Kashi Patent</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
-                <p className="text-muted-foreground text-lg leading-relaxed">
-                  Founded by a team of experienced drafters and engineers, Kashi Patent is dedicated to providing the highest quality patent drawing services. We understand the critical role that precise and clear illustrations play in securing intellectual property rights.
-                </p>
-                <p className="text-muted-foreground text-lg leading-relaxed">
-                  Our mission is to bridge the gap between invention and protection, ensuring every detail of your idea is perfectly captured and compliant with all patent office regulations worldwide.
-                </p>
-              </div>
+            
+            <h2 className="font-headline text-4xl font-bold mb-4">About Kashi Patent</h2>
+            <p className="text-muted-foreground text-lg max-w-3xl mx-auto mb-8">
+                Founded by a team of experienced drafters and engineers, Kashi Patent is dedicated to providing the highest quality patent drawing services. We understand the critical role that precise and clear illustrations play in securing intellectual property rights.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left border-t border-border pt-8">
+                <div>
+                    <h3 className="font-headline text-2xl font-bold text-primary mb-3">Our Mission</h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                        Our mission is to bridge the gap between invention and protection, ensuring every detail of your idea is perfectly captured and compliant with all patent office regulations worldwide.
+                    </p>
+                </div>
+                 <div>
+                    <h3 className="font-headline text-2xl font-bold text-primary mb-3">Our Vision</h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                        To be the most trusted and reliable partner for inventors and legal professionals globally, recognized for our precision, speed, and unwavering commitment to client success.
+                    </p>
+                </div>
             </div>
+
           </div>
         </div>
       </section>
+      
       {/* Why Choose Us Section */}
       <section id="why-choose-us" className="py-20 bg-card">
         <div className="container mx-auto">
