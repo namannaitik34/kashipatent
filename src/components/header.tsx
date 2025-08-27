@@ -37,7 +37,7 @@ export default function Header() {
             href={href}
             className={cn(
               'flex items-center gap-1 transition-colors px-3 py-2 rounded-md text-base font-medium',
-              isActive ? 'bg-primary/10 text-primary' : 'text-foreground/60 hover:bg-muted/50 hover:text-foreground'
+              isActive ? 'bg-primary/10 text-primary' : 'text-foreground/60 hover:text-foreground'
             )}
           >
             {children}
@@ -69,7 +69,7 @@ export default function Header() {
         href={href}
         className={cn(
           'transition-colors px-3 py-2 rounded-md text-base font-medium',
-          isActive ? 'bg-primary/10 text-primary' : 'text-foreground/60 hover:bg-muted/50 hover:text-foreground'
+          isActive ? 'bg-primary/10 text-primary' : 'text-foreground/60 hover:text-foreground'
         )}
       >
         {children}
@@ -106,7 +106,7 @@ export default function Header() {
         </nav>
 
         <div className="hidden md:flex items-center gap-2">
-            <Button asChild variant="ghost">
+            <Button asChild variant="outline">
                 <Link href="/contact">Contact</Link>
             </Button>
             <Button asChild>
