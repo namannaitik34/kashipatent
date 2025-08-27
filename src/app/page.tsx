@@ -18,7 +18,7 @@ import {
 } from "@/components/ui/accordion"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { FileUp, ClipboardList, Cog, Mail, RefreshCcw, PenTool, Palette, Copyright, Box, ArrowRight, CheckCircle, ShieldCheck, HeartHandshake, Zap, Wallet, Star, Clock, Send, FunctionSquare, DraftingCompass } from 'lucide-react';
+import { FileUp, ClipboardList, Cog, Mail, RefreshCcw, PenTool, Palette, Copyright, Box, ArrowRight, CheckCircle, ShieldCheck, HeartHandshake, Zap, Wallet, Star, Clock, Send, FunctionSquare, DraftingCompass, BrainCircuit, Target, Handshake, Lightbulb } from 'lucide-react';
 import { services } from '@/lib/services';
 import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
@@ -150,6 +150,29 @@ const howItWorksSteps = [
     title: 'Final Delivery',
     description: 'Receive your final, application-ready drawings in all required formats.',
   },
+];
+
+const coreValues = [
+    {
+        icon: <BrainCircuit className="w-8 h-8 text-primary" />,
+        title: "Uncompromising Precision",
+        description: "Every line, every angle, and every detail is meticulously crafted to meet the exacting standards of patent offices worldwide. Accuracy is not a goal; it's our foundation."
+    },
+    {
+        icon: <Handshake className="w-8 h-8 text-primary" />,
+        title: "Collaborative Partnership",
+        description: "We work as an extension of your team. We listen, adapt, and communicate proactively to ensure the final drawings are a perfect reflection of your vision and legal strategy."
+    },
+    {
+        icon: <Target className="w-8 h-8 text-primary" />,
+        title: "Purpose-Driven Quality",
+        description: "Our work is driven by a singular purpose: to secure the strongest possible protection for your intellectual property. We create drawings that are not just compliant, but compelling."
+    },
+    {
+        icon: <Lightbulb className="w-8 h-8 text-primary" />,
+        title: "Relentless Innovation",
+        description: "We are committed to staying at the forefront of drafting technology and techniques, ensuring we deliver not only exceptional quality but also efficiency and value to our clients."
+    }
 ];
 
 export default function Home() {
@@ -398,32 +421,50 @@ export default function Home() {
       </section>
 
       {/* About Us Section */}
-      <section id="about" className="py-20 bg-background">
+      <section id="about" className="py-20 md:py-32 bg-background text-foreground">
         <div className="container mx-auto">
-          <div className="max-w-4xl mx-auto text-center relative px-8 py-12">
-            <div className="absolute top-0 left-0 h-16 w-16 border-t-4 border-l-4 border-primary/20 rounded-tl-xl"></div>
-            <div className="absolute bottom-0 right-0 h-16 w-16 border-b-4 border-r-4 border-primary/20 rounded-br-xl"></div>
-            
-            <h2 className="font-headline text-4xl font-bold mb-4">About Kashi Patent</h2>
-            <p className="text-muted-foreground text-lg max-w-3xl mx-auto mb-8">
-                Founded by a team of experienced drafters and engineers, Kashi Patent is dedicated to providing the highest quality patent drawing services. We understand the critical role that precise and clear illustrations play in securing intellectual property rights.
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left border-t border-border pt-8">
-                <div>
-                    <h3 className="font-headline text-2xl font-bold text-primary mb-3">Our Mission</h3>
+            <div className="text-center">
+                <p className="text-base font-semibold text-primary uppercase tracking-wider">About Kashi Patent</p>
+                <h2 className="mt-2 font-headline text-4xl md:text-7xl font-extrabold tracking-tight">
+                    The Intersection of <br /> <span className="text-primary">Artistry &amp; Protection.</span>
+                </h2>
+                <p className="mt-8 max-w-3xl mx-auto text-lg md:text-xl text-muted-foreground leading-relaxed">
+                    Kashi Patent was founded on a simple yet powerful principle: that the most brilliant innovations deserve the clearest and most compelling visual protection. We are a dedicated team of engineers, artists, and patent experts who bridge the gap between complex inventions and the exacting requirements of intellectual property law.
+                </p>
+            </div>
+
+            <div className="mt-20 grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16">
+                 <div className="space-y-4">
+                    <h3 className="font-headline text-2xl font-bold text-primary">Our Mission</h3>
                     <p className="text-muted-foreground leading-relaxed">
-                        Our mission is to bridge the gap between invention and protection, ensuring every detail of your idea is perfectly captured and compliant with all patent office regulations worldwide.
+                        Our mission is to empower innovators by transforming their ideas into immaculate, compliant patent drawings that stand up to the rigorous scrutiny of patent offices worldwide. We strive to be the most reliable and precise partner for inventors and legal professionals, ensuring every detail is perfectly captured.
                     </p>
                 </div>
-                 <div>
-                    <h3 className="font-headline text-2xl font-bold text-primary mb-3">Our Vision</h3>
+                 <div className="space-y-4">
+                    <h3 className="font-headline text-2xl font-bold text-primary">Our Vision</h3>
                     <p className="text-muted-foreground leading-relaxed">
-                        To be the most trusted and reliable partner for inventors and legal professionals globally, recognized for our precision, speed, and unwavering commitment to client success.
+                        To be the global leader in patent illustration, recognized for our unwavering commitment to quality, precision, and client success. We envision a world where every great idea is protected by drawings that are as innovative and professional as the invention itself.
                     </p>
                 </div>
             </div>
 
-          </div>
+            <div className="mt-20">
+                <div className="text-center mb-12">
+                     <h3 className="font-headline text-3xl font-bold">Our Core Values</h3>
+                     <p className="mt-3 max-w-2xl mx-auto text-muted-foreground">The principles that guide our work and define our commitment to you.</p>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+                    {coreValues.map((value) => (
+                        <div key={value.title} className="text-center">
+                             <div className="flex justify-center items-center h-16 w-16 rounded-full bg-primary/10 mx-auto mb-5">
+                                {value.icon}
+                            </div>
+                            <h4 className="text-lg font-bold font-headline">{value.title}</h4>
+                            <p className="mt-2 text-sm text-muted-foreground">{value.description}</p>
+                        </div>
+                    ))}
+                </div>
+            </div>
         </div>
       </section>
       
