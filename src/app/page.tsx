@@ -361,22 +361,18 @@ export default function Home() {
                 ))}
               </div>
             </div>
-            <div className="hidden lg:flex items-center justify-center p-8 bg-card rounded-2xl shadow-lg">
-                <div className="grid grid-cols-3 gap-6">
-                    {howItWorksSteps.slice(0, -1).map((step, index) => (
-                        <div key={index} className="flex flex-col items-center text-center p-4 rounded-lg transition-all duration-300 hover:bg-background hover:shadow-md">
-                            <div className="p-4 bg-primary/10 rounded-full mb-3">{step.icon}</div>
-                            <p className="text-sm font-semibold">{step.title}</p>
-                        </div>
-                    ))}
-                    <div className="col-span-3 flex flex-col items-center text-center p-4 rounded-lg transition-all duration-300 hover:bg-background hover:shadow-md">
-                        <div className="p-4 bg-primary/10 rounded-full mb-3">{howItWorksSteps[howItWorksSteps.length - 1].icon}</div>
-                        <p className="text-sm font-semibold">{howItWorksSteps[howItWorksSteps.length - 1].title}</p>
-                    </div>
-                    <div className="col-span-3 text-center text-sm text-muted-foreground mt-4">
-                        Elements illustrating our streamlined process from submission to delivery.
-                    </div>
-                </div>
+            <div className="hidden lg:flex items-center justify-center p-8 bg-card rounded-2xl shadow-lg h-full">
+              <div className="text-center">
+                  <h3 className="font-headline text-6xl md:text-8xl font-bold text-primary/10 select-none">
+                    5
+                  </h3>
+                  <h3 className="font-headline text-5xl md:text-7xl font-bold text-primary -mt-12 md:-mt-20">
+                    Easy Steps
+                  </h3>
+                  <p className="text-muted-foreground mt-4 max-w-xs mx-auto">
+                    From your initial idea to final, compliant drawings—we make the process seamless.
+                  </p>
+              </div>
             </div>
           </div>
         </div>
