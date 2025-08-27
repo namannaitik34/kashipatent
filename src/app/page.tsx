@@ -25,19 +25,48 @@ import { Input } from '@/components/ui/input';
 
 const workSamples = [
   {
-    title: 'Utility Patent Drawing',
+    title: 'Drone Delivery System',
+    category: 'Utility Patent',
     image: 'https://picsum.photos/600/400?random=1',
     hint: 'technical drawing',
+    description: 'Detailed mechanical drawings for a novel autonomous drone delivery mechanism, ensuring all functional aspects were clearly illustrated for the patent application.',
+    testimonial: {
+      text: "The drawings were precise and professional. Kashi's team was a pleasure to work with.",
+      author: 'John Carter, CEO of AeroTech'
+    }
   },
   {
-    title: 'Design Patent Illustration',
+    title: 'Ergonomic Office Chair',
+    category: 'Design Patent',
     image: 'https://picsum.photos/600/400?random=2',
     hint: 'product design',
+    description: 'A full set of illustrations capturing the unique aesthetic and ornamental features of a new ergonomic chair, crucial for securing a design patent.',
+    testimonial: {
+      text: "They perfectly captured our design's essence. The final illustrations were beyond our expectations.",
+      author: 'Emily White, Lead Designer'
+    }
   },
   {
-    title: '3D Model Rendering',
+    title: 'Smart Medical Device',
+    category: '3D Model',
     image: 'https://picsum.photos/600/400?random=3',
     hint: '3d model',
+    description: 'Created a high-fidelity 3D model from 2D sketches, which was used for both patent illustrations and investor presentations.',
+    testimonial: {
+      text: "The 3D model was instrumental in our fundraising and patenting efforts. Highly recommended!",
+      author: 'Dr. Alisha Chen, MedInnovate'
+    }
+  },
+    {
+    title: 'Brand Logo for "Innovate"',
+    category: 'Trademark',
+    image: 'https://picsum.photos/600/400?random=4',
+    hint: 'company logo',
+    description: 'Developed a clean and distinctive logo, delivered in formats compliant with USPTO requirements for trademark registration.',
+    testimonial: {
+      text: "A seamless process from concept to the final, application-ready trademark drawing.",
+      author: 'Mark Robinson, Startup Founder'
+    }
   },
 ];
 
@@ -265,28 +294,53 @@ export default function Home() {
 
 
       {/* Work Samples Section */}
-      <section id="work" className="py-20 bg-background">
+      <section id="work" className="py-20 bg-muted">
         <div className="container mx-auto">
-          <h2 className="font-headline text-4xl font-bold text-center mb-12">Our Work</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {workSamples.map((sample) => (
-              <Card key={sample.title} className="overflow-hidden group">
-                <CardHeader className="p-0">
-                  <Image
-                    src={sample.image}
-                    alt={sample.title}
-                    width={600}
-                    height={400}
-                    className="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105"
-                    data-ai-hint={sample.hint}
-                  />
-                </CardHeader>
-                <CardContent className="p-6">
-                  <CardTitle className="font-headline text-xl">{sample.title}</CardTitle>
-                </CardContent>
-              </Card>
-            ))}
+          <div className="text-center mb-12">
+            <h2 className="font-headline text-4xl font-bold">Our Work Portfolio</h2>
+             <p className="mt-4 max-w-3xl mx-auto text-muted-foreground">
+              Explore a selection of our successful projects, showcasing our precision, quality, and expertise across various industries.
+            </p>
           </div>
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            className="w-full"
+          >
+            <CarouselContent>
+              {workSamples.map((sample, index) => (
+                <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                  <div className="p-1">
+                    <Card className="h-full flex flex-col">
+                      <CardHeader className="p-0 relative">
+                         <Badge variant="secondary" className="absolute top-4 left-4 z-10">{sample.category}</Badge>
+                        <Image
+                          src={sample.image}
+                          alt={sample.title}
+                          width={600}
+                          height={400}
+                          className="w-full h-56 object-cover rounded-t-lg"
+                          data-ai-hint={sample.hint}
+                        />
+                      </CardHeader>
+                      <CardContent className="p-6 flex flex-col flex-grow">
+                        <CardTitle className="font-headline text-xl mb-2">{sample.title}</CardTitle>
+                        <p className="text-muted-foreground text-sm flex-grow">{sample.description}</p>
+                        <div className="mt-6 pt-4 border-t">
+                            <p className="italic text-muted-foreground text-sm">"{sample.testimonial.text}"</p>
+                            <p className="text-sm font-semibold text-right mt-2">- {sample.testimonial.author}</p>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="hidden md:flex" />
+            <CarouselNext className="hidden md:flex" />
+          </Carousel>
         </div>
       </section>
 
