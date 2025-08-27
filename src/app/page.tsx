@@ -444,15 +444,17 @@ export default function Home() {
             </div>
 
             <div className="mt-20 grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16">
-                 <div className="space-y-4">
+                 <div className="relative pl-16">
+                    <div className="absolute top-0 left-0 text-7xl font-bold text-primary/10 select-none -mt-4">&ldquo;</div>
                     <h3 className="font-headline text-2xl font-bold text-primary">Our Mission</h3>
-                    <p className="text-muted-foreground leading-relaxed">
+                    <p className="mt-4 text-muted-foreground leading-relaxed">
                         Our mission is to empower innovators by transforming their ideas into immaculate, compliant patent drawings that stand up to the rigorous scrutiny of patent offices worldwide. We strive to be the most reliable and precise partner for inventors and legal professionals, ensuring every detail is perfectly captured.
                     </p>
                 </div>
-                 <div className="space-y-4">
+                 <div className="relative pl-16">
+                    <div className="absolute top-0 left-0 text-7xl font-bold text-primary/10 select-none -mt-4">&ldquo;</div>
                     <h3 className="font-headline text-2xl font-bold text-primary">Our Vision</h3>
-                    <p className="text-muted-foreground leading-relaxed">
+                    <p className="mt-4 text-muted-foreground leading-relaxed">
                         To be the global leader in patent illustration, recognized for our unwavering commitment to quality, precision, and client success. We envision a world where every great idea is protected by drawings that are as innovative and professional as the invention itself.
                     </p>
                 </div>
