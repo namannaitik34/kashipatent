@@ -203,7 +203,7 @@ export default function Home() {
                           <span>Provides broader, more robust protection for the core inventive concept.</span>
                         </li>
                       </ul>
-                       <Button asChild variant="outline" className="mt-6 border-primary/50 text-primary hover:bg-primary/5 hover:border-primary">
+                       <Button asChild variant="outline" className="mt-6 border-primary/50 text-primary hover:bg-primary/5 hover:text-primary">
                         <Link href="/services/utility-drawing">Learn More</Link>
                       </Button>
                     </div>
@@ -334,32 +334,45 @@ export default function Home() {
         </div>
       </section>
 
-
-
-
       {/* How It Works Section */}
       <section id="how-it-works" className="py-20 bg-background">
         <div className="container mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="font-headline text-4xl font-bold">How it Works?</h2>
+          <div className="text-center mb-16">
+            <h2 className="font-headline text-4xl font-bold">How It Works</h2>
             <p className="mt-4 max-w-3xl mx-auto text-muted-foreground">
-              Our Patent Drawing Services are designed to support patent agents, attorneys, and innovators with a simple, transparent process.
+              A simple, transparent process designed to support patent agents, attorneys, and innovators.
             </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 text-center">
-            {howItWorksSteps.map((step, index) => (
-              <Card key={index} className="flex flex-col items-center justify-start p-6 hover:shadow-lg transition-shadow bg-card">
-                <div className="mb-4 bg-primary/10 p-4 rounded-full">
-                  {step.icon}
-                </div>
-                <h3 className="font-headline text-lg font-semibold mb-2 h-16 flex items-center">{step.title}</h3>
-                {step.description && <p className="text-sm text-muted-foreground">{step.description}</p>}
-              </Card>
-            ))}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="relative">
+              <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-primary/20" />
+              <div className="space-y-12">
+                {howItWorksSteps.map((step, index) => (
+                  <div key={index} className="flex items-start gap-6 relative">
+                    <div className="flex-shrink-0 w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold text-lg ring-8 ring-background z-10">
+                      {index + 1}
+                    </div>
+                    <div className="flex-grow pt-1">
+                      <h3 className="font-headline text-xl font-semibold mb-2">{step.title}</h3>
+                      <p className="text-muted-foreground">{step.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="hidden lg:block">
+              <Image
+                src="https://picsum.photos/600/800?random=16"
+                alt="A person drafting a patent illustration"
+                width={600}
+                height={800}
+                className="rounded-lg shadow-2xl object-cover h-full"
+                data-ai-hint="patent drafting process"
+              />
+            </div>
           </div>
         </div>
       </section>
-
 
       {/* About Us Section */}
       <section id="about" className="py-20 bg-card">
