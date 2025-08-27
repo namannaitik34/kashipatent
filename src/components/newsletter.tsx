@@ -22,13 +22,10 @@ export default function Newsletter() {
             <div className="container">
                 <div className="relative bg-primary rounded-2xl p-8 md:p-12 overflow-hidden">
                     <div className="grid md:grid-cols-2 gap-8 items-center relative z-10">
-                        <div className="hidden md:block text-primary-foreground">
-                             <h3 className="font-headline text-6xl md:text-8xl font-bold text-primary-foreground/20 select-none">
-                                Get
-                              </h3>
-                              <h3 className="font-headline text-5xl md:text-7xl font-bold -mt-8 md:-mt-12">
-                                Ahead.
-                              </h3>
+                        <div className="hidden md:flex items-center justify-center">
+                            <h3 className="font-headline text-8xl lg:text-9xl font-bold text-primary-foreground/10 select-none">
+                                Innovate Smarter
+                            </h3>
                         </div>
                         <div className="text-primary-foreground text-center md:text-left">
                             <h2 className="font-headline text-4xl font-bold">Stay Updated with Patent News & Tips</h2>
