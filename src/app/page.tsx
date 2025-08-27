@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
@@ -360,15 +361,18 @@ export default function Home() {
                 ))}
               </div>
             </div>
-            <div className="hidden lg:block">
-              <Image
-                src="https://picsum.photos/600/800?random=16"
-                alt="A person drafting a patent illustration"
-                width={600}
-                height={800}
-                className="rounded-lg shadow-2xl object-cover h-full"
-                data-ai-hint="patent drafting process"
-              />
+            <div className="hidden lg:flex items-center justify-center p-8 bg-card rounded-2xl shadow-lg">
+                <div className="grid grid-cols-3 gap-6">
+                    {howItWorksSteps.map((step, index) => (
+                        <div key={index} className="flex flex-col items-center text-center p-4 rounded-lg transition-all duration-300 hover:bg-background hover:shadow-md">
+                            <div className="p-4 bg-primary/10 rounded-full mb-3">{step.icon}</div>
+                            <p className="text-sm font-semibold">{step.title}</p>
+                        </div>
+                    ))}
+                    <div className="col-span-3 text-center text-sm text-muted-foreground mt-4">
+                        Elements illustrating our streamlined process from submission to delivery.
+                    </div>
+                </div>
             </div>
           </div>
         </div>
