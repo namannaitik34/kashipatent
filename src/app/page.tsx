@@ -487,7 +487,7 @@ export default function Home() {
         <div className="container mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="font-headline text-4xl font-bold">Why Choose Kashi Patent??</h2>
+              <h2 className="font-headline text-4xl font-bold">Why Choose Kashi Patent?</h2>
               <p className="mt-4 text-muted-foreground text-lg">
                 We deliver patent drawings and services that exceed expectations, backed by experience and a proven track record of success.
               </p>
