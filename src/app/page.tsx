@@ -314,34 +314,42 @@ export default function Home() {
       {/* Services Section */}
       <section id="services" className="py-20 bg-background">
         <div className="container mx-auto">
-          <h2 className="font-headline text-4xl font-bold text-center mb-12">Our Services</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
+          <div className="text-center mb-12">
+            <h2 className="font-headline text-4xl font-bold">Our Services</h2>
+            <p className="mt-4 max-w-3xl mx-auto text-muted-foreground">
+              From initial concepts to final application, we provide a comprehensive suite of services to protect your IP.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.slice(0, 5).map((service) => (
-              <div key={service.slug} className="flex flex-col items-center text-center group/service">
-                <Link href={`/services/${service.slug}`} className="block relative w-48 h-48 mb-6">
-                  <Image
-                    src={service.image}
-                    alt={service.title}
-                    width={192}
-                    height={192}
-                    className="w-full h-full object-cover rounded-full border-4 border-transparent group-hover/service:border-primary transition-all duration-300"
-                    data-ai-hint={service.imageHint}
-                  />
-                </Link>
-                <h3 className="font-headline text-xl font-semibold mb-2">{service.title}</h3>
-                <p className="text-muted-foreground text-sm flex-grow mb-4">{service.description}</p>
-                 <Button asChild variant="link" className="mt-auto self-center p-0 text-primary">
+              <Card key={service.slug} className="group/service flex flex-col overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                <CardHeader className="p-0">
+                  <Link href={`/services/${service.slug}`} className="block relative h-56 w-full">
+                    <Image
+                      src={service.image}
+                      alt={service.title}
+                      fill
+                      className="object-cover transition-transform duration-300 group-hover/service:scale-105"
+                      data-ai-hint={service.imageHint}
+                    />
+                  </Link>
+                </CardHeader>
+                <CardContent className="p-6 flex flex-col flex-grow">
+                  <h3 className="font-headline text-xl font-semibold mb-2">{service.title}</h3>
+                  <p className="text-muted-foreground text-sm flex-grow mb-4">{service.description}</p>
+                  <Button asChild variant="link" className="mt-auto self-start p-0 text-primary">
                     <Link href={`/services/${service.slug}`}>
                       Learn More <ArrowRight className="ml-2 h-4 w-4" />
                     </Link>
                   </Button>
-              </div>
+                </CardContent>
+              </Card>
             ))}
-             <div className="flex sm:col-span-2 lg:col-span-3 items-center justify-center mt-8">
-              <Button asChild size="lg" variant="outline">
-                <Link href="/services">View All Services</Link>
-              </Button>
-            </div>
+          </div>
+          <div className="flex items-center justify-center mt-12">
+            <Button asChild size="lg" variant="outline">
+              <Link href="/services">View All Services</Link>
+            </Button>
           </div>
         </div>
       </section>
