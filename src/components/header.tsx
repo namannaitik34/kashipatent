@@ -19,14 +19,14 @@ import { services } from '@/lib/services';
 const mainNavLinks = [
   { href: '/', label: 'Home' },
   { href: '/services', label: 'Services', isDropdown: true },
-  { href: '/contact', label: 'Contact' },
+  { href: '/#work', label: 'Our Works' },
+  { href: '/#about', label: 'About Us' },
 ];
 
 export default function Header() {
   const pathname = usePathname();
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isServicesMenuOpen, setServicesMenuOpen] = useState(false);
-
 
   const NavLink = ({ href, children, isDropdown }: { href: string; children: React.ReactNode, isDropdown?: boolean }) => {
     const isActive = href === '/' ? pathname === href : pathname.startsWith(href);
@@ -35,25 +35,23 @@ export default function Header() {
         return (
             <DropdownMenu open={isServicesMenuOpen} onOpenChange={setServicesMenuOpen}>
                 <DropdownMenuTrigger asChild>
-                     <button
-                        onMouseEnter={() => setServicesMenuOpen(true)}
+                    <Link
+                        href={href}
                         className={cn(
-                            'flex items-center gap-1 transition-colors hover:text-primary pb-2 text-base font-medium',
-                            isActive ? 'text-primary border-b-2 border-primary' : 'text-foreground/60'
+                            'flex items-center gap-1 transition-colors px-3 py-2 rounded-md text-base font-medium',
+                            isActive ? 'bg-primary/10 text-primary' : 'text-foreground/60 hover:bg-muted/50 hover:text-foreground'
                         )}
+                        onMouseEnter={() => setServicesMenuOpen(true)}
                     >
                         {children}
                         <ChevronDown className={cn('h-4 w-4 transition-transform duration-200', isServicesMenuOpen && 'rotate-180')} />
-                    </button>
+                    </Link>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent 
                     align="start" 
                     className="w-56"
                     onMouseLeave={() => setServicesMenuOpen(false)}
                 >
-                    <DropdownMenuItem asChild>
-                         <Link href="/services" className="font-bold">All Services</Link>
-                    </DropdownMenuItem>
                     {services.map((service) => (
                         <DropdownMenuItem key={service.slug} asChild>
                             <Link href={`/services/${service.slug}`}>{service.title}</Link>
@@ -68,8 +66,8 @@ export default function Header() {
       <Link
         href={href}
         className={cn(
-          'transition-colors hover:text-primary pb-2 text-base font-medium',
-          isActive ? 'text-primary border-b-2 border-primary' : 'text-foreground/60'
+          'transition-colors px-3 py-2 rounded-md text-base font-medium',
+          isActive ? 'bg-primary/10 text-primary' : 'text-foreground/60 hover:bg-muted/50 hover:text-foreground'
         )}
         onClick={() => setMobileMenuOpen(false)}
       >
@@ -97,19 +95,27 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-20 items-center">
+      <div className="container flex h-20 items-center justify-between">
         <Logo />
-        <nav className="hidden md:flex items-center space-x-8 ml-10">
+        
+        <nav className="hidden md:flex items-center gap-2">
           {mainNavLinks.map((link) => (
             <NavLink key={link.href} href={link.href} isDropdown={link.isDropdown}>{link.label}</NavLink>
           ))}
         </nav>
-        <div className="flex flex-1 items-center justify-end space-x-4">
-          <Button asChild className="hidden md:inline-flex">
-            <Link href="/order">Order Now</Link>
-          </Button>
+
+        <div className="hidden md:flex items-center gap-2">
+            <Button asChild variant="ghost">
+                <Link href="/contact">Contact</Link>
+            </Button>
+            <Button asChild>
+                <Link href="/order">Order Now</Link>
+            </Button>
+        </div>
+
+        <div className="flex md:hidden">
           <Sheet open={isMobileMenuOpen} onOpenChange={setMobileMenuOpen}>
-            <SheetTrigger asChild className="md:hidden">
+            <SheetTrigger asChild>
               <Button variant="ghost" size="icon">
                 <Menu className="h-6 w-6" />
               </Button>
@@ -127,6 +133,7 @@ export default function Header() {
                   {mainNavLinks.map((link) => (
                     <MobileNavLink key={link.href} href={link.href}>{link.label}</MobileNavLink>
                   ))}
+                  <MobileNavLink href="/contact">Contact</MobileNavLink>
                 </div>
                 <div className="mt-auto">
                     <Button asChild size="lg" className="w-full">
