@@ -15,8 +15,9 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { FileUp, ClipboardList, Cog, Mail, RefreshCcw, PenTool, Palette, Copyright, Box, ArrowRight, CheckCircle, ShieldCheck, HeartHandshake, Zap, Wallet, Star, Clock, Send } from 'lucide-react';
+import { FileUp, ClipboardList, Cog, Mail, RefreshCcw, PenTool, Palette, Copyright, Box, ArrowRight, CheckCircle, ShieldCheck, HeartHandshake, Zap, Wallet, Star, Clock, Send, FunctionSquare, DraftingCompass } from 'lucide-react';
 import { services } from '@/lib/services';
 import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
@@ -39,32 +40,7 @@ const workSamples = [
   },
 ];
 
-const testimonials = [
-  {
-    name: 'John Doe',
-    title: 'Inventor',
-    avatar: 'https://picsum.photos/100/100?random=4',
-    hint: 'man portrait',
-    quote:
-      'Kashi Patent delivered exceptional quality drawings ahead of schedule. Their attention to detail is unmatched. Highly recommended!',
-  },
-  {
-    name: 'Jane Smith',
-    title: 'Patent Attorney',
-    avatar: 'https://picsum.photos/100/100?random=5',
-    hint: 'woman portrait',
-    quote:
-      'I rely on Kashi Patent for all my clients\' design patent needs. They are professional, responsive, and their work is always top-notch.',
-  },
-  {
-    name: 'Samuel Lee',
-    title: 'Startup Founder',
-    avatar: 'https://picsum.photos/100/100?random=6',
-    hint: 'person smiling',
-    quote:
-      'The 3D models and engineering drawings were critical for our prototype and patent application. The team was a pleasure to work with.',
-  },
-];
+
 
 const whyChooseUsFeatures = [
   {
@@ -188,84 +164,99 @@ export default function Home() {
       <section id="design-types" className="py-20 bg-background">
         <div className="container mx-auto">
           <div className="text-center mb-12">
-            <h2 className="font-headline text-4xl font-bold">Understanding Patent Drawings</h2>
+            <h2 className="font-headline text-4xl font-bold">Protecting Your Intellectual Property</h2>
             <p className="mt-4 max-w-3xl mx-auto text-muted-foreground">
-              Different ideas require different types of protection. We specialize in both utility and design patents to best serve your invention.
+              Understanding the difference between Utility and Design patents is key. We specialize in both to provide the exact protection your invention needs.
             </p>
           </div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
-            {/* Utility Patent Card */}
-            <Card className="flex flex-col">
-              <CardHeader>
-                <Badge className="w-fit mb-2">Technical</Badge>
-                <CardTitle className="font-headline text-2xl">Utility Patents</CardTitle>
-                <CardDescription>Protecting how your invention <span className="font-semibold text-primary">works and functions</span>.</CardDescription>
-              </CardHeader>
-              <CardContent className="flex-grow flex flex-col justify-between">
-                <Image
-                  src="https://picsum.photos/600/400?random=8"
-                  alt="Utility Patent Drawing Example"
-                  width={600}
-                  height={400}
-                  className="rounded-lg mb-6 shadow-md"
-                  data-ai-hint="technical diagram"
-                />
-                <ul className="space-y-3 text-sm">
-                  <li className="flex gap-3">
-                    <CheckCircle className="w-5 h-5 text-green-500 shrink-0 mt-0.5" />
-                    <span>Focuses on the functional aspects and mechanisms.</span>
-                  </li>
-                  <li className="flex gap-3">
-                    <CheckCircle className="w-5 h-5 text-green-500 shrink-0 mt-0.5" />
-                    <span>Includes diagrams, flowcharts, and schematics.</span>
-                  </li>
-                  <li className="flex gap-3">
-                    <CheckCircle className="w-5 h-5 text-green-500 shrink-0 mt-0.5" />
-                    <span>Drawings are typically detailed and annotated with reference numbers.</span>
-                  </li>
-                </ul>
-                <Button asChild variant="outline" className="mt-6 text-primary hover:bg-primary">
-                  <Link href="/services/utility-drawing">Learn More</Link>
-                </Button>
-              </CardContent>
-            </Card>
 
-            {/* Design Patent Card */}
-            <Card className="flex flex-col border-primary/50 shadow-lg">
-              <CardHeader>
-                <Badge variant="secondary" className="w-fit mb-2">Aesthetic</Badge>
-                <CardTitle className="font-headline text-2xl">Design Patents</CardTitle>
-                <CardDescription>Protecting your product's <span className="font-semibold text-primary">unique visual appearance</span>.</CardDescription>
-              </CardHeader>
-              <CardContent className="flex-grow flex flex-col justify-between">
-                <Image
-                  src="https://picsum.photos/600/400?random=9"
-                  alt="Design Patent Drawing Example"
-                  width={600}
-                  height={400}
-                  className="rounded-lg mb-6 shadow-md"
-                  data-ai-hint="product photo"
-                />
-                <ul className="space-y-3 text-sm">
-                  <li className="flex gap-3">
-                    <CheckCircle className="w-5 h-5 text-green-500 shrink-0 mt-0.5" />
-                    <span>Focuses on the ornamental, non-functional design.</span>
-                  </li>
-                  <li className="flex gap-3">
-                    <CheckCircle className="w-5 h-5 text-green-500 shrink-0 mt-0.5" />
-                    <span>Requires specific views (front, back, side, perspective, etc.).</span>
-                  </li>
-                  <li className="flex gap-3">
-                    <CheckCircle className="w-5 h-5 text-green-500 shrink-0 mt-0.5" />
-                    <span>Uses shading and surface lines to define the shape and contour.</span>
-                  </li>
-                </ul>
-                <Button asChild className="mt-6 text-white hover:bg-white text-primary">
-                  <Link href="/services/design-patent-services">Learn More</Link>
-                </Button>
-              </CardContent>
-            </Card>
-          </div>
+          <Tabs defaultValue="utility" className="w-full">
+            <TabsList className="grid w-full grid-cols-2 max-w-md mx-auto h-auto">
+              <TabsTrigger value="utility" className="py-3 px-6 text-base">
+                <FunctionSquare className="mr-2" />
+                Utility Patents
+              </TabsTrigger>
+              <TabsTrigger value="design" className="py-3 px-6 text-base">
+                <DraftingCompass className="mr-2" />
+                Design Patents
+              </TabsTrigger>
+            </TabsList>
+            <TabsContent value="utility">
+              <Card className="mt-6 border-transparent shadow-none">
+                <CardContent className="p-0 md:p-6">
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                    <div className="p-6 bg-card rounded-lg shadow-lg">
+                      <h3 className="font-headline text-2xl font-bold text-primary">Utility Patents: How It Works</h3>
+                      <p className="mt-2 text-muted-foreground">Protect the functional aspects of your invention—what it does and how it does it.</p>
+                      <ul className="space-y-4 mt-6 text-sm">
+                        <li className="flex gap-3 items-start">
+                          <CheckCircle className="w-5 h-5 text-green-500 shrink-0 mt-0.5" />
+                          <span>Focuses on the operational mechanisms, structure, and functional components of an invention.</span>
+                        </li>
+                        <li className="flex gap-3 items-start">
+                          <CheckCircle className="w-5 h-5 text-green-500 shrink-0 mt-0.5" />
+                          <span>Includes detailed diagrams, flowcharts, and schematics with numbered callouts.</span>
+                        </li>
+                        <li className="flex gap-3 items-start">
+                          <CheckCircle className="w-5 h-5 text-green-500 shrink-0 mt-0.5" />
+                          <span>Provides broader, more robust protection for the core inventive concept.</span>
+                        </li>
+                      </ul>
+                       <Button asChild variant="outline" className="mt-6 border-primary/50 text-primary hover:bg-primary/5 hover:border-primary">
+                        <Link href="/services/utility-drawing">Learn More</Link>
+                      </Button>
+                    </div>
+                     <Image
+                        src="https://picsum.photos/600/500?random=8"
+                        alt="Utility Patent Drawing Example"
+                        width={600}
+                        height={500}
+                        className="rounded-lg object-cover shadow-md aspect-video lg:aspect-square"
+                        data-ai-hint="technical diagram"
+                      />
+                  </div>
+                </CardContent>
+              </Card>
+            </TabsContent>
+            <TabsContent value="design">
+               <Card className="mt-6 border-transparent shadow-none">
+                <CardContent className="p-0 md:p-6">
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                     <Image
+                        src="https://picsum.photos/600/500?random=9"
+                        alt="Design Patent Drawing Example"
+                        width={600}
+                        height={500}
+                        className="rounded-lg object-cover shadow-md aspect-video lg:aspect-square order-last lg:order-first"
+                        data-ai-hint="product photo"
+                      />
+                    <div className="p-6 bg-card rounded-lg shadow-lg">
+                      <h3 className="font-headline text-2xl font-bold text-primary">Design Patents: How It Looks</h3>
+                      <p className="mt-2 text-muted-foreground">Secure the unique, ornamental, and non-functional visual appearance of your product.</p>
+                      <ul className="space-y-4 mt-6 text-sm">
+                        <li className="flex gap-3 items-start">
+                          <CheckCircle className="w-5 h-5 text-green-500 shrink-0 mt-0.5" />
+                          <span>Focuses on the aesthetic design, including shape, configuration, and surface ornamentation.</span>
+                        </li>
+                        <li className="flex gap-3 items-start">
+                          <CheckCircle className="w-5 h-5 text-green-500 shrink-0 mt-0.5" />
+                          <span>Requires specific views (front, back, top, bottom, sides, and perspective) to fully disclose the design.</span>
+                        </li>
+                        <li className="flex gap-3 items-start">
+                          <CheckCircle className="w-5 h-5 text-green-500 shrink-0 mt-0.5" />
+                          <span>Uses solid and broken lines to define the claimed design and its environment.</span>
+                        </li>
+                      </ul>
+                      <Button asChild className="mt-6 bg-accent hover:bg-accent/90 text-accent-foreground">
+                        <Link href="/services/design-patent-services">Learn More</Link>
+                      </Button>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </TabsContent>
+          </Tabs>
+
         </div>
       </section>
 
