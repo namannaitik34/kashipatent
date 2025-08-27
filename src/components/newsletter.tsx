@@ -22,9 +22,12 @@ export default function Newsletter() {
             <div className="container">
                 <div className="relative bg-primary rounded-2xl p-8 md:p-12 overflow-hidden">
                     <div className="grid md:grid-cols-2 gap-8 items-center relative z-10">
-                        <div className="hidden md:flex items-center justify-center">
+                        <div className="hidden md:flex items-center justify-center relative">
                             <h3 className="font-headline text-8xl lg:text-9xl font-bold text-primary-foreground/10 select-none">
-                                Innovate Smarter
+                                Protect
+                            </h3>
+                             <h3 className="absolute font-headline text-5xl lg:text-6xl font-bold text-primary-foreground/80 select-none mt-16">
+                                Your Brilliance
                             </h3>
                         </div>
                         <div className="text-primary-foreground text-center md:text-left">
