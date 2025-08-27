@@ -188,6 +188,7 @@ export default function Home() {
                     <div className="p-6 bg-card rounded-lg shadow-lg">
                       <h3 className="font-headline text-2xl font-bold text-primary">Utility Patents: How It Works</h3>
                       <p className="mt-2 text-muted-foreground">Protect the functional aspects of your invention—what it does and how it does it.</p>
+                       <p className="mt-4 text-lg font-semibold">Starting from just $20</p>
                       <ul className="space-y-4 mt-6 text-sm">
                         <li className="flex gap-3 items-start">
                           <CheckCircle className="w-5 h-5 text-green-500 shrink-0 mt-0.5" />
@@ -233,6 +234,7 @@ export default function Home() {
                     <div className="p-6 bg-card rounded-lg shadow-lg">
                       <h3 className="font-headline text-2xl font-bold text-primary">Design Patents: How It Looks</h3>
                       <p className="mt-2 text-muted-foreground">Secure the unique, ornamental, and non-functional visual appearance of your product.</p>
+                      <p className="mt-4 text-lg font-semibold">Starting from just $25</p>
                       <ul className="space-y-4 mt-6 text-sm">
                         <li className="flex gap-3 items-start">
                           <CheckCircle className="w-5 h-5 text-green-500 shrink-0 mt-0.5" />
