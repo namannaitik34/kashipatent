@@ -13,7 +13,6 @@ import { services } from '@/lib/services';
 
 const mainNavLinks = [
   { href: '/', label: 'Home' },
-  { href: '/services', label: 'Services', isDropdown: true },
   { href: '/#work', label: 'Our Works' },
   { href: '/#about', label: 'About Us' },
 ];
@@ -22,47 +21,10 @@ export default function Header() {
   const pathname = usePathname();
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isServicesMenuOpen, setServicesMenuOpen] = useState(false);
+  const servicesIsActive = pathname.startsWith('/services');
 
-  const NavLink = ({ href, children, isDropdown }: { href: string; children: React.ReactNode, isDropdown?: boolean }) => {
+  const NavLink = ({ href, children }: { href: string; children: React.ReactNode }) => {
     const isActive = href === '/' ? pathname === href : pathname.startsWith(href);
-
-    if (isDropdown) {
-      return (
-        <div 
-            className="relative" 
-            onMouseEnter={() => setServicesMenuOpen(true)} 
-            onMouseLeave={() => setServicesMenuOpen(false)}
-        >
-          <Link
-            href={href}
-            className={cn(
-              'flex items-center gap-1 transition-colors px-3 py-2 rounded-md text-base font-medium',
-              isActive ? 'bg-primary/10 text-primary' : 'text-foreground/60 hover:text-foreground'
-            )}
-          >
-            {children}
-            <ChevronDown className={cn('h-4 w-4 transition-transform duration-200', isServicesMenuOpen && 'rotate-180')} />
-          </Link>
-          {isServicesMenuOpen && (
-            <div className="absolute top-full left-0 mt-2 w-56 rounded-md shadow-lg bg-popover text-popover-foreground ring-1 ring-black ring-opacity-5 z-50">
-              <div className="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
-                {services.map((service) => (
-                  <Link
-                    key={service.slug}
-                    href={`/services/${service.slug}`}
-                    className="block px-4 py-2 text-sm text-popover-foreground hover:bg-accent"
-                    onClick={() => setServicesMenuOpen(false)}
-                    role="menuitem"
-                  >
-                    {service.title}
-                  </Link>
-                ))}
-              </div>
-            </div>
-          )}
-        </div>
-      );
-    }
 
     return (
       <Link
@@ -101,8 +63,41 @@ export default function Header() {
         
         <nav className="hidden md:flex items-center justify-center flex-1 gap-2">
           {mainNavLinks.map((link) => (
-            <NavLink key={link.href} href={link.href} isDropdown={link.isDropdown}>{link.label}</NavLink>
+            <NavLink key={link.href} href={link.href}>{link.label}</NavLink>
           ))}
+           <div 
+            className="relative" 
+            onMouseEnter={() => setServicesMenuOpen(true)} 
+            onMouseLeave={() => setServicesMenuOpen(false)}
+        >
+             <Link
+                href="/services"
+                className={cn(
+                'flex items-center gap-1 transition-colors px-3 py-2 rounded-md text-base font-medium',
+                servicesIsActive ? 'bg-primary/10 text-primary' : 'text-foreground/60 hover:text-foreground'
+                )}
+            >
+                <span>Services</span>
+                <ChevronDown className={cn('h-4 w-4 transition-transform duration-200', isServicesMenuOpen && 'rotate-180')} />
+          </Link>
+          {isServicesMenuOpen && (
+            <div className="absolute top-full left-0 mt-2 w-56 rounded-md shadow-lg bg-popover text-popover-foreground ring-1 ring-black ring-opacity-5 z-50">
+              <div className="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
+                {services.map((service) => (
+                  <Link
+                    key={service.slug}
+                    href={`/services/${service.slug}`}
+                    className="block px-4 py-2 text-sm text-popover-foreground hover:bg-accent"
+                    onClick={() => setServicesMenuOpen(false)}
+                    role="menuitem"
+                  >
+                    {service.title}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
         </nav>
 
         <div className="hidden md:flex items-center gap-2">
@@ -134,6 +129,7 @@ export default function Header() {
                   {mainNavLinks.map((link) => (
                     <MobileNavLink key={link.href} href={link.href}>{link.label}</MobileNavLink>
                   ))}
+                   <MobileNavLink href="/services">Services</MobileNavLink>
                   <MobileNavLink href="/contact">Contact</MobileNavLink>
                 </div>
                 <div className="mt-auto">
@@ -149,3 +145,4 @@ export default function Header() {
     </header>
   );
 }
+
