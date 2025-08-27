@@ -398,27 +398,21 @@ export default function Home() {
       </section>
 
       {/* About Us Section */}
-      <section id="about" className="py-20 bg-card">
+      <section id="about" className="py-20 bg-background">
         <div className="container mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div>
-              <Image
-                src="https://picsum.photos/800/600?random=7"
-                alt="Our team at work"
-                width={800}
-                height={600}
-                className="rounded-lg shadow-lg"
-                data-ai-hint="drafting office"
-              />
-            </div>
-            <div>
-              <h2 className="font-headline text-4xl font-bold mb-4">About Kashi Patent</h2>
-              <p className="mb-4 text-muted-foreground">
-                Founded by a team of experienced drafters and engineers, Kashi Patent is dedicated to providing the highest quality patent drawing services. We understand the critical role that precise and clear illustrations play in securing intellectual property rights.
-              </p>
-              <p className="text-muted-foreground">
-                Our mission is to bridge the gap between invention and protection, ensuring every detail of your idea is perfectly captured and compliant with all patent office regulations worldwide.
-              </p>
+          <div className="max-w-4xl mx-auto text-center relative">
+            <div className="absolute top-0 left-0 h-16 w-16 border-t-4 border-l-4 border-primary/20 rounded-tl-xl"></div>
+            <div className="absolute bottom-0 right-0 h-16 w-16 border-b-4 border-r-4 border-primary/20 rounded-br-xl"></div>
+            <div className="px-8 py-12">
+              <h2 className="font-headline text-4xl font-bold mb-6">About Kashi Patent</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+                <p className="text-muted-foreground text-lg leading-relaxed">
+                  Founded by a team of experienced drafters and engineers, Kashi Patent is dedicated to providing the highest quality patent drawing services. We understand the critical role that precise and clear illustrations play in securing intellectual property rights.
+                </p>
+                <p className="text-muted-foreground text-lg leading-relaxed">
+                  Our mission is to bridge the gap between invention and protection, ensuring every detail of your idea is perfectly captured and compliant with all patent office regulations worldwide.
+                </p>
+              </div>
             </div>
           </div>
         </div>
