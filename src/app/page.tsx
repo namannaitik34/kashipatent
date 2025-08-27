@@ -67,36 +67,36 @@ const testimonials = [
 ];
 
 const whyChooseUsFeatures = [
-    {
-        icon: <ShieldCheck className="w-8 h-8 text-primary" />,
-        title: 'Impeccable Quality',
-        description: 'Expertly crafted patent drawings that meet the highest USPTO standards.',
-    },
-    {
-        icon: <HeartHandshake className="w-8 h-8 text-primary" />,
-        title: 'Dedicated Support',
-        description: 'Responsive communication and guidance throughout your project.',
-    },
-    {
-        icon: <Zap className="w-8 h-8 text-primary" />,
-        title: 'Proven Reliability',
-        description: 'Dependable service for inventors, attorneys, and businesses worldwide.',
-    },
-    {
-        icon: <Wallet className="w-8 h-8 text-primary" />,
-        title: 'Budget-friendly Prices',
-        description: "Find lower prices? We'll match them to ensure the best value.",
-    },
-    {
-        icon: <Star className="w-8 h-8 text-primary" />,
-        title: 'Satisfaction Guarantee',
-        description: 'Unlimited revisions at no extra cost. Complete satisfaction or you don\'t pay.',
-    },
-    {
-        icon: <Clock className="w-8 h-8 text-primary" />,
-        title: 'Quick Delivery',
-        description: 'Receive high-quality outputs in just a few hours. Super-expedited options available.',
-    },
+  {
+    icon: <ShieldCheck className="w-8 h-8 text-primary" />,
+    title: 'Impeccable Quality',
+    description: 'Expertly crafted patent drawings that meet the highest USPTO standards.',
+  },
+  {
+    icon: <HeartHandshake className="w-8 h-8 text-primary" />,
+    title: 'Dedicated Support',
+    description: 'Responsive communication and guidance throughout your project.',
+  },
+  {
+    icon: <Zap className="w-8 h-8 text-primary" />,
+    title: 'Proven Reliability',
+    description: 'Dependable service for inventors, attorneys, and businesses worldwide.',
+  },
+  {
+    icon: <Wallet className="w-8 h-8 text-primary" />,
+    title: 'Budget-friendly Prices',
+    description: "Find lower prices? We'll match them to ensure the best value.",
+  },
+  {
+    icon: <Star className="w-8 h-8 text-primary" />,
+    title: 'Satisfaction Guarantee',
+    description: 'Unlimited revisions at no extra cost. Complete satisfaction or you don\'t pay.',
+  },
+  {
+    icon: <Clock className="w-8 h-8 text-primary" />,
+    title: 'Quick Delivery',
+    description: 'Receive high-quality outputs in just a few hours. Super-expedited options available.',
+  },
 ]
 
 const faqs = [
@@ -184,77 +184,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Work Samples Section */}
-      <section id="work" className="py-20 bg-background">
-        <div className="container mx-auto">
-          <h2 className="font-headline text-4xl font-bold text-center mb-12">Our Work</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {workSamples.map((sample) => (
-              <Card key={sample.title} className="overflow-hidden group">
-                <CardHeader className="p-0">
-                  <Image
-                    src={sample.image}
-                    alt={sample.title}
-                    width={600}
-                    height={400}
-                    className="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105"
-                    data-ai-hint={sample.hint}
-                  />
-                </CardHeader>
-                <CardContent className="p-6">
-                  <CardTitle className="font-headline text-xl">{sample.title}</CardTitle>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-      
-      {/* Services Section */}
-      <section id="services" className="py-20 bg-card">
-        <div className="container mx-auto">
-          <h2 className="font-headline text-4xl font-bold text-center mb-12">Our Services</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.slice(0, 5).map((service) => (
-               <Card key={service.slug} className="flex flex-col overflow-hidden group/card relative transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
-                 <div className="absolute top-4 right-4 z-10">
-                    <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground shadow-lg">
-                        <Link href="/order">
-                            <span>${service.price}</span>
-                        </Link>
-                    </Button>
-                </div>
-                 <CardHeader className="p-0">
-                    <Link href={`/services/${service.slug}`} className="block relative h-56 w-full">
-                        <Image
-                        src={service.image}
-                        alt={service.title}
-                        fill
-                        className="object-cover transition-transform duration-300 group-hover/card:scale-105"
-                        data-ai-hint={service.imageHint}
-                        />
-                    </Link>
-                 </CardHeader>
-                 <CardContent className="p-6 flex flex-col flex-grow">
-                     <CardTitle className="font-headline text-xl mb-2">{service.title}</CardTitle>
-                   <CardDescription className="flex-grow mb-4">{service.description}</CardDescription>
-                   <Button asChild variant="link" className="mt-auto self-start p-0 text-primary">
-                     <Link href={`/services/${service.slug}`}>
-                       Learn More <ArrowRight className="ml-2 h-4 w-4" />
-                     </Link>
-                   </Button>
-                 </CardContent>
-               </Card>
-            ))}
-            <div className="flex md:col-span-2 lg:col-span-1 items-center justify-center">
-                 <Button asChild size="lg" variant="outline">
-                    <Link href="/services">View All Services</Link>
-                </Button>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Understanding Patent Drawings Section */}
       <section id="design-types" className="py-20 bg-background">
         <div className="container mx-auto">
@@ -295,7 +224,7 @@ export default function Home() {
                     <span>Drawings are typically detailed and annotated with reference numbers.</span>
                   </li>
                 </ul>
-                <Button asChild variant="outline" className="mt-6 hover:bg-primary hover:text-primary-foreground">
+                <Button asChild variant="outline" className="mt-6 text-primary hover:bg-primary">
                   <Link href="/services/utility-drawing">Learn More</Link>
                 </Button>
               </CardContent>
@@ -331,7 +260,7 @@ export default function Home() {
                     <span>Uses shading and surface lines to define the shape and contour.</span>
                   </li>
                 </ul>
-                <Button asChild variant="default" className="mt-6">
+                <Button asChild className="mt-6 text-white hover:bg-white text-primary">
                   <Link href="/services/design-patent-services">Learn More</Link>
                 </Button>
               </CardContent>
@@ -340,40 +269,79 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Why Choose Us Section */}
-      <section id="why-choose-us" className="py-20 bg-card">
+
+      {/* Work Samples Section */}
+      <section id="work" className="py-20 bg-background">
         <div className="container mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div>
-                    <h2 className="font-headline text-4xl font-bold">Why Choose Kashi Patent?</h2>
-                    <p className="mt-4 text-muted-foreground text-lg">
-                        We deliver patent drawings and services that exceed expectations, backed by experience and a proven track record of success.
-                    </p>
-                     <Image
-                        src="https://picsum.photos/800/600?random=10"
-                        alt="Patent design software interface on a tablet"
-                        width={800}
-                        height={600}
-                        className="rounded-lg shadow-xl mt-8"
-                        data-ai-hint="design software"
-                    />
-                </div>
-                <div className="space-y-8">
-                    {whyChooseUsFeatures.map((feature) => (
-                        <div key={feature.title} className="flex items-start gap-5">
-                            <div className="flex-shrink-0 bg-primary/10 p-4 rounded-full">
-                                {feature.icon}
-                            </div>
-                            <div>
-                                <h3 className="text-xl font-semibold mb-1">{feature.title}</h3>
-                                <p className="text-muted-foreground">{feature.description}</p>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </div>
+          <h2 className="font-headline text-4xl font-bold text-center mb-12">Our Work</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {workSamples.map((sample) => (
+              <Card key={sample.title} className="overflow-hidden group">
+                <CardHeader className="p-0">
+                  <Image
+                    src={sample.image}
+                    alt={sample.title}
+                    width={600}
+                    height={400}
+                    className="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105"
+                    data-ai-hint={sample.hint}
+                  />
+                </CardHeader>
+                <CardContent className="p-6">
+                  <CardTitle className="font-headline text-xl">{sample.title}</CardTitle>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </div>
       </section>
+
+      {/* Services Section */}
+      <section id="services" className="py-20 bg-card">
+        <div className="container mx-auto">
+          <h2 className="font-headline text-4xl font-bold text-center mb-12">Our Services</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {services.slice(0, 5).map((service) => (
+              <Card key={service.slug} className="flex flex-col overflow-hidden group/card relative transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
+                <div className="absolute top-4 right-4 z-10">
+                  <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground shadow-lg">
+                    <Link href="/order">
+                      <span>${service.price}</span>
+                    </Link>
+                  </Button>
+                </div>
+                <CardHeader className="p-0">
+                  <Link href={`/services/${service.slug}`} className="block relative h-56 w-full">
+                    <Image
+                      src={service.image}
+                      alt={service.title}
+                      fill
+                      className="object-cover transition-transform duration-300 group-hover/card:scale-105"
+                      data-ai-hint={service.imageHint}
+                    />
+                  </Link>
+                </CardHeader>
+                <CardContent className="p-6 flex flex-col flex-grow">
+                  <CardTitle className="font-headline text-xl mb-2">{service.title}</CardTitle>
+                  <CardDescription className="flex-grow mb-4">{service.description}</CardDescription>
+                  <Button asChild variant="link" className="mt-auto self-start p-0 text-primary">
+                    <Link href={`/services/${service.slug}`}>
+                      Learn More <ArrowRight className="ml-2 h-4 w-4" />
+                    </Link>
+                  </Button>
+                </CardContent>
+              </Card>
+            ))}
+            <div className="flex md:col-span-2 lg:col-span-1 items-center justify-center">
+              <Button asChild size="lg" variant="outline">
+                <Link href="/services">View All Services</Link>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
 
 
       {/* How It Works Section */}
@@ -426,8 +394,44 @@ export default function Home() {
           </div>
         </div>
       </section>
+      {/* Why Choose Us Section */}
+      <section id="why-choose-us" className="py-20 bg-card">
+        <div className="container mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="font-headline text-4xl font-bold">Why Choose Kashi Patent?</h2>
+              <p className="mt-4 text-muted-foreground text-lg">
+                We deliver patent drawings and services that exceed expectations, backed by experience and a proven track record of success.
+              </p>
+              <Image
+                src="https://picsum.photos/800/600?random=10"
+                alt="Patent design software interface on a tablet"
+                width={800}
+                height={600}
+                className="rounded-lg shadow-xl mt-8"
+                data-ai-hint="design software"
+              />
+            </div>
+            <div className="space-y-8">
+              {whyChooseUsFeatures.map((feature) => (
+                <div key={feature.title} className="flex items-start gap-5">
+                  <div className="flex-shrink-0 bg-primary/10 p-4 rounded-full">
+                    {feature.icon}
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold mb-1">{feature.title}</h3>
+                    <p className="text-muted-foreground">{feature.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+
       {/* FAQ Section */}
-      <section id="faq" className="py-20 bg-background">
+      <section id="faq" className="py-20 bg-card">
         <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-12">
             <h2 className="font-headline text-4xl font-bold">Frequently Asked Questions</h2>
@@ -445,6 +449,44 @@ export default function Home() {
               </AccordionItem>
             ))}
           </Accordion>
+        </div>
+      </section>
+
+      {/* Newsletter Section */}
+      <section id="newsletter" className="py-20 bg-background md:-mb-[135px]">
+        <div className="container">
+          <div className="relative bg-primary rounded-2xl p-8 md:p-12 overflow-hidden">
+            <div className="grid md:grid-cols-2 gap-8 items-center relative z-10">
+              <div className="hidden md:block">
+                <Image
+                  src="https://picsum.photos/600/400"
+                  width={500}
+                  height={350}
+                  alt="Newsletter illustration"
+                  data-ai-hint="newsletter illustration mailboxes"
+                  className="rounded-lg object-cover"
+                />
+              </div>
+              <div className="text-primary-foreground text-center md:text-left">
+                <h2 className="font-headline text-4xl font-bold">Stay Updated with Patent News & Tips</h2>
+                <p className="mt-4 text-lg text-primary-foreground/80">Join our newsletter to receive the latest updates, industry news, and exclusive tips directly in your inbox.</p>
+                <form className="mt-8 flex flex-col sm:flex-row gap-3 max-w-md mx-auto md:mx-0">
+                  <Input
+                    type="email"
+                    placeholder="Enter your email address"
+                    className="bg-primary-foreground/20 border-primary-foreground/50 text-primary-foreground placeholder:text-primary-foreground/70 flex-grow"
+                    aria-label="Email address"
+                  />
+                  <Button type="submit" size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
+                    <Send className="mr-2 h-4 w-4" />
+                    Subscribe
+                  </Button>
+                </form>
+              </div>
+            </div>
+            <div className="absolute top-0 left-0 w-32 h-32 bg-primary-foreground/10 rounded-full -translate-x-1/2 -translate-y-1/2" />
+            <div className="absolute bottom-0 right-0 w-48 h-48 bg-primary-foreground/10 rounded-full translate-x-1/2 translate-y-1/2" />
+          </div>
         </div>
       </section>
 
