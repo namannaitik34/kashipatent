@@ -295,7 +295,7 @@ export default function Home() {
                     <span>Drawings are typically detailed and annotated with reference numbers.</span>
                   </li>
                 </ul>
-                <Button asChild variant="outline" className="mt-6 text-primary hover:bg-primary">
+                <Button asChild variant="outline" className="mt-6 hover:bg-primary hover:text-primary-foreground">
                   <Link href="/services/utility-drawing">Learn More</Link>
                 </Button>
               </CardContent>
@@ -331,7 +331,7 @@ export default function Home() {
                     <span>Uses shading and surface lines to define the shape and contour.</span>
                   </li>
                 </ul>
-                <Button asChild className="mt-6 text- hover:bg-white text-primary">
+                <Button asChild variant="default" className="mt-6">
                   <Link href="/services/design-patent-services">Learn More</Link>
                 </Button>
               </CardContent>
