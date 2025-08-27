@@ -24,16 +24,12 @@ import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
 
 const workSamples = [
-  {
+    {
     title: 'Drone Delivery System',
     category: 'Utility Patent',
     image: 'https://picsum.photos/600/400?random=1',
     hint: 'technical drawing',
     description: 'Detailed mechanical drawings for a novel autonomous drone delivery mechanism, ensuring all functional aspects were clearly illustrated for the patent application.',
-    testimonial: {
-      text: "The drawings were precise and professional. Kashi's team was a pleasure to work with.",
-      author: 'John Carter, CEO of AeroTech'
-    }
   },
   {
     title: 'Ergonomic Office Chair',
@@ -41,10 +37,6 @@ const workSamples = [
     image: 'https://picsum.photos/600/400?random=2',
     hint: 'product design',
     description: 'A full set of illustrations capturing the unique aesthetic and ornamental features of a new ergonomic chair, crucial for securing a design patent.',
-    testimonial: {
-      text: "They perfectly captured our design's essence. The final illustrations were beyond our expectations.",
-      author: 'Emily White, Lead Designer'
-    }
   },
   {
     title: 'Smart Medical Device',
@@ -52,10 +44,6 @@ const workSamples = [
     image: 'https://picsum.photos/600/400?random=3',
     hint: '3d model',
     description: 'Created a high-fidelity 3D model from 2D sketches, which was used for both patent illustrations and investor presentations.',
-    testimonial: {
-      text: "The 3D model was instrumental in our fundraising and patenting efforts. Highly recommended!",
-      author: 'Dr. Alisha Chen, MedInnovate'
-    }
   },
     {
     title: 'Brand Logo for "Innovate"',
@@ -63,10 +51,6 @@ const workSamples = [
     image: 'https://picsum.photos/600/400?random=4',
     hint: 'company logo',
     description: 'Developed a clean and distinctive logo, delivered in formats compliant with USPTO requirements for trademark registration.',
-    testimonial: {
-      text: "A seamless process from concept to the final, application-ready trademark drawing.",
-      author: 'Mark Robinson, Startup Founder'
-    }
   },
 ];
 
@@ -293,94 +277,67 @@ export default function Home() {
       </section>
 
 
-      {/* Work Samples Section */}
+       {/* Work Samples Section */}
       <section id="work" className="py-20 bg-muted">
         <div className="container mx-auto">
           <div className="text-center mb-12">
             <h2 className="font-headline text-4xl font-bold">Our Work Portfolio</h2>
-             <p className="mt-4 max-w-3xl mx-auto text-muted-foreground">
+            <p className="mt-4 max-w-3xl mx-auto text-muted-foreground">
               Explore a selection of our successful projects, showcasing our precision, quality, and expertise across various industries.
             </p>
           </div>
-          <Carousel
-            opts={{
-              align: "start",
-              loop: true,
-            }}
-            className="w-full"
-          >
-            <CarouselContent>
-              {workSamples.map((sample, index) => (
-                <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-                  <div className="p-1">
-                    <Card className="h-full flex flex-col">
-                      <CardHeader className="p-0 relative">
-                         <Badge variant="secondary" className="absolute top-4 left-4 z-10">{sample.category}</Badge>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+            {workSamples.map((sample, index) => (
+              <Card key={index} className="overflow-hidden group/card transition-shadow duration-300 hover:shadow-xl">
+                 <div className="grid grid-cols-1 lg:grid-cols-2">
+                    <div className="relative h-64 lg:h-auto">
                         <Image
-                          src={sample.image}
-                          alt={sample.title}
-                          width={600}
-                          height={400}
-                          className="w-full h-56 object-cover rounded-t-lg"
-                          data-ai-hint={sample.hint}
+                            src={sample.image}
+                            alt={sample.title}
+                            fill
+                            className="object-cover transition-transform duration-300 group-hover/card:scale-105"
+                            data-ai-hint={sample.hint}
                         />
-                      </CardHeader>
-                      <CardContent className="p-6 flex flex-col flex-grow">
+                    </div>
+                    <div className="p-6 flex flex-col">
+                        <Badge variant="secondary" className="self-start mb-2">{sample.category}</Badge>
                         <CardTitle className="font-headline text-xl mb-2">{sample.title}</CardTitle>
                         <p className="text-muted-foreground text-sm flex-grow">{sample.description}</p>
-                        <div className="mt-6 pt-4 border-t">
-                            <p className="italic text-muted-foreground text-sm">"{sample.testimonial.text}"</p>
-                            <p className="text-sm font-semibold text-right mt-2">- {sample.testimonial.author}</p>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  </div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious className="hidden md:flex" />
-            <CarouselNext className="hidden md:flex" />
-          </Carousel>
+                    </div>
+                 </div>
+              </Card>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-20 bg-card">
+      <section id="services" className="py-20 bg-background">
         <div className="container mx-auto">
           <h2 className="font-headline text-4xl font-bold text-center mb-12">Our Services</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
             {services.slice(0, 5).map((service) => (
-              <Card key={service.slug} className="flex flex-col overflow-hidden group/card relative transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
-                <div className="absolute top-4 right-4 z-10">
-                  <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground shadow-lg">
-                    <Link href="/order">
-                      <span>${service.price}</span>
-                    </Link>
-                  </Button>
-                </div>
-                <CardHeader className="p-0">
-                  <Link href={`/services/${service.slug}`} className="block relative h-56 w-full">
-                    <Image
-                      src={service.image}
-                      alt={service.title}
-                      fill
-                      className="object-cover transition-transform duration-300 group-hover/card:scale-105"
-                      data-ai-hint={service.imageHint}
-                    />
-                  </Link>
-                </CardHeader>
-                <CardContent className="p-6 flex flex-col flex-grow">
-                  <CardTitle className="font-headline text-xl mb-2">{service.title}</CardTitle>
-                  <CardDescription className="flex-grow mb-4">{service.description}</CardDescription>
-                  <Button asChild variant="link" className="mt-auto self-start p-0 text-primary">
+              <div key={service.slug} className="flex flex-col items-center text-center group/service">
+                <Link href={`/services/${service.slug}`} className="block relative w-48 h-48 mb-6">
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    width={192}
+                    height={192}
+                    className="w-full h-full object-cover rounded-full border-4 border-transparent group-hover/service:border-primary transition-all duration-300"
+                    data-ai-hint={service.imageHint}
+                  />
+                </Link>
+                <h3 className="font-headline text-xl font-semibold mb-2">{service.title}</h3>
+                <p className="text-muted-foreground text-sm flex-grow mb-4">{service.description}</p>
+                 <Button asChild variant="link" className="mt-auto self-center p-0 text-primary">
                     <Link href={`/services/${service.slug}`}>
                       Learn More <ArrowRight className="ml-2 h-4 w-4" />
                     </Link>
                   </Button>
-                </CardContent>
-              </Card>
+              </div>
             ))}
-            <div className="flex md:col-span-2 lg:col-span-1 items-center justify-center">
+             <div className="flex sm:col-span-2 lg:col-span-3 items-center justify-center mt-8">
               <Button asChild size="lg" variant="outline">
                 <Link href="/services">View All Services</Link>
               </Button>
@@ -390,7 +347,7 @@ export default function Home() {
       </section>
 
       {/* How It Works Section */}
-      <section id="how-it-works" className="py-20 bg-background">
+      <section id="how-it-works" className="py-20 bg-muted">
         <div className="container mx-auto">
           <div className="text-center mb-16">
             <h2 className="font-headline text-4xl font-bold">How It Works</h2>
@@ -404,7 +361,7 @@ export default function Home() {
               <div className="space-y-12">
                 {howItWorksSteps.map((step, index) => (
                   <div key={index} className="flex items-start gap-6 relative">
-                    <div className="flex-shrink-0 w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold text-lg ring-8 ring-background z-10">
+                    <div className="flex-shrink-0 w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold text-lg ring-8 ring-muted z-10">
                       {index + 1}
                     </div>
                     <div className="flex-grow pt-1">
