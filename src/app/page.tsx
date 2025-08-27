@@ -22,6 +22,7 @@ import { FileUp, ClipboardList, Cog, Mail, RefreshCcw, PenTool, Palette, Copyrig
 import { services } from '@/lib/services';
 import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
+import FadeIn from '@/components/fade-in';
 
 const workSamples = [
     {
@@ -184,7 +185,7 @@ export default function Home() {
         data-ai-hint="blueprint background"
       >
         <div className="absolute inset-0 bg-black/50" />
-        <div className="relative z-10 text-center p-4">
+        <FadeIn className="relative z-10 text-center p-4">
           <h1 className="font-headline text-5xl md:text-7xl font-bold drop-shadow-lg">
             Precision in Every Line.
           </h1>
@@ -194,10 +195,11 @@ export default function Home() {
           <Button asChild size="lg" className="mt-8 bg-accent hover:bg-accent/90 text-accent-foreground">
             <Link href="/order">Order Now</Link>
           </Button>
-        </div>
+        </FadeIn>
       </section>
 
       {/* Understanding Patent Drawings Section */}
+      <FadeIn>
       <section id="design-types" className="py-20 bg-background">
         <div className="container mx-auto">
           <div className="text-center mb-12">
@@ -298,9 +300,11 @@ export default function Home() {
 
         </div>
       </section>
+      </FadeIn>
 
 
        {/* Work Samples Section */}
+      <FadeIn>
       <section id="work" className="py-20 bg-muted">
         <div className="container mx-auto">
           <div className="text-center mb-12">
@@ -333,8 +337,10 @@ export default function Home() {
           </div>
         </div>
       </section>
+      </FadeIn>
 
       {/* Services Section */}
+      <FadeIn>
       <section id="services" className="py-20 bg-background">
         <div className="container mx-auto">
           <div className="text-center mb-12">
@@ -376,8 +382,10 @@ export default function Home() {
           </div>
         </div>
       </section>
+      </FadeIn>
 
       {/* How It Works Section */}
+      <FadeIn>
       <section id="how-it-works" className="py-20 bg-muted">
         <div className="container mx-auto">
           <div className="text-center mb-16">
@@ -419,8 +427,10 @@ export default function Home() {
           </div>
         </div>
       </section>
+      </FadeIn>
 
       {/* About Us Section */}
+      <FadeIn>
       <section id="about" className="py-20 md:py-32 bg-background text-foreground">
         <div className="container mx-auto">
             <div className="text-center">
@@ -467,8 +477,10 @@ export default function Home() {
             </div>
         </div>
       </section>
+      </FadeIn>
       
       {/* Why Choose Us Section */}
+      <FadeIn>
       <section id="why-choose-us" className="py-20 bg-card">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -502,9 +514,11 @@ export default function Home() {
           </div>
         </div>
       </section>
+      </FadeIn>
 
 
       {/* FAQ Section */}
+      <FadeIn>
       <section id="faq" className="py-20 bg-card">
         <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-12">
@@ -525,6 +539,7 @@ export default function Home() {
           </Accordion>
         </div>
       </section>
+      </FadeIn>
     </div>
   );
 }
