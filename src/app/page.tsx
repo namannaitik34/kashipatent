@@ -295,7 +295,7 @@ export default function Home() {
                     <span>Drawings are typically detailed and annotated with reference numbers.</span>
                   </li>
                 </ul>
-                <Button asChild variant="outline" className="mt-6">
+                <Button asChild variant="outline" className="mt-6 text-primary hover:bg-primary">
                   <Link href="/services/utility-drawing">Learn More</Link>
                 </Button>
               </CardContent>
@@ -331,7 +331,7 @@ export default function Home() {
                     <span>Uses shading and surface lines to define the shape and contour.</span>
                   </li>
                 </ul>
-                <Button asChild className="mt-6">
+                <Button asChild className="mt-6 text- hover:bg-white text-primary">
                   <Link href="/services/design-patent-services">Learn More</Link>
                 </Button>
               </CardContent>
@@ -427,7 +427,7 @@ export default function Home() {
         </div>
       </section>
       {/* FAQ Section */}
-      <section id="faq" className="py-20 bg-card">
+      <section id="faq" className="py-20 bg-background">
         <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-12">
             <h2 className="font-headline text-4xl font-bold">Frequently Asked Questions</h2>
@@ -445,44 +445,6 @@ export default function Home() {
               </AccordionItem>
             ))}
           </Accordion>
-        </div>
-      </section>
-
-      {/* Newsletter Section */}
-      <section id="newsletter" className="py-20 bg-background md:-mb-[135px]">
-        <div className="container">
-          <div className="relative bg-primary rounded-2xl p-8 md:p-12 overflow-hidden">
-            <div className="grid md:grid-cols-2 gap-8 items-center relative z-10">
-              <div className="hidden md:block">
-                  <Image 
-                    src="https://picsum.photos/600/400"
-                    width={500}
-                    height={350}
-                    alt="Newsletter illustration"
-                    data-ai-hint="newsletter illustration mailboxes"
-                    className="rounded-lg object-cover"
-                  />
-              </div>
-              <div className="text-primary-foreground text-center md:text-left">
-                  <h2 className="font-headline text-4xl font-bold">Stay Updated with Patent News & Tips</h2>
-                  <p className="mt-4 text-lg text-primary-foreground/80">Join our newsletter to receive the latest updates, industry news, and exclusive tips directly in your inbox.</p>
-                  <form className="mt-8 flex flex-col sm:flex-row gap-3 max-w-md mx-auto md:mx-0">
-                    <Input 
-                      type="email"
-                      placeholder="Enter your email address"
-                      className="bg-primary-foreground/20 border-primary-foreground/50 text-primary-foreground placeholder:text-primary-foreground/70 flex-grow"
-                      aria-label="Email address"
-                    />
-                    <Button type="submit" size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
-                      <Send className="mr-2 h-4 w-4" />
-                      Subscribe
-                    </Button>
-                  </form>
-              </div>
-            </div>
-             <div className="absolute top-0 left-0 w-32 h-32 bg-primary-foreground/10 rounded-full -translate-x-1/2 -translate-y-1/2" />
-             <div className="absolute bottom-0 right-0 w-48 h-48 bg-primary-foreground/10 rounded-full translate-x-1/2 translate-y-1/2" />
-          </div>
         </div>
       </section>
 

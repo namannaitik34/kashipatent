@@ -6,6 +6,7 @@ import Footer from '@/components/footer';
 import WhatsAppFab from '@/components/whatsapp-fab';
 import Chatbot from '@/components/chatbot';
 import Script from 'next/script';
+import Newsletter from '@/components/newsletter';
 
 export const metadata: Metadata = {
   title: 'Kashi Patent - Premium Patent Design',
@@ -28,6 +29,9 @@ export default function RootLayout({
         <div className="flex flex-col min-h-screen">
           <Header />
           <main className="flex-grow">{children}</main>
+          <div className="-mb-24">
+             <Newsletter />
+          </div>
           <Footer />
         </div>
         <Chatbot />
