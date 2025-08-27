@@ -1,3 +1,4 @@
+
 "use client";
 
 import Link from 'next/link';
@@ -6,12 +7,6 @@ import { useState } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetDescription, SheetTrigger } from '@/components/ui/sheet';
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
 import { Logo } from '@/components/logo';
 import { cn } from '@/lib/utils';
 import { services } from '@/lib/services';
@@ -30,37 +25,43 @@ export default function Header() {
 
   const NavLink = ({ href, children, isDropdown }: { href: string; children: React.ReactNode, isDropdown?: boolean }) => {
     const isActive = href === '/' ? pathname === href : pathname.startsWith(href);
-    
+
     if (isDropdown) {
-        return (
-            <div onMouseLeave={() => setServicesMenuOpen(false)} className="relative">
-                <DropdownMenu open={isServicesMenuOpen} onOpenChange={setServicesMenuOpen}>
-                    <DropdownMenuTrigger asChild>
-                        <Link
-                            href={href}
-                            onMouseEnter={() => setServicesMenuOpen(true)}
-                            className={cn(
-                                'flex items-center gap-1 transition-colors px-3 py-2 rounded-md text-base font-medium',
-                                isActive ? 'bg-primary/10 text-primary' : 'text-foreground/60 hover:bg-muted/50 hover:text-foreground'
-                            )}
-                        >
-                            {children}
-                            <ChevronDown className={cn('h-4 w-4 transition-transform duration-200', isServicesMenuOpen && 'rotate-180')} />
-                        </Link>
-                    </DropdownMenuTrigger>
-                    <DropdownMenuContent 
-                        align="start" 
-                        className="w-56"
-                    >
-                        {services.map((service) => (
-                            <DropdownMenuItem key={service.slug} asChild>
-                                <Link href={`/services/${service.slug}`} onClick={() => setServicesMenuOpen(false)}>{service.title}</Link>
-                            </DropdownMenuItem>
-                        ))}
-                    </DropdownMenuContent>
-                </DropdownMenu>
+      return (
+        <div 
+            className="relative" 
+            onMouseEnter={() => setServicesMenuOpen(true)} 
+            onMouseLeave={() => setServicesMenuOpen(false)}
+        >
+          <Link
+            href={href}
+            className={cn(
+              'flex items-center gap-1 transition-colors px-3 py-2 rounded-md text-base font-medium',
+              isActive ? 'bg-primary/10 text-primary' : 'text-foreground/60 hover:bg-muted/50 hover:text-foreground'
+            )}
+          >
+            {children}
+            <ChevronDown className={cn('h-4 w-4 transition-transform duration-200', isServicesMenuOpen && 'rotate-180')} />
+          </Link>
+          {isServicesMenuOpen && (
+            <div className="absolute top-full left-0 mt-2 w-56 rounded-md shadow-lg bg-popover text-popover-foreground ring-1 ring-black ring-opacity-5 z-50">
+              <div className="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
+                {services.map((service) => (
+                  <Link
+                    key={service.slug}
+                    href={`/services/${service.slug}`}
+                    className="block px-4 py-2 text-sm text-popover-foreground hover:bg-accent"
+                    onClick={() => setServicesMenuOpen(false)}
+                    role="menuitem"
+                  >
+                    {service.title}
+                  </Link>
+                ))}
+              </div>
             </div>
-        )
+          )}
+        </div>
+      );
     }
 
     return (
@@ -70,7 +71,6 @@ export default function Header() {
           'transition-colors px-3 py-2 rounded-md text-base font-medium',
           isActive ? 'bg-primary/10 text-primary' : 'text-foreground/60 hover:bg-muted/50 hover:text-foreground'
         )}
-        onClick={() => setMobileMenuOpen(false)}
       >
         {children}
       </Link>
@@ -99,7 +99,7 @@ export default function Header() {
       <div className="container flex h-20 items-center justify-between">
         <Logo />
         
-        <nav className="hidden md:flex items-center gap-2">
+        <nav className="hidden md:flex items-center justify-center flex-1 gap-2">
           {mainNavLinks.map((link) => (
             <NavLink key={link.href} href={link.href} isDropdown={link.isDropdown}>{link.label}</NavLink>
           ))}
