@@ -361,7 +361,7 @@ export default function Home() {
                 ))}
               </div>
             </div>
-            <div className="hidden lg:flex items-center justify-center p-8 bg-card rounded-2xl shadow-lg h-full">
+            <div className="hidden lg:flex items-center justify-center h-full">
               <div className="text-center">
                   <h3 className="font-headline text-6xl md:text-8xl font-bold text-primary/10 select-none">
                     5
