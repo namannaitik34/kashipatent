@@ -33,31 +33,33 @@ export default function Header() {
     
     if (isDropdown) {
         return (
-            <DropdownMenu open={isServicesMenuOpen} onOpenChange={setServicesMenuOpen}>
+            <DropdownMenu onOpenChange={setServicesMenuOpen}>
                 <DropdownMenuTrigger asChild>
                     <Link
                         href={href}
+                        onMouseEnter={() => setServicesMenuOpen(true)}
                         className={cn(
                             'flex items-center gap-1 transition-colors px-3 py-2 rounded-md text-base font-medium',
                             isActive ? 'bg-primary/10 text-primary' : 'text-foreground/60 hover:bg-muted/50 hover:text-foreground'
                         )}
-                        onMouseEnter={() => setServicesMenuOpen(true)}
                     >
                         {children}
                         <ChevronDown className={cn('h-4 w-4 transition-transform duration-200', isServicesMenuOpen && 'rotate-180')} />
                     </Link>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent 
-                    align="start" 
-                    className="w-56"
-                    onMouseLeave={() => setServicesMenuOpen(false)}
-                >
-                    {services.map((service) => (
-                        <DropdownMenuItem key={service.slug} asChild>
-                            <Link href={`/services/${service.slug}`}>{service.title}</Link>
-                        </DropdownMenuItem>
-                    ))}
-                </DropdownMenuContent>
+                {isServicesMenuOpen && (
+                    <DropdownMenuContent 
+                        align="start" 
+                        className="w-56"
+                        onMouseLeave={() => setServicesMenuOpen(false)}
+                    >
+                        {services.map((service) => (
+                            <DropdownMenuItem key={service.slug} asChild>
+                                <Link href={`/services/${service.slug}`}>{service.title}</Link>
+                            </DropdownMenuItem>
+                        ))}
+                    </DropdownMenuContent>
+                )}
             </DropdownMenu>
         )
     }
