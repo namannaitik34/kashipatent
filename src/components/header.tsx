@@ -33,34 +33,32 @@ export default function Header() {
     
     if (isDropdown) {
         return (
-            <DropdownMenu onOpenChange={setServicesMenuOpen}>
-                <DropdownMenuTrigger asChild>
-                    <Link
-                        href={href}
-                        onMouseEnter={() => setServicesMenuOpen(true)}
-                        className={cn(
-                            'flex items-center gap-1 transition-colors px-3 py-2 rounded-md text-base font-medium',
-                            isActive ? 'bg-primary/10 text-primary' : 'text-foreground/60 hover:bg-muted/50 hover:text-foreground'
-                        )}
-                    >
-                        {children}
-                        <ChevronDown className={cn('h-4 w-4 transition-transform duration-200', isServicesMenuOpen && 'rotate-180')} />
-                    </Link>
-                </DropdownMenuTrigger>
-                {isServicesMenuOpen && (
-                    <DropdownMenuContent 
-                        align="start" 
-                        className="w-56"
-                        onMouseLeave={() => setServicesMenuOpen(false)}
-                    >
-                        {services.map((service) => (
-                            <DropdownMenuItem key={service.slug} asChild>
-                                <Link href={`/services/${service.slug}`}>{service.title}</Link>
-                            </DropdownMenuItem>
-                        ))}
-                    </DropdownMenuContent>
-                )}
-            </DropdownMenu>
+          <DropdownMenu open={isServicesMenuOpen} onOpenChange={setServicesMenuOpen}>
+            <div onMouseLeave={() => setServicesMenuOpen(false)} className="flex items-center">
+              <DropdownMenuTrigger asChild onMouseEnter={() => setServicesMenuOpen(true)}>
+                  <Link
+                      href={href}
+                      className={cn(
+                          'flex items-center gap-1 transition-colors px-3 py-2 rounded-md text-base font-medium',
+                          isActive ? 'bg-primary/10 text-primary' : 'text-foreground/60 hover:bg-muted/50 hover:text-foreground'
+                      )}
+                  >
+                      {children}
+                      <ChevronDown className={cn('h-4 w-4 transition-transform duration-200', isServicesMenuOpen && 'rotate-180')} />
+                  </Link>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent 
+                  align="start" 
+                  className="w-56"
+              >
+                  {services.map((service) => (
+                      <DropdownMenuItem key={service.slug} asChild>
+                          <Link href={`/services/${service.slug}`} onClick={() => setServicesMenuOpen(false)}>{service.title}</Link>
+                      </DropdownMenuItem>
+                  ))}
+              </DropdownMenuContent>
+            </div>
+        </DropdownMenu>
         )
     }
 
