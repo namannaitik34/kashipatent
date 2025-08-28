@@ -517,7 +517,7 @@ export default function Home() {
       
       {/* Why Choose Us Section */}
       <FadeIn>
-        <section id="why-choose-us" className="py-20 bg-card">
+        <section id="why-choose-us" className="py-20 bg-background">
           <div className="container mx-auto">
             <div className="text-center mb-12">
               <h2 className="font-headline text-4xl font-bold">Why Choose Kashi Patent?</h2>
@@ -560,7 +560,7 @@ export default function Home() {
 
       {/* How It Works Section */}
       <FadeIn>
-        <section id="how-it-works" className="py-20 bg-background">
+        <section id="how-it-works" className="py-20 bg-muted/40">
           <div className="container mx-auto">
             <div className="text-center mb-16">
               <h2 className="font-headline text-4xl font-bold">How It Works</h2>
@@ -607,7 +607,7 @@ export default function Home() {
 
       {/* FAQ Section */}
       <FadeIn>
-        <section id="faq" className="py-20 bg-muted/40">
+        <section id="faq" className="py-20 bg-background">
           <div className="container mx-auto max-w-4xl">
             <div className="text-center mb-12">
               <h2 className="font-headline text-4xl font-bold">Frequently Asked Questions</h2>
