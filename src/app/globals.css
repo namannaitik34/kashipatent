@@ -4,25 +4,25 @@
 
 @layer base {
   :root {
-    --background: 240 10% 97.5%; /* Light Gray (#F5F5F5) */
-    --foreground: 240 10% 3.9%;
+    --background: 240 10% 97.5%; /* Light Gray - Kept for clean background */
+    --foreground: 222.2 47.4% 11.2%;
     --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
+    --card-foreground: 222.2 47.4% 11.2%;
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
-    --primary: 221 44% 20%; /* Deep Navy Blue from Logo */
+    --primary: 238 49% 34%; /* Dark Blue / Navy */
     --primary-foreground: 0 0% 98%;
-    --secondary: 0 0% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-    --muted: 0 0% 96.1%;
-    --muted-foreground: 225.2 38.4% 47.1%;
-    --accent: 174 72% 45%; /* Vibrant Teal from Logo */
-    --accent-foreground: 0 0% 100%;
+    --secondary: 128 22% 35%; /* Greenish Gray */
+    --secondary-foreground: 0 0% 98%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 25 75% 46%; /* Orange */
+    --accent-foreground: 0 0% 98%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 89.8%;
-    --input: 0 0% 89.8%;
-    --ring: 221 44% 20%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 238 49% 34%; /* Dark Blue / Navy */
     --radius: 0.5rem;
   }
 
@@ -33,19 +33,19 @@
     --card-foreground: 0 0% 98%;
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 0 0% 98%;
-    --primary: 221 44% 20%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-    --secondary: 217.2 32.6% 17.5%;
+    --primary: 238 49% 34%; /* Dark Blue / Navy */
+    --primary-foreground: 0 0% 98%;
+    --secondary: 128 22% 35%; /* Greenish Gray */
     --secondary-foreground: 0 0% 98%;
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
-    --accent: 174 72% 45%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 25 75% 46%; /* Orange */
+    --accent-foreground: 0 0% 98%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
-    --ring: 221 44% 20%;
+    --ring: 238 49% 34%;
   }
 }
 
