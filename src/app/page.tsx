@@ -342,7 +342,7 @@ export default function Home() {
 
       {/* Services Section */}
       <FadeIn>
-      <section id="services" className="py-20 bg-background">
+      <section id="services" className="py-20 bg-muted">
         <div className="container mx-auto">
           <div className="text-center mb-12">
             <h2 className="font-headline text-4xl font-bold">Our Services</h2>
@@ -391,7 +391,7 @@ export default function Home() {
 
       {/* How It Works Section */}
       <FadeIn>
-      <section id="how-it-works" className="py-20 bg-muted">
+      <section id="how-it-works" className="py-20 bg-background">
         <div className="container mx-auto">
           <div className="text-center mb-16">
             <h2 className="font-headline text-4xl font-bold">How It Works</h2>
@@ -405,7 +405,7 @@ export default function Home() {
               <div className="space-y-12">
                 {howItWorksSteps.map((step, index) => (
                   <div key={index} className="flex items-start gap-6 relative">
-                    <div className="flex-shrink-0 w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold text-lg ring-8 ring-muted z-10">
+                    <div className="flex-shrink-0 w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold text-lg ring-8 ring-background z-10">
                       {index + 1}
                     </div>
                     <div className="flex-grow pt-1">
@@ -436,7 +436,7 @@ export default function Home() {
 
       {/* About Section */}
       <FadeIn>
-      <section id="about" className="py-20 md:py-32 bg-background text-foreground">
+      <section id="about" className="py-20 md:py-32 bg-muted text-foreground">
         <div className="container mx-auto">
             <div className="text-center">
                 <p className="text-base font-semibold text-primary uppercase tracking-wider">About Kashi Patent</p>
@@ -525,7 +525,7 @@ export default function Home() {
 
       {/* FAQ Section */}
       <FadeIn>
-      <section id="faq" className="py-20 bg-card">
+      <section id="faq" className="py-20 bg-background">
         <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-12">
             <h2 className="font-headline text-4xl font-bold">Frequently Asked Questions</h2>
