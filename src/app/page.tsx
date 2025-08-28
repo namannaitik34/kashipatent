@@ -185,27 +185,27 @@ const showcaseImages = Array.from({ length: 24 }, (_, i) => ({
   hint: `design showcase ${i + 1}`,
 }));
 
-const ShowcaseImage = ({ src, hint }: { src: string, hint: string }) => {
-  const ref = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ['start end', 'end start'],
-  });
-  const y = useTransform(scrollYProgress, [0, 1], ['-10%', '10%']);
+const ShowcaseImage = ({ src, hint, yOffset = '-10%' }: { src: string, hint: string, yOffset?: string }) => {
+    const ref = useRef(null);
+    const { scrollYProgress } = useScroll({
+        target: ref,
+        offset: ['start end', 'end start'],
+    });
+    const y = useTransform(scrollYProgress, [0, 1], [yOffset, '10%']);
 
-  return (
-    <div ref={ref} className="relative overflow-hidden aspect-[2/3]">
-      <motion.div style={{ y }} className="absolute inset-0">
-        <Image
-          src={src}
-          alt={hint}
-          fill
-          className="object-cover"
-          data-ai-hint={hint}
-        />
-      </motion.div>
-    </div>
-  );
+    return (
+        <div ref={ref} className="relative overflow-hidden aspect-[2/3]">
+            <motion.div style={{ y }} className="absolute inset-0">
+                <Image
+                    src={src}
+                    alt={hint}
+                    fill
+                    className="object-cover"
+                    data-ai-hint={hint}
+                />
+            </motion.div>
+        </div>
+    );
 };
 
 
@@ -430,36 +430,31 @@ export default function Home() {
       </FadeIn>
 
        {/* Design Showcase Section */}
-      <section id="showcase" className="py-20 bg-muted/40 overflow-hidden">
-        <div className="container mx-auto">
-          <div className="text-center mb-16 max-w-3xl mx-auto">
-            <h2 className="font-headline text-4xl font-bold">A Showcase of Precision</h2>
-            <p className="mt-4 text-muted-foreground">
-              Witness the clarity and detail we bring to every project. Our drawings don't just meet standards—they set them.
-            </p>
-          </div>
-
-          <div ref={showcaseRef} className="relative">
-             <motion.div style={{y}} className="absolute inset-0 z-0">
-               <div className="absolute top-0 left-0 w-96 h-96 bg-primary/10 rounded-full -translate-x-1/2 -translate-y-1/2" />
-               <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent/10 rounded-full translate-x-1/2 translate-y-1/2" />
-            </motion.div>
-            
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 relative z-10">
-              {showcaseImages.map((img, index) => (
-                <ShowcaseImage key={index} src={img.src} hint={img.hint} />
-              ))}
+      <section id="showcase" className="relative bg-muted/40 py-20 md:py-32 overflow-hidden">
+        <div className="absolute inset-0 z-0 opacity-80">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+                {showcaseImages.map((img, index) => (
+                    <ShowcaseImage key={index} src={img.src} hint={img.hint} yOffset={`${(index % 4) * -5 - 10}%`} />
+                ))}
             </div>
-            
-            <div className="mt-16 text-center">
-              <Button asChild size="lg" variant="outline" className="border-primary/30 hover:bg-primary/5">
-                <Link href="/#work">
-                  <View className="mr-2" />
-                  Explore Our Full Portfolio
-                </Link>
-              </Button>
+        </div>
+        <div className="relative z-10 flex items-center justify-center h-full">
+            <div className="container">
+                <div className="bg-background/80 backdrop-blur-sm rounded-lg shadow-xl p-8 md:p-12 max-w-3xl mx-auto text-center">
+                    <h2 className="font-headline text-4xl font-bold text-foreground">A Showcase of Precision</h2>
+                    <p className="mt-4 text-muted-foreground">
+                        Witness the clarity and detail we bring to every project. Our drawings don't just meet standards—they set them.
+                    </p>
+                    <div className="mt-8">
+                        <Button asChild size="lg" variant="outline" className="border-primary/30 hover:bg-primary/5">
+                            <Link href="/#work">
+                                <View className="mr-2" />
+                                Explore Our Full Portfolio
+                            </Link>
+                        </Button>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
       </section>
 
