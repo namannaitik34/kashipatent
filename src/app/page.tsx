@@ -306,7 +306,7 @@ export default function Home() {
 
       {/* Work Samples Section */}
       <FadeIn>
-        <section id="work" className="py-20 bg-background">
+        <section id="work" className="py-20 bg-muted/40">
           <div className="container mx-auto">
             <div className="text-center mb-12">
               <h2 className="font-headline text-4xl font-bold">Our Work Portfolio</h2>
@@ -342,7 +342,7 @@ export default function Home() {
 
       {/* Services Section */}
       <FadeIn>
-        <section id="services" className="py-20 bg-muted">
+        <section id="services" className="py-20 bg-background">
           <div className="container mx-auto">
             <div className="text-center mb-12">
               <h2 className="font-headline text-4xl font-bold">Our Services</h2>
@@ -393,7 +393,7 @@ export default function Home() {
       </FadeIn>
       {/* About Section */}
       <FadeIn>
-        <section id="about" className="py-20 md:py-32 bg-background text-foreground">
+        <section id="about" className="py-20 md:py-32 bg-muted/40 text-foreground">
           <div className="container mx-auto">
             <div className="text-center">
               <p className="text-base font-semibold text-primary uppercase tracking-wider">About Kashi Patent</p>
@@ -443,40 +443,60 @@ export default function Home() {
         </section>
       </FadeIn>
       <FadeIn>
-        <section id="why-choose-us" className="py-20 bg-card">
-          <div className="container mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <h2 className="font-headline text-4xl font-bold">Why Choose Kashi Patent?</h2>
-                <p className="mt-4 text-muted-foreground text-lg">
-                  We deliver patent drawings and services that exceed expectations, backed by experience and a proven track record of success.
-                </p>
-                <p className="mt-4 text-accent font-semibold text-lg">Get 15% OFF on your first order! Limited Time Offer!</p>
-                <Image
-                  src="https://picsum.photos/800/600?random=10"
-                  alt="Patent design software interface on a tablet"
-                  width={800}
-                  height={600}
-                  className="rounded-lg shadow-xl mt-8"
-                  data-ai-hint="design software"
-                />
-              </div>
-              <div className="space-y-8">
-                {whyChooseUsFeatures.map((feature) => (
-                  <div key={feature.title} className="flex items-start gap-5">
-                    <div className="flex-shrink-0 bg-primary/10 p-4 rounded-full">
-                      {feature.icon}
+        <section id="why-choose-us" className="relative py-20 bg-background text-white">
+          <div className="absolute inset-0">
+            <Image
+              src="https://picsum.photos/1920/1080?random=10"
+              alt="Professional working on a technical drawing"
+              fill
+              className="object-cover"
+              data-ai-hint="professional workspace"
+            />
+            <div className="absolute inset-0 bg-primary/80 backdrop-blur-sm" />
+          </div>
+          <div className="container mx-auto relative z-10">
+            <div className="text-center mb-12">
+              <h2 className="font-headline text-4xl font-bold">Why Choose Kashi Patent?</h2>
+              <p className="mt-4 max-w-3xl mx-auto text-lg text-white/90">
+                We deliver unparalleled quality, speed, and value, backed by a proven track record of success.
+              </p>
+              <p className="mt-4 text-accent font-semibold text-xl animate-pulse">Get 15% OFF on your first order! Limited Time Offer!</p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div className="bg-white/10 p-8 rounded-lg backdrop-blur-md">
+                    <ShieldCheck className="w-12 h-12 mx-auto text-accent" />
+                    <h3 className="font-headline text-2xl font-bold mt-4">Unmatched Quality</h3>
+                    <p className="mt-2 text-white/80">Expertly crafted, USPTO-compliant patent drawings that secure your intellectual property with precision.</p>
+                </div>
+                 <div className="bg-white/10 p-8 rounded-lg backdrop-blur-md">
+                    <Clock className="w-12 h-12 mx-auto text-accent" />
+                    <h3 className="font-headline text-2xl font-bold mt-4">Rapid Turnaround</h3>
+                    <p className="mt-2 text-white/80">Receive high-quality outputs in just a few hours. Expedited options are available to meet any deadline.</p>
+                </div>
+                 <div className="bg-white/10 p-8 rounded-lg backdrop-blur-md">
+                    <Wallet className="w-12 h-12 mx-auto text-accent" />
+                    <h3 className="font-headline text-2xl font-bold mt-4">Affordable Pricing</h3>
+                    <p className="mt-2 text-white/80">Get premium services at budget-friendly prices. We'll match lower prices to ensure the best value for you.</p>
+                </div>
+            </div>
+            <div className="mt-12 text-center">
+                <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-4 text-lg">
+                    <div className="flex items-center gap-2">
+                        <Star className="w-6 h-6 text-accent shrink-0" />
+                        <span>Satisfaction Guarantee</span>
                     </div>
-                    <div>
-                      <h3 className="text-xl font-semibold mb-1">{feature.title}</h3>
-                      <p className="text-muted-foreground">{feature.description}</p>
+                    <div className="flex items-center gap-2">
+                        <RefreshCcw className="w-6 h-6 text-accent shrink-0" />
+                        <span>Unlimited Revisions</span>
                     </div>
-                  </div>
-                ))}
-                <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
-                    <Link href="/order">Order Now</Link>
+                    <div className="flex items-center gap-2">
+                        <HeartHandshake className="w-6 h-6 text-accent shrink-0" />
+                        <span>Dedicated Support</span>
+                    </div>
+                </div>
+                 <Button asChild size="lg" className="mt-10 bg-accent hover:bg-accent/90 text-accent-foreground">
+                    <Link href="/order">Secure Your Design Now</Link>
                 </Button>
-              </div>
             </div>
           </div>
         </section>
@@ -484,7 +504,7 @@ export default function Home() {
 
       {/* How It Works Section */}
       <FadeIn>
-        <section id="how-it-works" className="py-20 bg-muted">
+        <section id="how-it-works" className="py-20 bg-muted/40">
           <div className="container mx-auto">
             <div className="text-center mb-16">
               <h2 className="font-headline text-4xl font-bold">How It Works</h2>
@@ -498,7 +518,7 @@ export default function Home() {
                 <div className="space-y-12">
                   {howItWorksSteps.map((step, index) => (
                     <div key={index} className="flex items-start gap-6 relative">
-                      <div className="flex-shrink-0 w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold text-lg ring-8 ring-background z-10">
+                      <div className="flex-shrink-0 w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold text-lg ring-8 ring-muted/40 z-10">
                         {index + 1}
                       </div>
                       <div className="flex-grow pt-1">
