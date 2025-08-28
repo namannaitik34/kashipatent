@@ -1,4 +1,6 @@
 
+"use client";
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
@@ -18,11 +20,13 @@ import {
 } from "@/components/ui/accordion"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { FileUp, ClipboardList, Cog, Mail, RefreshCcw, PenTool, Palette, Copyright, Box, ArrowRight, CheckCircle, ShieldCheck, HeartHandshake, Zap, Wallet, Star, Clock, Send, FunctionSquare, DraftingCompass, BrainCircuit, Target, Handshake, Lightbulb } from 'lucide-react';
+import { FileUp, ClipboardList, Cog, Mail, RefreshCcw, PenTool, Palette, Copyright, Box, ArrowRight, CheckCircle, ShieldCheck, HeartHandshake, Zap, Wallet, Star, Clock, Send, FunctionSquare, DraftingCompass, BrainCircuit, Target, Handshake, Lightbulb, View } from 'lucide-react';
 import { services } from '@/lib/services';
 import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
 import FadeIn from '@/components/fade-in';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { useRef } from 'react';
 
 const workSamples = [
   {
@@ -176,7 +180,58 @@ const coreValues = [
   }
 ];
 
+const showcaseImages = [
+  {
+    src: "https://picsum.photos/800/1200?random=21",
+    hint: "technical drawing blueprint",
+    speed: -0.1
+  },
+  {
+    src: "https://picsum.photos/800/1200?random=22",
+    hint: "product design sketch",
+    speed: 0.15
+  },
+  {
+    src: "https://picsum.photos/800/1200?random=23",
+    hint: "3d model rendering",
+    speed: -0.05
+  },
+  {
+    src: "https://picsum.photos/800/1200?random=24",
+    hint: "detailed schematic",
+    speed: 0.1
+  },
+];
+
+const ShowcaseImage = ({ src, hint, speed }: { src: string, hint: string, speed: number }) => {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ['start end', 'end start'],
+  });
+  const y = useTransform(scrollYProgress, [0, 1], ['-20%', '20%']);
+
+  return (
+    <div ref={ref} className="relative overflow-hidden h-[50vh] md:h-[80vh] rounded-xl shadow-lg">
+      <motion.div style={{ y }} className="absolute inset-0">
+        <Image
+          src={src}
+          alt={hint}
+          fill
+          className="object-cover"
+          data-ai-hint={hint}
+        />
+      </motion.div>
+    </div>
+  );
+};
+
+
 export default function Home() {
+  const showcaseRef = useRef(null);
+  const { scrollYProgress } = useScroll({ target: showcaseRef, offset: ["start end", "end start"] });
+  const y = useTransform(scrollYProgress, [0, 1], ["-20%", "0%"]);
+
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
@@ -363,7 +418,7 @@ export default function Home() {
                         className="object-cover transition-transform duration-300 group-hover/service:scale-105"
                         data-ai-hint={service.imageHint}
                       />
-                      <Badge className="absolute top-4 right-4 z-10" variant="default">
+                       <Badge className="absolute top-4 right-4 z-10" variant="default">
                         Starts at ${service.price}
                       </Badge>
                     </Link>
@@ -380,7 +435,7 @@ export default function Home() {
                 </Card>
               ))}
             </div>
-            <div className="flex items-center justify-center mt-12 space-x-4">
+             <div className="flex items-center justify-center mt-12 space-x-4">
               <Button asChild size="lg" variant="outline">
                 <Link href="/services">View All Services</Link>
               </Button>
@@ -391,9 +446,44 @@ export default function Home() {
           </div>
         </section>
       </FadeIn>
+
+       {/* Design Showcase Section */}
+      <section id="showcase" className="py-20 bg-muted/40 overflow-hidden">
+        <div className="container mx-auto">
+          <div className="text-center mb-16 max-w-3xl mx-auto">
+            <h2 className="font-headline text-4xl font-bold">A Showcase of Precision</h2>
+            <p className="mt-4 text-muted-foreground">
+              Witness the clarity and detail we bring to every project. Our drawings don't just meet standards—they set them.
+            </p>
+          </div>
+
+          <div ref={showcaseRef} className="relative">
+            <motion.div style={{y}} className="absolute inset-0 z-0">
+               <div className="absolute top-0 left-0 w-96 h-96 bg-primary/10 rounded-full -translate-x-1/2 -translate-y-1/2" />
+               <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent/10 rounded-full translate-x-1/2 translate-y-1/2" />
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 relative z-10">
+              {showcaseImages.map((img, index) => (
+                <ShowcaseImage key={index} src={img.src} hint={img.hint} speed={img.speed} />
+              ))}
+            </div>
+            
+            <div className="mt-16 text-center">
+              <Button asChild size="lg" variant="outline" className="border-primary/30 hover:bg-primary/5">
+                <Link href="/#work">
+                  <View className="mr-2" />
+                  Explore Our Full Portfolio
+                </Link>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* About Section */}
       <FadeIn>
-        <section id="about" className="py-20 md:py-32 bg-muted/40 text-foreground">
+        <section id="about" className="py-20 md:py-32 bg-background text-foreground">
           <div className="container mx-auto">
             <div className="text-center">
               <p className="text-base font-semibold text-primary uppercase tracking-wider">About Kashi Patent</p>
@@ -466,7 +556,7 @@ export default function Home() {
               </div>
               <div className="mt-12 text-center">
                 <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
-                  <Link href="/order">Secure Your Design Now</Link>
+                   <Link href="/order">Secure Your Design Now</Link>
                 </Button>
               </div>
             </div>
