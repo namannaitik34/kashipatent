@@ -342,7 +342,7 @@ export default function Home() {
 
       {/* Services Section */}
       <FadeIn>
-      <section id="services" className="py-20 bg-muted">
+      <section id="services" className="py-20 bg-background">
         <div className="container mx-auto">
           <div className="text-center mb-12">
             <h2 className="font-headline text-4xl font-bold">Our Services</h2>
@@ -363,10 +363,10 @@ export default function Home() {
                       className="object-cover transition-transform duration-300 group-hover/service:scale-105"
                       data-ai-hint={service.imageHint}
                     />
+                     <Badge className="absolute top-4 right-4 z-10" variant="default">
+                        Starts at ${service.price}
+                    </Badge>
                   </Link>
-                  <Badge className="absolute top-4 right-4 z-10" variant="default">
-                    Starts at ${service.price}
-                  </Badge>
                 </CardHeader>
                 <CardContent className="p-6 flex flex-col flex-grow">
                   <h3 className="font-headline text-xl font-semibold mb-2">{service.title}</h3>
@@ -391,7 +391,7 @@ export default function Home() {
 
       {/* How It Works Section */}
       <FadeIn>
-      <section id="how-it-works" className="py-20 bg-background">
+      <section id="how-it-works" className="py-20 bg-muted">
         <div className="container mx-auto">
           <div className="text-center mb-16">
             <h2 className="font-headline text-4xl font-bold">How It Works</h2>
@@ -436,7 +436,7 @@ export default function Home() {
 
       {/* About Section */}
       <FadeIn>
-      <section id="about" className="py-20 md:py-32 bg-muted text-foreground">
+      <section id="about" className="py-20 md:py-32 bg-background text-foreground">
         <div className="container mx-auto">
             <div className="text-center">
                 <p className="text-base font-semibold text-primary uppercase tracking-wider">About Kashi Patent</p>
@@ -525,7 +525,7 @@ export default function Home() {
 
       {/* FAQ Section */}
       <FadeIn>
-      <section id="faq" className="py-20 bg-background">
+      <section id="faq" className="py-20 bg-muted">
         <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-12">
             <h2 className="font-headline text-4xl font-bold">Frequently Asked Questions</h2>
