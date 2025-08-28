@@ -10,6 +10,7 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
+  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import {
@@ -61,6 +62,10 @@ export default function Header() {
                   <Link href={`/services/${service.slug}`}>{service.title}</Link>
                 </DropdownMenuItem>
               ))}
+              <DropdownMenuSeparator />
+              <DropdownMenuItem asChild>
+                  <Link href="/services">All Services</Link>
+              </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
         </nav>
@@ -81,8 +86,8 @@ export default function Header() {
               </Button>
             </SheetTrigger>
             <SheetContent side="left">
-              <SheetHeader className="sr-only">
-                <SheetTitle>Menu</SheetTitle>
+              <SheetHeader>
+                <SheetTitle className="sr-only">Menu</SheetTitle>
               </SheetHeader>
               <div className="flex flex-col h-full py-6">
                 <div className="px-4 mb-6">
@@ -93,7 +98,16 @@ export default function Header() {
                     if (link.label === 'Services') {
                       return (
                         <div key="services-mobile" className="flex flex-col gap-2">
-                          <span className="font-semibold text-foreground">Services</span>
+                           <Link
+                                href="/services"
+                                className={cn(
+                                    'font-semibold text-foreground',
+                                     pathname === '/services' && 'text-foreground'
+                                )}
+                                onClick={closeMobileMenu}
+                            >
+                                Services
+                            </Link>
                           {services.map((service) => (
                             <Link
                               key={service.slug}
