@@ -6,23 +6,23 @@
   :root {
     --background: 240 10% 97.5%; /* Light Gray (#F5F5F5) */
     --foreground: 240 10% 3.9%;
-    --card: 240 10% 97.5%;
+    --card: 0 0% 100%;
     --card-foreground: 240 10% 3.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
-    --primary: 206 84% 68%; /* Subtle Blue (#64B5F6) */
+    --primary: 221 44% 20%; /* Deep Navy Blue from Logo */
     --primary-foreground: 0 0% 98%;
     --secondary: 0 0% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
     --muted: 0 0% 96.1%;
     --muted-foreground: 225.2 38.4% 47.1%;
-    --accent: 174 45% 61%; /* Teal (#4DB6AC) */
+    --accent: 174 72% 45%; /* Vibrant Teal from Logo */
     --accent-foreground: 0 0% 100%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
     --border: 0 0% 89.8%;
     --input: 0 0% 89.8%;
-    --ring: 206 84% 68%;
+    --ring: 221 44% 20%;
     --radius: 0.5rem;
   }
 
@@ -33,19 +33,19 @@
     --card-foreground: 0 0% 98%;
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 0 0% 98%;
-    --primary: 206 84% 68%;
+    --primary: 221 44% 20%;
     --primary-foreground: 222.2 47.4% 11.2%;
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 0 0% 98%;
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
-    --accent: 174 45% 61%;
+    --accent: 174 72% 45%;
     --accent-foreground: 0 0% 100%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
-    --ring: 206 84% 68%;
+    --ring: 221 44% 20%;
   }
 }
 
