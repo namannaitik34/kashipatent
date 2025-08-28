@@ -443,50 +443,36 @@ export default function Home() {
         </section>
       </FadeIn>
       <FadeIn>
-      <section id="why-choose-us" className="py-20 bg-muted/40">
-        <div className="container mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="order-last lg:order-first">
-              <div className="text-center lg:text-left mb-8">
-                <h2 className="font-headline text-4xl font-bold">Why Choose Kashi Patent?</h2>
-                <p className="mt-4 max-w-2xl mx-auto lg:mx-0 text-lg text-muted-foreground">
-                  We deliver unparalleled quality, speed, and value, backed by a proven track record of success.
-                </p>
-                 <p className="mt-4 text-accent font-semibold text-xl animate-pulse">Get 15% OFF on your first order! Limited Time Offer!</p>
-              </div>
-              <div className="space-y-6">
+        <section id="why-choose-us" className="py-20 bg-muted/40">
+          <div className="container mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="font-headline text-4xl font-bold">Why Choose Kashi Patent?</h2>
+              <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
+                We deliver unparalleled quality, speed, and value, backed by a proven track record of success.
+              </p>
+              <p className="mt-4 text-accent font-semibold text-xl animate-pulse">Get 15% OFF on your first order! Limited Time Offer!</p>
+            </div>
+            <div className="max-w-5xl mx-auto">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {whyChooseUsFeatures.map((feature, index) => (
-                  <div key={index} className="flex items-start gap-4">
-                    <div className="flex-shrink-0 flex justify-center items-center h-12 w-12 rounded-full bg-primary/10">
+                  <div key={index} className="flex flex-col items-center text-center p-6 bg-card rounded-lg shadow-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                    <div className="flex-shrink-0 flex justify-center items-center h-16 w-16 rounded-full bg-primary/10 mb-4">
                       {feature.icon}
                     </div>
-                    <div>
-                      <h3 className="font-headline text-xl font-bold">{feature.title}</h3>
-                      <p className="text-muted-foreground">{feature.description}</p>
-                    </div>
+                    <h3 className="font-headline text-xl font-bold mb-2">{feature.title}</h3>
+                    <p className="text-muted-foreground">{feature.description}</p>
                   </div>
                 ))}
               </div>
-              <div className="mt-10 text-center lg:text-left">
+              <div className="mt-12 text-center">
                 <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
                   <Link href="/order">Secure Your Design Now</Link>
                 </Button>
               </div>
             </div>
-            <div className="flex items-center justify-center">
-              <Image 
-                src="https://picsum.photos/600/700" 
-                alt="Why choose us"
-                width={600}
-                height={700}
-                className="rounded-xl shadow-2xl object-cover"
-                data-ai-hint="professionals collaborating"
-              />
-            </div>
           </div>
-        </div>
-      </section>
-    </FadeIn>
+        </section>
+      </FadeIn>
 
       {/* How It Works Section */}
       <FadeIn>
