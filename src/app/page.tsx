@@ -180,7 +180,7 @@ const coreValues = [
   }
 ];
 
-const showcaseImages = Array.from({ length: 48 }, (_, i) => ({
+const showcaseImages = Array.from({ length: 60 }, (_, i) => ({
   src: `https://picsum.photos/400/600?random=${21 + i}`,
   hint: `design showcase ${i + 1}`,
 }));
