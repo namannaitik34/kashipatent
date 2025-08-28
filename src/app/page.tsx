@@ -180,39 +180,21 @@ const coreValues = [
   }
 ];
 
-const showcaseImages = [
-  {
-    src: "https://picsum.photos/800/1200?random=21",
-    hint: "technical drawing blueprint",
-    speed: -0.1
-  },
-  {
-    src: "https://picsum.photos/800/1200?random=22",
-    hint: "product design sketch",
-    speed: 0.15
-  },
-  {
-    src: "https://picsum.photos/800/1200?random=23",
-    hint: "3d model rendering",
-    speed: -0.05
-  },
-  {
-    src: "https://picsum.photos/800/1200?random=24",
-    hint: "detailed schematic",
-    speed: 0.1
-  },
-];
+const showcaseImages = Array.from({ length: 25 }, (_, i) => ({
+  src: `https://picsum.photos/400/600?random=${21 + i}`,
+  hint: `design showcase ${i + 1}`,
+}));
 
-const ShowcaseImage = ({ src, hint, speed }: { src: string, hint: string, speed: number }) => {
+const ShowcaseImage = ({ src, hint }: { src: string, hint: string }) => {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ['start end', 'end start'],
   });
-  const y = useTransform(scrollYProgress, [0, 1], ['-20%', '20%']);
+  const y = useTransform(scrollYProgress, [0, 1], ['-10%', '10%']);
 
   return (
-    <div ref={ref} className="relative overflow-hidden h-[50vh] md:h-[80vh] rounded-xl shadow-lg">
+    <div ref={ref} className="relative overflow-hidden aspect-[2/3] rounded-lg shadow-lg">
       <motion.div style={{ y }} className="absolute inset-0">
         <Image
           src={src}
@@ -458,14 +440,14 @@ export default function Home() {
           </div>
 
           <div ref={showcaseRef} className="relative">
-            <motion.div style={{y}} className="absolute inset-0 z-0">
+             <motion.div style={{y}} className="absolute inset-0 z-0">
                <div className="absolute top-0 left-0 w-96 h-96 bg-primary/10 rounded-full -translate-x-1/2 -translate-y-1/2" />
                <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent/10 rounded-full translate-x-1/2 translate-y-1/2" />
             </motion.div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 relative z-10">
+            
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6 relative z-10">
               {showcaseImages.map((img, index) => (
-                <ShowcaseImage key={index} src={img.src} hint={img.hint} speed={img.speed} />
+                <ShowcaseImage key={index} src={img.src} hint={img.hint} />
               ))}
             </div>
             
