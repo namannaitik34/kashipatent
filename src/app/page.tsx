@@ -432,7 +432,7 @@ export default function Home() {
       </section>
       </FadeIn>
 
-      {/* About Us Section */}
+      {/* About Section */}
       <FadeIn>
       <section id="about" className="py-20 md:py-32 bg-background text-foreground">
         <div className="container mx-auto">
@@ -483,8 +483,6 @@ export default function Home() {
         </div>
       </section>
       </FadeIn>
-      
-      {/* Why Choose Us Section */}
       <FadeIn>
       <section id="why-choose-us" className="py-20 bg-card">
         <div className="container mx-auto">
