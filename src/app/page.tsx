@@ -352,7 +352,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.slice(0, 5).map((service) => (
               <Card key={service.slug} className="group/service flex flex-col overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
-                <CardHeader className="p-0">
+                <CardHeader className="p-0 relative">
                   <Link href={`/services/${service.slug}`} className="block relative h-56 w-full">
                     <Image
                       src={service.image}
@@ -362,6 +362,9 @@ export default function Home() {
                       data-ai-hint={service.imageHint}
                     />
                   </Link>
+                  <Badge className="absolute top-4 right-4 z-10" variant="default">
+                    Starts at ${service.price}
+                  </Badge>
                 </CardHeader>
                 <CardContent className="p-6 flex flex-col flex-grow">
                   <h3 className="font-headline text-xl font-semibold mb-2">{service.title}</h3>
@@ -545,3 +548,5 @@ export default function Home() {
     </div>
   );
 }
+
+    
