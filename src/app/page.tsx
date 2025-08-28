@@ -192,6 +192,7 @@ export default function Home() {
           <p className="mt-4 text-lg md:text-xl max-w-3xl mx-auto drop-shadow-md">
             Transforming innovative ideas into USPTO-compliant patent drawings with unparalleled accuracy and artistry.
           </p>
+          <p className="mt-6 text-accent font-semibold text-lg animate-pulse">Get 15% OFF on your first order! Limited Time Offer!</p>
           <Button asChild size="lg" className="mt-8 bg-accent hover:bg-accent/90 text-accent-foreground">
             <Link href="/order">Order Now</Link>
           </Button>
@@ -348,6 +349,7 @@ export default function Home() {
             <p className="mt-4 max-w-3xl mx-auto text-muted-foreground">
               From initial concepts to final application, we provide a comprehensive suite of services to protect your IP.
             </p>
+             <p className="mt-4 text-accent font-semibold text-lg">Get 15% OFF on your first order! Limited Time Offer!</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.slice(0, 5).map((service) => (
@@ -492,6 +494,7 @@ export default function Home() {
               <p className="mt-4 text-muted-foreground text-lg">
                 We deliver patent drawings and services that exceed expectations, backed by experience and a proven track record of success.
               </p>
+              <p className="mt-4 text-accent font-semibold text-lg">Get 15% OFF on your first order! Limited Time Offer!</p>
               <Image
                 src="https://picsum.photos/800/600?random=10"
                 alt="Patent design software interface on a tablet"
@@ -546,5 +549,3 @@ export default function Home() {
     </div>
   );
 }
-
-    
