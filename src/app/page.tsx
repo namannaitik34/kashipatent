@@ -449,7 +449,7 @@ export default function Home() {
                         <Button asChild size="lg" variant="outline" className="border-primary/30 hover:bg-primary/5">
                             <Link href="/#work">
                                 <View className="mr-2" />
-                                Explore Our Full Portfolio
+                                Explore Our Full Portfolio...
                             </Link>
                         </Button>
                     </div>
