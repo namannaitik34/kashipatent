@@ -23,6 +23,7 @@ import {
 import { ChevronDown, Menu } from 'lucide-react';
 import { services } from '@/lib/services';
 import { cn } from '@/lib/utils';
+import { ScrollArea } from './ui/scroll-area';
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -85,15 +86,13 @@ export default function Header() {
                 <span className="sr-only">Open menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="left">
-              <SheetHeader>
+            <SheetContent side="left" className="flex flex-col p-0">
+              <SheetHeader className="p-4 border-b">
                 <SheetTitle className="sr-only">Menu</SheetTitle>
+                <Logo />
               </SheetHeader>
-              <div className="flex flex-col h-full py-6">
-                <div className="px-4 mb-6">
-                  <Logo />
-                </div>
-                <nav className="flex flex-col gap-4 px-4 text-lg font-medium">
+              <ScrollArea className="flex-grow">
+                <nav className="flex flex-col gap-4 p-4 text-lg font-medium">
                   {[...navLinks, { href: '/services', label: 'Services' }].map((link) => {
                     if (link.label === 'Services') {
                       return (
@@ -113,7 +112,7 @@ export default function Header() {
                               key={service.slug}
                               href={`/services/${service.slug}`}
                               className={cn(
-                                'text-muted-foreground hover:text-foreground pl-4',
+                                'text-muted-foreground hover:text-foreground pl-4 text-base font-normal',
                                 pathname === `/services/${service.slug}` && 'text-foreground'
                               )}
                               onClick={closeMobileMenu}
@@ -139,14 +138,14 @@ export default function Header() {
                     );
                   })}
                 </nav>
-                <div className="mt-auto flex flex-col gap-2 px-4">
-                  <Button variant="outline" asChild size="lg" onClick={closeMobileMenu}>
-                    <Link href="/contact">Contact</Link>
-                  </Button>
-                  <Button asChild size="lg" onClick={closeMobileMenu} className="bg-accent hover:bg-accent/90 text-accent-foreground">
-                    <Link href="/order">Order Now</Link>
-                  </Button>
-                </div>
+              </ScrollArea>
+              <div className="mt-auto flex flex-col gap-2 p-4 border-t">
+                <Button variant="outline" asChild size="lg" onClick={closeMobileMenu}>
+                  <Link href="/contact">Contact</Link>
+                </Button>
+                <Button asChild size="lg" onClick={closeMobileMenu} className="bg-accent hover:bg-accent/90 text-accent-foreground">
+                  <Link href="/order">Order Now</Link>
+                </Button>
               </div>
             </SheetContent>
           </Sheet>

@@ -192,7 +192,7 @@ export default function Home() {
           <p className="mt-4 text-lg md:text-xl max-w-3xl mx-auto drop-shadow-md">
             Transforming innovative ideas into USPTO-compliant patent drawings with unparalleled accuracy and artistry.
           </p>
-          <p className="mt-6 text-accent font-semibold text-lg animate-pulse">Get 15% OFF on your first order! Limited Time Offer!</p>
+          <p className="mt-6 text-white font-semibold text-lg animate-pulse">Get 15% OFF on your first order! Limited Time Offer!</p>
           <Button asChild size="lg" className="mt-8 bg-accent hover:bg-accent/90 text-accent-foreground">
             <Link href="/order">Order Now</Link>
           </Button>
