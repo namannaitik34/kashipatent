@@ -443,58 +443,28 @@ export default function Home() {
         </section>
       </FadeIn>
       <FadeIn>
-        <section id="why-choose-us" className="relative py-20 bg-background text-white">
-          <div className="absolute inset-0">
-            <Image
-              src="https://picsum.photos/1920/1080?random=10"
-              alt="Professional working on a technical drawing"
-              fill
-              className="object-cover"
-              data-ai-hint="professional workspace"
-            />
-            <div className="absolute inset-0 bg-primary/80 backdrop-blur-sm" />
-          </div>
-          <div className="container mx-auto relative z-10">
+        <section id="why-choose-us" className="py-20 bg-muted/40">
+          <div className="container mx-auto">
             <div className="text-center mb-12">
               <h2 className="font-headline text-4xl font-bold">Why Choose Kashi Patent?</h2>
-              <p className="mt-4 max-w-3xl mx-auto text-lg text-white/90">
+              <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
                 We deliver unparalleled quality, speed, and value, backed by a proven track record of success.
               </p>
               <p className="mt-4 text-accent font-semibold text-xl animate-pulse">Get 15% OFF on your first order! Limited Time Offer!</p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-                <div className="bg-white/10 p-8 rounded-lg backdrop-blur-md">
-                    <ShieldCheck className="w-12 h-12 mx-auto text-accent" />
-                    <h3 className="font-headline text-2xl font-bold mt-4">Unmatched Quality</h3>
-                    <p className="mt-2 text-white/80">Expertly crafted, USPTO-compliant patent drawings that secure your intellectual property with precision.</p>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {whyChooseUsFeatures.map((feature, index) => (
+                <div key={index} className="text-center p-6 bg-card rounded-lg shadow-sm">
+                  <div className="flex justify-center items-center h-16 w-16 rounded-full bg-primary/10 mx-auto mb-5">
+                    {feature.icon}
+                  </div>
+                  <h3 className="font-headline text-xl font-bold mt-4">{feature.title}</h3>
+                  <p className="mt-2 text-muted-foreground">{feature.description}</p>
                 </div>
-                 <div className="bg-white/10 p-8 rounded-lg backdrop-blur-md">
-                    <Clock className="w-12 h-12 mx-auto text-accent" />
-                    <h3 className="font-headline text-2xl font-bold mt-4">Rapid Turnaround</h3>
-                    <p className="mt-2 text-white/80">Receive high-quality outputs in just a few hours. Expedited options are available to meet any deadline.</p>
-                </div>
-                 <div className="bg-white/10 p-8 rounded-lg backdrop-blur-md">
-                    <Wallet className="w-12 h-12 mx-auto text-accent" />
-                    <h3 className="font-headline text-2xl font-bold mt-4">Affordable Pricing</h3>
-                    <p className="mt-2 text-white/80">Get premium services at budget-friendly prices. We'll match lower prices to ensure the best value for you.</p>
-                </div>
+              ))}
             </div>
-            <div className="mt-12 text-center">
-                <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-4 text-lg">
-                    <div className="flex items-center gap-2">
-                        <Star className="w-6 h-6 text-accent shrink-0" />
-                        <span>Satisfaction Guarantee</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                        <RefreshCcw className="w-6 h-6 text-accent shrink-0" />
-                        <span>Unlimited Revisions</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                        <HeartHandshake className="w-6 h-6 text-accent shrink-0" />
-                        <span>Dedicated Support</span>
-                    </div>
-                </div>
-                 <Button asChild size="lg" className="mt-10 bg-accent hover:bg-accent/90 text-accent-foreground">
+             <div className="mt-12 text-center">
+                 <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
                     <Link href="/order">Secure Your Design Now</Link>
                 </Button>
             </div>
@@ -504,7 +474,7 @@ export default function Home() {
 
       {/* How It Works Section */}
       <FadeIn>
-        <section id="how-it-works" className="py-20 bg-muted/40">
+        <section id="how-it-works" className="py-20 bg-background">
           <div className="container mx-auto">
             <div className="text-center mb-16">
               <h2 className="font-headline text-4xl font-bold">How It Works</h2>
@@ -518,7 +488,7 @@ export default function Home() {
                 <div className="space-y-12">
                   {howItWorksSteps.map((step, index) => (
                     <div key={index} className="flex items-start gap-6 relative">
-                      <div className="flex-shrink-0 w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold text-lg ring-8 ring-muted/40 z-10">
+                      <div className="flex-shrink-0 w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold text-lg ring-8 ring-background z-10">
                         {index + 1}
                       </div>
                       <div className="flex-grow pt-1">
@@ -551,7 +521,7 @@ export default function Home() {
 
       {/* FAQ Section */}
       <FadeIn>
-        <section id="faq" className="py-20 bg-background">
+        <section id="faq" className="py-20 bg-muted/40">
           <div className="container mx-auto max-w-4xl">
             <div className="text-center mb-12">
               <h2 className="font-headline text-4xl font-bold">Frequently Asked Questions</h2>
@@ -575,3 +545,5 @@ export default function Home() {
     </div>
   );
 }
+
+    
