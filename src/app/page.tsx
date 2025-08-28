@@ -194,7 +194,7 @@ const ShowcaseImage = ({ src, hint }: { src: string, hint: string }) => {
   const y = useTransform(scrollYProgress, [0, 1], ['-10%', '10%']);
 
   return (
-    <div ref={ref} className="relative overflow-hidden aspect-[2/3] rounded-lg shadow-lg">
+    <div ref={ref} className="relative overflow-hidden aspect-[2/3]">
       <motion.div style={{ y }} className="absolute inset-0">
         <Image
           src={src}
@@ -445,7 +445,7 @@ export default function Home() {
                <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent/10 rounded-full translate-x-1/2 translate-y-1/2" />
             </motion.div>
             
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 relative z-10 max-h-[80vh] overflow-y-auto">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 relative z-10 max-h-[80vh] overflow-y-auto">
               {showcaseImages.map((img, index) => (
                 <ShowcaseImage key={index} src={img.src} hint={img.hint} />
               ))}
