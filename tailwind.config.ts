@@ -16,10 +16,6 @@ export default {
       },
     },
     extend: {
-      fontFamily: {
-        body: ['var(--font-pt-sans)'],
-        headline: ['var(--font-playfair)'],
-      },
       colors: {
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',

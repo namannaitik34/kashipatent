@@ -8,18 +8,6 @@ import Chatbot from '@/components/chatbot';
 import Script from 'next/script';
 import Newsletter from '@/components/newsletter';
 import FadeIn from '@/components/fade-in';
-import { Playfair_Display, PT_Sans } from 'next/font/google';
-
-const playfair = Playfair_Display({
-  subsets: ['latin'],
-  variable: '--font-playfair',
-});
-
-const ptSans = PT_Sans({
-  subsets: ['latin'],
-  weight: ['400', '700'],
-  variable: '--font-pt-sans',
-});
 
 export const metadata: Metadata = {
   title: 'Kashi Patent - Premium Patent Design',
@@ -32,11 +20,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${playfair.variable} ${ptSans.variable}`}>
+    <html lang="en">
       <head>
         <Script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js" async />
       </head>
-      <body className="font-body antialiased bg-background text-foreground">
+      <body className="font-sans antialiased bg-background text-foreground">
         <div className="flex flex-col min-h-screen">
           <Header />
           <main className="flex-grow">

@@ -58,10 +58,9 @@
   }
   body {
     @apply bg-background text-foreground;
-    font-family: var(--font-pt-sans), sans-serif;
   }
 
   h1, h2, h3, h4, h5, h6, .font-headline {
-    font-family: var(--font-playfair), serif;
+    @apply font-sans font-bold;
   }
 }
