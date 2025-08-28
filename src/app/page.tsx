@@ -512,38 +512,35 @@ export default function Home() {
       
       {/* Why Choose Us Section */}
       <FadeIn>
-        <section id="why-choose-us" className="py-20 bg-background">
-          <div className="container mx-auto">
+        <section id="why-choose-us" className="py-20 relative bg-background">
+          <div className="absolute inset-0">
+            <Image
+              src="https://picsum.photos/1920/1080?random=20"
+              alt="Team collaborating on patent drawings"
+              fill
+              className="object-cover"
+              data-ai-hint="team collaboration"
+            />
+            <div className="absolute inset-0 bg-primary/90" />
+          </div>
+          <div className="container mx-auto relative text-white">
             <div className="text-center mb-12">
               <h2 className="font-headline text-4xl font-bold">Why Choose Kashi Patent?</h2>
-              <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
+              <p className="mt-4 max-w-2xl mx-auto text-lg text-white/80">
                 We deliver unparalleled quality, speed, and value, backed by a proven track record of success.
               </p>
             </div>
-             <div className="relative rounded-xl overflow-hidden">
-                <Image 
-                    src="https://picsum.photos/1200/500?random=20"
-                    alt="Team collaborating on patent drawings"
-                    width={1200}
-                    height={500}
-                    className="w-full h-auto object-cover"
-                    data-ai-hint="team collaboration"
-                />
-                <div className="absolute inset-0 bg-primary/80" />
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-[-100px] relative z-10 px-4 md:px-8">
-              {whyChooseUsFeatures.slice(0,3).map((feature, index) => (
-                <Card key={index} className="text-center p-6 bg-card rounded-lg shadow-xl transition-all duration-300 hover:-translate-y-2">
-                  <div className="flex-shrink-0 flex justify-center items-center h-16 w-16 rounded-full bg-primary/10 mb-4 mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {whyChooseUsFeatures.map((feature, index) => (
+                <Card key={index} className="text-center p-6 bg-white/10 backdrop-blur-sm border-white/20 rounded-lg transition-all duration-300 hover:bg-white/20 hover:-translate-y-2">
+                  <div className="flex-shrink-0 flex justify-center items-center h-16 w-16 rounded-full bg-white/20 mb-4 mx-auto">
                     {feature.icon}
                   </div>
                   <h3 className="font-headline text-xl font-bold mb-2">{feature.title}</h3>
-                  <p className="text-muted-foreground">{feature.description}</p>
+                  <p className="text-white/80">{feature.description}</p>
                 </Card>
               ))}
             </div>
-
             <div className="mt-12 text-center">
               <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
                  <Link href="/order">Secure Your Design Now</Link>
