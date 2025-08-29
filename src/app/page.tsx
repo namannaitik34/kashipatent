@@ -347,7 +347,7 @@ export default function Home() {
         <section id="work" className="py-20 bg-muted/40">
           <div className="container mx-auto">
             <div className="text-center mb-12">
-              <h2 className="font-headline text-4xl font-bold">Our Work Portfolio</h2>
+              <h2 className="font-headline text-4xl font-bold">Our Work Portfolio </h2>
               <p className="mt-4 max-w-3xl mx-auto text-muted-foreground">
                 Explore a selection of our successful projects, showcasing our precision, quality, and expertise across various industries.
               </p>
