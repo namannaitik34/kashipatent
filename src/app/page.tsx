@@ -218,7 +218,7 @@ export default function Home() {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="relative h-[70vh] flex items-center justify-center text-foreground bg-background overflow-hidden">
+      <section className="relative h-[90vh] flex items-center justify-center text-foreground bg-background overflow-hidden">
         <HeroBackground />
         <FadeIn className="relative z-10 text-center p-4">
           <h1 className="font-headline text-5xl md:text-7xl font-bold text-primary">
