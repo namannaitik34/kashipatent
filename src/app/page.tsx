@@ -237,7 +237,7 @@ export default function Home() {
         </FadeIn>
       </section>
 
-      {/* Understanding Patent Drawings Section */}
+      {/*Understanding Patent Drawings Section*/}
       <FadeIn>
         <section id="design-types" className="py-20 bg-background">
           <div className="container mx-auto">
