@@ -49,7 +49,7 @@ export default function Chatbot() {
           suggestions: predefinedQuestions
         }]);
     }
-  }, [isOpen]);
+  }, [isOpen, messages.length]);
 
   useEffect(() => {
     if (scrollAreaRef.current) {
@@ -132,13 +132,13 @@ export default function Chatbot() {
                                 {message.sender === 'user' && <User className="h-6 w-6 text-muted-foreground shrink-0" />}
                             </div>
                             {message.suggestions && (
-                              <div className="flex flex-wrap gap-2 mt-2 ml-8">
+                              <div className="flex flex-col items-start gap-2 mt-2 ml-8">
                                 {message.suggestions.map((suggestion, index) => (
                                   <Button 
                                     key={index}
                                     variant="outline"
                                     size="sm"
-                                    className="text-xs h-auto py-1.5"
+                                    className="text-xs h-auto py-1.5 text-left whitespace-normal"
                                     onClick={() => handleSend(suggestion)}
                                   >
                                     {suggestion}
