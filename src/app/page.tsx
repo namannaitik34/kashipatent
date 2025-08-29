@@ -214,19 +214,15 @@ export default function Home() {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="relative h-[70vh] bg-cover bg-center flex items-center justify-center text-white"
-        style={{ backgroundImage: "url('https://picsum.photos/1920/1080?random=0')" }}
-        data-ai-hint="blueprint background"
-      >
-        <div className="absolute inset-0 bg-black/50" />
-        <FadeIn className="relative z-10 text-center p-4">
-          <h1 className="font-headline text-5xl md:text-7xl font-bold drop-shadow-lg">
+      <section className="bg-background text-foreground py-20 md:py-32">
+        <FadeIn className="container text-center">
+          <h1 className="font-headline text-5xl md:text-7xl font-bold">
             Precision in Every Line.
           </h1>
-          <p className="mt-4 text-lg md:text-xl max-w-3xl mx-auto drop-shadow-md">
+          <p className="mt-4 text-lg md:text-xl max-w-3xl mx-auto text-muted-foreground">
             Transforming innovative ideas into USPTO-compliant patent drawings with unparalleled accuracy and artistry.
           </p>
-          <p className="mt-6 text-white font-semibold text-2xl animate-pulse">Get 15% OFF on your first order! Limited Time Offer!</p>
+          <p className="mt-6 text-accent font-semibold text-2xl animate-pulse">Get 15% OFF on your first order! Limited Time Offer!</p>
           <Button asChild size="lg" className="mt-8 bg-accent hover:bg-accent/90 text-accent-foreground">
             <Link href="/order">Order Now</Link>
           </Button>
@@ -427,17 +423,15 @@ export default function Home() {
       </FadeIn>
 
        {/* Design Showcase Section */}
-      <section id="showcase" className="relative w-full min-h-screen bg-muted/40 flex items-center justify-center overflow-hidden">
-          <div className="absolute inset-0 z-0">
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-                  {showcaseImages.map((img, index) => (
-                      <ShowcaseImage key={index} src={img.src} hint={img.hint} yOffset={`${(index % 4) * -5 - 10}%`} />
-                  ))}
-              </div>
+      <section id="showcase" className="relative w-full overflow-hidden bg-muted/40">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+              {showcaseImages.map((img, index) => (
+                  <ShowcaseImage key={index} src={img.src} hint={img.hint} yOffset={`${(index % 4) * -5 - 10}%`} />
+              ))}
           </div>
-          <div className="relative z-10 flex items-center justify-center h-full">
+          <div className="absolute inset-0 z-10 flex items-center justify-center bg-background/80 backdrop-blur-sm">
               <div className="container">
-                  <div className="bg-background/80 backdrop-blur-sm rounded-lg shadow-xl p-8 md:p-12 max-w-3xl mx-auto text-center">
+                  <div className="rounded-lg p-8 md:p-12 max-w-3xl mx-auto text-center">
                       <h2 className="font-headline text-4xl font-bold text-foreground">A Showcase of Precision</h2>
                       <p className="mt-4 text-muted-foreground">
                           Witness the clarity and detail we bring to every project. Our drawings don't just meet standards—they set them.
