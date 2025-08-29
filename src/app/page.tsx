@@ -210,9 +210,6 @@ const ShowcaseImage = ({ src, hint, yOffset = '-10%' }: { src: string, hint: str
 
 
 export default function Home() {
-  const showcaseRef = useRef(null);
-  const { scrollYProgress } = useScroll({ target: showcaseRef, offset: ["start end", "end start"] });
-  const y = useTransform(scrollYProgress, [0, 1], ["-20%", "0%"]);
 
   return (
     <div className="flex flex-col">
@@ -430,34 +427,32 @@ export default function Home() {
       </FadeIn>
 
        {/* Design Showcase Section */}
-      <section id="showcase" className="bg-muted/40 overflow-hidden">
-        <div className="relative py-20 md:py-32">
-            <div className="absolute inset-0 z-0 opacity-80">
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-                    {showcaseImages.map((img, index) => (
-                        <ShowcaseImage key={index} src={img.src} hint={img.hint} yOffset={`${(index % 4) * -5 - 10}%`} />
-                    ))}
-                </div>
-            </div>
-            <div className="relative z-10 flex items-center justify-center h-full">
-                <div className="container">
-                    <div className="bg-background/80 backdrop-blur-sm rounded-lg shadow-xl p-8 md:p-12 max-w-3xl mx-auto text-center">
-                        <h2 className="font-headline text-4xl font-bold text-foreground">A Showcase of Precision</h2>
-                        <p className="mt-4 text-muted-foreground">
-                            Witness the clarity and detail we bring to every project. Our drawings don't just meet standards—they set them.
-                        </p>
-                        <div className="mt-8">
-                            <Button asChild size="lg" variant="outline" className="border-primary/30 hover:bg-primary/5">
-                                <Link href="/#work">
-                                    <View className="mr-2" />
-                                    Explore Our Full Portfolio...
-                                </Link>
-                            </Button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+      <section id="showcase" className="relative w-full min-h-screen bg-muted/40 flex items-center justify-center overflow-hidden">
+          <div className="absolute inset-0 z-0">
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+                  {showcaseImages.map((img, index) => (
+                      <ShowcaseImage key={index} src={img.src} hint={img.hint} yOffset={`${(index % 4) * -5 - 10}%`} />
+                  ))}
+              </div>
+          </div>
+          <div className="relative z-10 flex items-center justify-center h-full">
+              <div className="container">
+                  <div className="bg-background/80 backdrop-blur-sm rounded-lg shadow-xl p-8 md:p-12 max-w-3xl mx-auto text-center">
+                      <h2 className="font-headline text-4xl font-bold text-foreground">A Showcase of Precision</h2>
+                      <p className="mt-4 text-muted-foreground">
+                          Witness the clarity and detail we bring to every project. Our drawings don't just meet standards—they set them.
+                      </p>
+                      <div className="mt-8">
+                          <Button asChild size="lg" variant="outline" className="border-primary/30 hover:bg-primary/5">
+                              <Link href="/#work">
+                                  <View className="mr-2" />
+                                  Explore Our Full Portfolio
+                              </Link>
+                          </Button>
+                      </div>
+                  </div>
+              </div>
+          </div>
       </section>
 
       {/* About Section */}
@@ -625,3 +620,5 @@ export default function Home() {
     </div>
   );
 }
+
+    
