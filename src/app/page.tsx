@@ -27,6 +27,7 @@ import { Input } from '@/components/ui/input';
 import FadeIn from '@/components/fade-in';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
+import HeroBackground from '@/components/hero-background';
 
 const workSamples = [
   {
@@ -210,14 +211,21 @@ const ShowcaseImage = ({ src, hint, yOffset = '-10%' }: { src: string, hint: str
 
 
 export default function Home() {
+  const showcaseRef = useRef(null);
+  const { scrollYProgress } = useScroll({ target: showcaseRef, offset: ["start end", "end start"] });
+  const y = useTransform(scrollYProgress, [0, 1], ["-20%", "0%"]);
 
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="bg-background text-foreground py-20 md:py-32">
-        <FadeIn className="container text-center">
-          <h1 className="font-headline text-5xl md:text-7xl font-bold">
-            Precision in Every Line.
+      <section className="relative h-[70vh] flex items-center justify-center text-foreground bg-background overflow-hidden">
+        <HeroBackground />
+        <FadeIn className="relative z-10 text-center p-4">
+          <h1 className="font-headline text-5xl md:text-7xl font-bold text-primary">
+            Precision in Every Line
+          </h1>
+          <h1 className="font-headline text-5xl md:text-7xl font-bold text-primary">
+            Strength in Every Structure.
           </h1>
           <p className="mt-4 text-lg md:text-xl max-w-3xl mx-auto text-muted-foreground">
             Transforming innovative ideas into USPTO-compliant patent drawings with unparalleled accuracy and artistry.
@@ -423,30 +431,34 @@ export default function Home() {
       </FadeIn>
 
        {/* Design Showcase Section */}
-      <section id="showcase" className="relative w-full overflow-hidden bg-muted/40">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-              {showcaseImages.map((img, index) => (
-                  <ShowcaseImage key={index} src={img.src} hint={img.hint} yOffset={`${(index % 4) * -5 - 10}%`} />
-              ))}
-          </div>
-          <div className="absolute inset-0 z-10 flex items-center justify-center bg-background/80 backdrop-blur-sm">
-              <div className="container">
-                  <div className="rounded-lg p-8 md:p-12 max-w-3xl mx-auto text-center">
-                      <h2 className="font-headline text-4xl font-bold text-foreground">A Showcase of Precision</h2>
-                      <p className="mt-4 text-muted-foreground">
-                          Witness the clarity and detail we bring to every project. Our drawings don't just meet standards—they set them.
-                      </p>
-                      <div className="mt-8">
-                          <Button asChild size="lg" variant="outline" className="border-primary/30 hover:bg-primary/5">
-                              <Link href="/#work">
-                                  <View className="mr-2" />
-                                  Explore Our Full Portfolio
-                              </Link>
-                          </Button>
-                      </div>
-                  </div>
-              </div>
-          </div>
+      <section id="showcase" className="bg-muted/40 overflow-hidden">
+        <div className="relative">
+            <div className="absolute inset-0 z-0">
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+                    {showcaseImages.map((img, index) => (
+                        <ShowcaseImage key={index} src={img.src} hint={img.hint} yOffset={`${(index % 4) * -5 - 10}%`} />
+                    ))}
+                </div>
+            </div>
+            <div className="relative z-10 flex items-center justify-center h-full min-h-[50vh] py-20 md:py-32">
+                <div className="container">
+                    <div className="bg-background/80 backdrop-blur-sm rounded-lg shadow-xl p-8 md:p-12 max-w-3xl mx-auto text-center">
+                        <h2 className="font-headline text-4xl font-bold text-foreground">A Showcase of Precision</h2>
+                        <p className="mt-4 text-muted-foreground">
+                            Witness the clarity and detail we bring to every project. Our drawings don't just meet standards—they set them.
+                        </p>
+                        <div className="mt-8">
+                            <Button asChild size="lg" variant="outline" className="border-primary/30 hover:bg-primary/5">
+                                <Link href="/#work">
+                                    <View className="mr-2" />
+                                    Explore Our Full Portfolio...
+                                </Link>
+                            </Button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
       </section>
 
       {/* About Section */}
@@ -614,5 +626,3 @@ export default function Home() {
     </div>
   );
 }
-
-    
