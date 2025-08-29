@@ -63,32 +63,32 @@ const workSamples = [
 
 const whyChooseUsFeatures = [
   {
-    icon: <ShieldCheck className="w-8 h-8 text-primary" />,
+    icon: <ShieldCheck className="w-8 h-8 text-white" />,
     title: 'Impeccable Quality',
     description: 'Expertly crafted patent drawings that meet the highest USPTO standards.',
   },
   {
-    icon: <HeartHandshake className="w-8 h-8 text-primary" />,
+    icon: <HeartHandshake className="w-8 h-8 text-white" />,
     title: 'Dedicated Support',
     description: 'Responsive communication and guidance throughout your project.',
   },
   {
-    icon: <Zap className="w-8 h-8 text-primary" />,
+    icon: <Zap className="w-8 h-8 text-white" />,
     title: 'Proven Reliability',
     description: 'Dependable service for inventors, attorneys, and businesses worldwide.',
   },
   {
-    icon: <Wallet className="w-8 h-8 text-primary" />,
+    icon: <Wallet className="w-8 h-8 text-white" />,
     title: 'Budget-friendly Prices',
     description: "Find lower prices? We'll match them to ensure the best value.",
   },
   {
-    icon: <Star className="w-8 h-8 text-primary" />,
+    icon: <Star className="w-8 h-8 text-white" />,
     title: 'Satisfaction Guarantee',
     description: 'Unlimited revisions at no extra cost. Complete satisfaction or you don\'t pay.',
   },
   {
-    icon: <Clock className="w-8 h-8 text-primary" />,
+    icon: <Clock className="w-8 h-8 text-white" />,
     title: 'Quick Delivery',
     description: 'Receive high-quality outputs in just a few hours. Super-expedited options available.',
   },
@@ -180,7 +180,7 @@ const coreValues = [
   }
 ];
 
-const showcaseImages = Array.from({ length: 60 }, (_, i) => ({
+const showcaseImages = Array.from({ length: 80 }, (_, i) => ({
   src: `https://picsum.photos/400/600?random=${21 + i}`,
   hint: `design showcase ${i + 1}`,
 }));
@@ -521,7 +521,7 @@ export default function Home() {
               className="object-cover"
               data-ai-hint="team collaboration"
             />
-            <div className="absolute inset-0 bg-primary/90" />
+            <div className="absolute inset-0 bg-primary/95" />
           </div>
           <div className="container mx-auto relative text-white">
             <div className="text-center mb-12">
