@@ -1,3 +1,4 @@
+
 import { getServiceBySlug, services, Service } from '@/lib/services';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
@@ -126,7 +127,17 @@ export default function ServicePage({ params }: ServicePageProps) {
                         alt={`A 3D model for ${service.title}`}
                         camera-controls
                         auto-rotate
-                        style={{ width: '100%', height: '100%', backgroundColor: '#f5f5f5' }}
+                        style={{ 
+                            width: '100%', 
+                            height: '100%', 
+                            '--grid-color': 'hsl(var(--border))',
+                            backgroundColor: 'hsl(var(--background))',
+                            backgroundImage: `
+                                linear-gradient(var(--grid-color) 1px, transparent 1px),
+                                linear-gradient(to right, var(--grid-color) 1px, transparent 1px)
+                            `,
+                            backgroundSize: '20px 20px',
+                        }}
                     />
                  </div>
             </div>
