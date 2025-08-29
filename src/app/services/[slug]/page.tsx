@@ -1,4 +1,6 @@
 
+"use client";
+
 import { getServiceBySlug, services, Service } from '@/lib/services';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
@@ -23,36 +25,6 @@ declare global {
       >;
     }
   }
-}
-
-
-type ServicePageProps = {
-  params: {
-    slug: string;
-  };
-};
-
-// Generate static pages for each service at build time
-export async function generateStaticParams() {
-  return services.map((service) => ({
-    slug: service.slug,
-  }));
-}
-
-// Generate metadata for each service page
-export async function generateMetadata({ params }: ServicePageProps) {
-  const service = getServiceBySlug(params.slug);
-
-  if (!service) {
-    return {
-      title: 'Service Not Found',
-    };
-  }
-
-  return {
-    title: `${service.title} | Kashi Patent`,
-    description: service.description,
-  };
 }
 
 const ServiceFeatures = ({ slug }: { slug: string }) => {
@@ -83,7 +55,8 @@ const ServiceFeatures = ({ slug }: { slug: string }) => {
     );
 }
 
-export default function ServicePage({ params }: ServicePageProps) {
+// This component is now client-side to use the model-viewer
+export default function ServicePage({ params }: { params: { slug: string }}) {
   const service = getServiceBySlug(params.slug);
 
   if (!service) {
@@ -129,7 +102,7 @@ export default function ServicePage({ params }: ServicePageProps) {
                         auto-rotate
                         style={{ 
                             width: '100%', 
-                            height: '100%', 
+                            height: '100%',
                             '--grid-color': 'hsl(var(--border))',
                             backgroundColor: 'hsl(var(--background))',
                             backgroundImage: `
