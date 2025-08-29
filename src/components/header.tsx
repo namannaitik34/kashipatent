@@ -59,7 +59,7 @@ export default function Header() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background">
+    <header className="sticky top-0 z-50 w-full border-b bg-background shadow-sm">
       <div className="container flex h-20 items-center">
         <Logo />
         <nav className="hidden md:flex items-center space-x-8 mx-auto">
