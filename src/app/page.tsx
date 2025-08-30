@@ -342,7 +342,7 @@ export default function Home() {
       </FadeIn>
 
 
-      {/* Work Samples Section */}
+      {/*Work Samples Section*/}
       <FadeIn>
         <section id="work" className="py-20 bg-muted/40">
           <div className="container mx-auto">
