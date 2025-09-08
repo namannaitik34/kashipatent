@@ -222,11 +222,9 @@ export default function Home() {
         <HeroBackground />
         <FadeIn className="relative z-10 text-center p-4">
           <h1 className="font-headline text-5xl md:text-7xl font-bold text-primary">
-            Precision in Every Line
+          Transforming Creative Concepts into Legally Protected Patents.
           </h1>
-          <h1 className="font-headline text-5xl md:text-7xl font-bold text-primary">
-            Strength in Every Structure.
-          </h1>
+
           <p className="mt-4 text-lg md:text-xl max-w-3xl mx-auto text-muted-foreground">
             Transforming innovative ideas into USPTO-compliant patent drawings with unparalleled accuracy and artistry.
           </p>
