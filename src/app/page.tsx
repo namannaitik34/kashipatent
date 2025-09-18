@@ -58,6 +58,20 @@ const workSamples = [
     hint: 'company logo',
     description: 'Developed a clean and distinctive logo, delivered in formats compliant with USPTO requirements for trademark registration.',
   },
+    {
+    title: 'Robotic Arm Mechanism',
+    category: 'Utility Patent',
+    image: 'https://picsum.photos/600/400?random=5',
+    hint: 'robotic arm drawing',
+    description: 'Complex drawings detailing the joints and actuators of a multi-axis robotic arm.',
+  },
+  {
+    title: 'Consumer Electronics Casing',
+    category: 'Design Patent',
+    image: 'https://picsum.photos/600/400?random=6',
+    hint: 'electronics casing',
+    description: 'Sleek, modern design illustrations for a new handheld electronic device.',
+  },
 ];
 
 
@@ -345,31 +359,31 @@ export default function Home() {
         <section id="work" className="py-20 bg-muted/40">
           <div className="container mx-auto">
             <div className="text-center mb-12">
-              <h2 className="font-headline text-4xl font-bold">Our Work Portfolio </h2>
+              <h2 className="font-headline text-4xl font-bold">Our Work Portfolio</h2>
               <p className="mt-4 max-w-3xl mx-auto text-muted-foreground">
                 Explore a selection of our successful projects, showcasing our precision, quality, and expertise across various industries.
               </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {workSamples.map((sample, index) => (
-                <Card key={index} className="overflow-hidden group/card transition-shadow duration-300 hover:shadow-xl">
-                  <div className="grid grid-cols-1 lg:grid-cols-2">
-                    <div className="relative h-64 lg:h-auto">
-                      <Image
-                        src={sample.image}
-                        alt={sample.title}
-                        fill
-                        className="object-cover transition-transform duration-300 group-hover/card:scale-105"
-                        data-ai-hint={sample.hint}
-                      />
-                    </div>
-                    <div className="p-6 flex flex-col">
-                      <Badge variant="secondary" className="self-start mb-2">{sample.category}</Badge>
-                      <CardTitle className="font-headline text-xl mb-2">{sample.title}</CardTitle>
-                      <p className="text-muted-foreground text-sm flex-grow">{sample.description}</p>
-                    </div>
+                <div key={index} className="group relative overflow-hidden rounded-lg shadow-lg">
+                  <Image
+                    src={sample.image}
+                    alt={sample.title}
+                    width={600}
+                    height={400}
+                    className="object-cover w-full h-full transition-transform duration-500 ease-in-out group-hover:scale-110"
+                    data-ai-hint={sample.hint}
+                  />
+                  <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                    <h3 className="text-white font-headline text-xl font-bold transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                      {sample.title}
+                    </h3>
+                    <p className="text-white/80 text-sm transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">
+                      {sample.category}
+                    </p>
                   </div>
-                </Card>
+                </div>
               ))}
             </div>
           </div>
