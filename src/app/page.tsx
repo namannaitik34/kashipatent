@@ -561,34 +561,39 @@ export default function Home() {
                 A simple, transparent process designed to support patent agents, attorneys, and innovators.
               </p>
             </div>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
               <div className="relative">
-                <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-primary/20" />
+                <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-primary/20 -z-10" />
                 <div className="space-y-12">
                   {howItWorksSteps.map((step, index) => (
                     <div key={index} className="flex items-start gap-6 relative">
-                      <div className="flex-shrink-0 w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold text-lg ring-8 ring-background z-10">
+                       <div className="flex-shrink-0 w-8 h-8 bg-background border-2 border-primary text-primary rounded-full flex items-center justify-center font-bold text-lg ring-8 ring-muted/40 z-10">
                         {index + 1}
                       </div>
                       <div className="flex-grow pt-1">
-                        <h3 className="font-headline text-xl font-semibold mb-2">{step.title}</h3>
+                        <h3 className="font-headline text-xl font-semibold mb-1">{step.title}</h3>
                         <p className="text-muted-foreground">{step.description}</p>
                       </div>
                     </div>
                   ))}
                 </div>
               </div>
-              <div className="hidden lg:flex items-center justify-center h-full">
+              <div className="flex flex-col items-center justify-center p-8 bg-card rounded-lg shadow-lg">
                 <div className="text-center">
-                  <h3 className="font-headline text-6xl md:text-8xl font-bold text-primary/10 select-none">
-                    5
+                  <h3 className="font-headline text-3xl font-bold text-primary">
+                    Ready to Start?
                   </h3>
-                  <h3 className="font-headline text-5xl md:text-7xl font-bold text-primary -mt-12 md:-mt-20">
-                    Easy Steps
-                  </h3>
-                  <p className="text-muted-foreground mt-4 max-w-xs mx-auto">
-                    From your initial idea to final, compliant drawings—we make the process seamless.
+                  <p className="text-muted-foreground mt-2 max-w-sm mx-auto">
+                    Let's turn your idea into professional, compliant patent drawings.
                   </p>
+                   <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+                      <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
+                        <Link href="/order">Start Your Project</Link>
+                      </Button>
+                      <Button asChild size="lg" variant="outline">
+                        <Link href="/services">View Our Services</Link>
+                      </Button>
+                   </div>
                 </div>
               </div>
             </div>
