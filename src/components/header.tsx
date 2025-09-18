@@ -55,6 +55,7 @@ export default function Header() {
     { href: '/#about', label: 'About Us' },
     { href: '/services', label: 'Services' },
     { href: '/#how-it-works', label: 'How It Works' },
+    { href: '/#why-patents', label: 'Why Patents' },
     { href: '/#faq', label: 'FAQs' },
   ];
 
@@ -91,6 +92,7 @@ export default function Header() {
             </DropdownMenuContent>
           </DropdownMenu>
           <NavLink href="/#how-it-works">How It Works</NavLink>
+          <NavLink href="/#why-patents">Why Patents</NavLink>
           <NavLink href="/#faq">FAQs</NavLink>
           <NavLink href="/contact">Contact</NavLink>
         </nav>

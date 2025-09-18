@@ -20,7 +20,7 @@ import {
 } from "@/components/ui/accordion"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { FileUp, ClipboardList, Cog, Mail, RefreshCcw, PenTool, Palette, Copyright, Box, ArrowRight, CheckCircle, ShieldCheck, HeartHandshake, Zap, Wallet, Star, Clock, Send, FunctionSquare, DraftingCompass, BrainCircuit, Target, Handshake, Lightbulb, View } from 'lucide-react';
+import { FileUp, ClipboardList, Cog, Mail, RefreshCcw, PenTool, Palette, Copyright, Box, ArrowRight, CheckCircle, ShieldCheck, HeartHandshake, Zap, Wallet, Star, Clock, Send, FunctionSquare, DraftingCompass, BrainCircuit, Target, Handshake, Lightbulb, View, Scale } from 'lucide-react';
 import { services } from '@/lib/services';
 import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
@@ -596,11 +596,29 @@ export default function Home() {
         </section>
       </FadeIn>
 
+      {/* Why Patents Matter Section */}
+      <FadeIn>
+        <section id="why-patents" className="py-20 bg-background">
+          <div className="container mx-auto max-w-4xl">
+            <div className="text-center">
+              <div className="flex justify-center mb-6">
+                  <div className="flex justify-center items-center h-16 w-16 rounded-full bg-primary/10">
+                      <Scale className="w-8 h-8 text-primary" />
+                  </div>
+              </div>
+              <h2 className="font-headline text-4xl font-bold">Why Patents Matter</h2>
+              <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
+                A patent is more than just a legal document; it's a powerful business tool that grants you exclusive rights to your invention. It prevents others from making, using, or selling your unique idea without your permission, giving you a competitive edge in the marketplace. Securing a patent not only protects your hard work and creativity but also turns your innovation into a valuable asset that can attract investors, be licensed for revenue, or sold. In essence, a patent is your official claim to your ingenuity, providing the legal foundation to control and profit from your invention.
+              </p>
+            </div>
+          </div>
+        </section>
+      </FadeIn>
 
 
       {/* FAQ Section */}
       <FadeIn>
-        <section id="faq" className="py-20 bg-background">
+        <section id="faq" className="py-20 bg-muted/40">
           <div className="container mx-auto max-w-4xl">
             <div className="text-center mb-12">
               <h2 className="font-headline text-4xl font-bold">Frequently Asked Questions</h2>
