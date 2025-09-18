@@ -20,7 +20,7 @@ import {
 } from "@/components/ui/accordion"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { FileUp, ClipboardList, Cog, Mail, RefreshCcw, PenTool, Palette, Copyright, Box, ArrowRight, CheckCircle, ShieldCheck, HeartHandshake, Zap, Wallet, Star, Clock, Send, FunctionSquare, DraftingCompass, BrainCircuit, Target, Handshake, Lightbulb, View, Scale } from 'lucide-react';
+import { FileUp, ClipboardList, Cog, Mail, RefreshCcw, PenTool, Palette, Copyright, Box, ArrowRight, CheckCircle, ShieldCheck, HeartHandshake, Zap, Wallet, Star, Clock, Send, FunctionSquare, DraftingCompass, BrainCircuit, Target, Handshake, Lightbulb, View, Scale, Lock, Shield, TrendingUp, Gem } from 'lucide-react';
 import { services } from '@/lib/services';
 import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
@@ -599,19 +599,41 @@ export default function Home() {
       {/* Why Patents Matter Section */}
       <FadeIn>
         <section id="why-patents" className="py-20 bg-background">
-          <div className="container mx-auto max-w-4xl">
-            <div className="text-center">
-              <div className="flex justify-center mb-6">
-                  <div className="flex justify-center items-center h-16 w-16 rounded-full bg-primary/10">
-                      <Scale className="w-8 h-8 text-primary" />
-                  </div>
-              </div>
-              <h2 className="font-headline text-4xl font-bold">Why Patents Matter</h2>
-              <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
-                A patent is more than just a legal document; it's a powerful business tool that grants you exclusive rights to your invention. It prevents others from making, using, or selling your unique idea without your permission, giving you a competitive edge in the marketplace. Securing a patent not only protects your hard work and creativity but also turns your innovation into a valuable asset that can attract investors, be licensed for revenue, or sold. In essence, a patent is your official claim to your ingenuity, providing the legal foundation to control and profit from your invention.
-              </p>
+            <div className="container mx-auto max-w-5xl">
+                <div className="text-center mb-12">
+                    <h2 className="font-headline text-4xl font-bold">Why Patents Matter</h2>
+                    <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
+                        A patent is more than a legal document; it's a powerful business tool. It protects your hard work, provides a competitive edge, and turns your ingenuity into a valuable asset.
+                    </p>
+                </div>
+                <Card className="bg-card shadow-xl">
+                    <CardContent className="p-8 md:p-12">
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+                            <div className="text-center flex flex-col items-center">
+                                <div className="flex items-center justify-center h-16 w-16 rounded-full bg-primary/10 mb-4">
+                                    <Lock className="w-8 h-8 text-primary" />
+                                </div>
+                                <h3 className="font-headline text-xl font-semibold">Exclusive Rights</h3>
+                                <p className="mt-2 text-muted-foreground text-sm">A patent grants you the legal right to stop others from making, using, or selling your invention without permission.</p>
+                            </div>
+                            <div className="text-center flex flex-col items-center">
+                                <div className="flex items-center justify-center h-16 w-16 rounded-full bg-primary/10 mb-4">
+                                    <TrendingUp className="w-8 h-8 text-primary" />
+                                </div>
+                                <h3 className="font-headline text-xl font-semibold">Market Advantage</h3>
+                                <p className="mt-2 text-muted-foreground text-sm">By protecting your idea, you secure a unique position in the marketplace, preventing direct competition.</p>
+                            </div>
+                            <div className="text-center flex flex-col items-center">
+                                <div className="flex items-center justify-center h-16 w-16 rounded-full bg-primary/10 mb-4">
+                                    <Gem className="w-8 h-8 text-primary" />
+                                </div>
+                                <h3 className="font-headline text-xl font-semibold">Valuable Asset</h3>
+                                <p className="mt-2 text-muted-foreground text-sm">Patents can be bought, sold, or licensed, attracting investors and creating revenue streams for your business.</p>
+                            </div>
+                        </div>
+                    </CardContent>
+                </Card>
             </div>
-          </div>
         </section>
       </FadeIn>
 
