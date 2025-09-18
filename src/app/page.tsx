@@ -1,4 +1,5 @@
 
+
 "use client";
 
 import Image from 'next/image';
@@ -364,15 +365,17 @@ export default function Home() {
                 Explore a selection of our successful projects, showcasing our precision, quality, and expertise across various industries.
               </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          </div>
+          <div className="flex overflow-x-auto space-x-8 pb-4 scrollbar-hide">
+            <div className="flex-none pl-8" />
               {workSamples.map((sample, index) => (
-                <div key={index} className="group relative overflow-hidden rounded-lg shadow-lg">
+                <div key={index} className="group relative overflow-hidden rounded-lg shadow-lg flex-none w-80 md:w-96">
                   <Image
                     src={sample.image}
                     alt={sample.title}
                     width={600}
                     height={400}
-                    className="object-cover w-full h-full transition-transform duration-500 ease-in-out group-hover:scale-110"
+                    className="object-cover w-full h-full aspect-[4/3] transition-transform duration-500 ease-in-out group-hover:scale-110"
                     data-ai-hint={sample.hint}
                   />
                   <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
@@ -385,7 +388,7 @@ export default function Home() {
                   </div>
                 </div>
               ))}
-            </div>
+            <div className="flex-none pr-8" />
           </div>
         </section>
       </FadeIn>
@@ -682,4 +685,23 @@ export default function Home() {
       </FadeIn>
     </div>
   );
+}
+
+// Helper to hide scrollbar in Tailwind
+// You need to add this to your tailwind.config.js plugins:
+// require('tailwind-scrollbar-hide')
+// Or define it in a global CSS file
+const scrollbarHide = {
+  '.scrollbar-hide': {
+    /* IE and Edge */
+    '-ms-overflow-style': 'none',
+
+    /* Firefox */
+    'scrollbar-width': 'none',
+
+    /* Safari and Chrome */
+    '&::-webkit-scrollbar': {
+      display: 'none'
+    }
+  }
 }
