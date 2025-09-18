@@ -369,7 +369,7 @@ export default function Home() {
           <div className="flex overflow-x-auto space-x-8 pb-4 scrollbar-hide">
             <div className="flex-none pl-8" />
               {workSamples.map((sample, index) => (
-                <div key={index} className="group relative overflow-hidden rounded-lg shadow-lg flex-none w-80 md:w-96">
+                <div key={index} className="group relative overflow-hidden rounded-lg shadow-lg flex-none w-96">
                   <Image
                     src={sample.image}
                     alt={sample.title}
