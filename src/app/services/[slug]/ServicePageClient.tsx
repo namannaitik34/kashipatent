@@ -28,11 +28,11 @@ declare global {
 
 const ServiceFeatures = ({ slug }: { slug: string }) => {
     const features: { [key: string]: string[] } = {
-        'utility-drawing': ['USPTO & PCT Compliant', 'Multiple Views (Isometric, Orthogonal)', 'Detailed Callouts & Numbering', 'Flowcharts & Schematics'],
-        'design-patent-services': ['Clear Ornamental Views', 'Proper Shading & Surface Lines', 'Broken Lines for Environment', 'All Required Perspectives'],
+        'utility-patent-drawing-services': ['USPTO & PCT Compliant', 'Multiple Views (Isometric, Orthogonal)', 'Detailed Callouts & Numbering', 'Flowcharts & Schematics'],
+        'design-patent-drawing-services': ['Clear Ornamental Views', 'Proper Shading & Surface Lines', 'Broken Lines for Environment', 'All Required Perspectives'],
         'trademark-drawing-services': ['Standard Character Drawings', 'Stylized Mark Illustrations', 'High-Resolution Vector Files', 'Compliance with Trademark Rules'],
         'engineering-drawing-services': ['Detailed Schematics & Blueprints', 'GD&T (Geometric Tolerancing)', 'Bill of Materials (BOM)', 'Manufacturing-Ready Plans'],
-        '3d-modeling-services': ['Photorealistic Renderings', 'CAD Model Creation', 'Exploded Views & Assemblies', 'Files for 3D Printing'],
+        '3d-modeling-for-patents': ['Photorealistic Renderings', 'CAD Model Creation', 'Exploded Views & Assemblies', 'Files for 3D Printing'],
     };
 
     const serviceFeatures = features[slug] || [];
@@ -132,3 +132,5 @@ export default function ServicePageClient({ service }: { service: Service }) {
     </div>
   );
 }
+
+    

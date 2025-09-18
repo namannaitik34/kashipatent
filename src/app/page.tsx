@@ -295,7 +295,7 @@ export default function Home() {
                           </li>
                         </ul>
                         <Button asChild variant="outline" className="mt-6 border-primary/50 text-primary hover:bg-primary/5 hover:text-primary">
-                          <Link href="/services/utility-drawing">Learn More</Link>
+                          <Link href="/services/utility-patent-drawing-services">Learn More</Link>
                         </Button>
                       </div>
                       <Image
@@ -341,7 +341,7 @@ export default function Home() {
                           </li>
                         </ul>
                         <Button asChild className="mt-6 bg-accent hover:bg-accent/90 text-accent-foreground">
-                          <Link href="/services/design-patent-services">Learn More</Link>
+                          <Link href="/services/design-patent-drawing-services">Learn More</Link>
                         </Button>
                       </div>
                     </div>
@@ -705,3 +705,5 @@ const scrollbarHide = {
     }
   }
 }
+
+    

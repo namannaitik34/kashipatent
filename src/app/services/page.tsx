@@ -8,17 +8,17 @@ import { ArrowRight } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 
 export const metadata = {
-  title: 'Our Services | Kashi Patent',
-  description: 'Explore the wide range of patent and design services we offer to protect your intellectual property.',
+  title: 'Our Patent Drawing Services | Kashi Patent',
+  description: 'Explore the wide range of patent and design drawing services we offer to protect your intellectual property.',
 };
 
 export default function ServicesPage() {
   return (
     <div className="container py-12 md:py-20">
       <div className="text-center mb-16">
-        <h1 className="font-headline text-4xl md:text-5xl font-bold">Our Professional Services</h1>
+        <h1 className="font-headline text-4xl md:text-5xl font-bold">Our Professional Patent Drawing Services</h1>
         <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
-          We provide a comprehensive suite of services to protect and visualize your intellectual property, from initial concept to final application.
+          We provide a comprehensive suite of patent drawing services to protect and visualize your intellectual property, from initial concept to final application.
         </p>
       </div>
 
@@ -36,7 +36,7 @@ export default function ServicesPage() {
                 />
               </Link>
                <Badge className="absolute top-4 right-4 z-10 text-base" variant="default">
-                  ${service.price}
+                  Starts at ${service.price}
               </Badge>
             </div>
             <CardContent className="p-6 flex flex-col flex-grow">
@@ -60,3 +60,5 @@ export default function ServicesPage() {
     </div>
   );
 }
+
+    
