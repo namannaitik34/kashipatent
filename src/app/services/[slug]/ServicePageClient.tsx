@@ -32,7 +32,7 @@ export default function ServicePageClient({ service, prevSlug, nextSlug, prevSer
   return (
     <div className="bg-background relative">
       {/* Hero Section */}
-      <section className="relative h-auto md:h-auto w-full bg-black flex items-center justify-center py-16 md:py-24">
+      <section className="relative h-[60vh] w-full bg-black flex items-center justify-center">
         <Image
             src={service.image}
             alt={service.title}
@@ -41,30 +41,28 @@ export default function ServicePageClient({ service, prevSlug, nextSlug, prevSer
             data-ai-hint={service.imageHint}
             priority
         />
-        <div className="relative z-10 flex flex-col items-start justify-center h-full text-left text-white p-4">
-            <div className="container flex flex-col items-start text-left gap-6">
-                <div className="flex flex-col items-start text-left gap-4">
-                    <Badge variant="secondary" className="bg-white/20 text-white backdrop-blur-sm">Kashi Patent Drawings and Design Services</Badge>
-                    <h1 className="font-headline text-4xl md:text-6xl font-bold">{service.title}</h1>
-                    <p className="mt-4 max-w-3xl text-lg text-white/90">{service.longDescription}</p>
-                    <div className="mt-6 inline-block">
-                        <div className=" border border-white/30 bg-white/10 backdrop-blur-sm rounded-lg px-6 py-3 font-bold text-lg">
-                            Starting at ${service.price} per {service.pricePer}
-                        </div>
+        <div className="absolute inset-0 flex items-center justify-center">
+            <div className="container text-start text-white relative z-10 ">
+                <Badge variant="secondary" className="mb-4 bg-white/20 text-white backdrop-blur-sm">Kashi Patent Drawings and Design Services</Badge>
+                <h1 className="font-headline text-4xl md:text-6xl font-bold">{service.title}</h1>
+                <p className="mt-4 mx-auto text-lg text-white/90">{service.longDescription}</p>
+                <div className="mt-6 inline-block">
+                    <div className=" border text-accent-foreground rounded-lg px-6 py-3 font-bold text-lg">
+                        Starting at ${service.price} per {service.pricePer}
                     </div>
                 </div>
-                 <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full max-w-2xl">
-                    <Button variant="outline" size="lg" className="bg-white/10 border-white/20 text-white hover:bg-white/20 backdrop-blur-sm">
+                 <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-2xl mx-auto">
+                    <Button variant="outline" size="lg" className="bg-white/10 border-white/20 text-white hover:bg-white/20 hover:text-white backdrop-blur-sm">
                         <Eye className="mr-2 h-5 w-5" />
                         View Samples
                     </Button>
-                    <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground sm:col-span-1 lg:col-span-1">
+                    <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
                         <Link href="/order">
                             <FileText className="mr-2 h-5 w-5" />
                             Get Quote
                         </Link>
                     </Button>
-                    <Button size="lg" className="bg-white text-primary hover:bg-white/90 sm:col-span-2 lg:col-span-1">
+                    <Button size="lg" className="bg-white text-primary hover:bg-white/90">
                         <Calendar className="mr-2 h-5 w-5" />
                         Schedule Free Consultancy
                     </Button>
@@ -78,7 +76,7 @@ export default function ServicePageClient({ service, prevSlug, nextSlug, prevSer
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             {/* Left Column */}
             <div className="lg:col-span-2">
-                 <div className="prose lg:prose-xl max-w-none text-foreground/90 space-y-12">
+                 <div className="prose lg:prose-xl max-w-none text-foreground/90 space-y-102">
                     <div>
                         <h2 className="font-headline text-3xl text-primary">What Are {service.title}?</h2>
                         <p>{service.longDescription}</p>

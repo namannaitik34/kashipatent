@@ -1,3 +1,4 @@
+
 import type { Metadata } from 'next';
 import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
@@ -27,7 +28,7 @@ export default function RootLayout({
       <body className="font-sans antialiased bg-background text-foreground">
         <div className="flex flex-col min-h-screen">
           <Header />
-          <main className="flex-grow">
+          <main className="flex-grow pt-20">
              <FadeIn>{children}</FadeIn>
           </main>
           <div className="-mb-24">
