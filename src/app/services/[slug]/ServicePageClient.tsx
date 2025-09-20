@@ -65,7 +65,7 @@ export default function ServicePageClient({ service, prevSlug, nextSlug, prevSer
                     </div>
                 </div>
                  <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-2xl mx-auto">
-                    <Button variant="outline" size="lg" className="border-white/50 text-white hover:bg-white/10 hover:text-white backdrop-blur-sm">
+                    <Button variant="outline" size="lg" className="bg-white/10 border-white/20 text-white hover:bg-white/20 hover:text-white backdrop-blur-sm">
                         <Eye className="mr-2 h-5 w-5" />
                         View Samples
                     </Button>
@@ -75,7 +75,7 @@ export default function ServicePageClient({ service, prevSlug, nextSlug, prevSer
                             Get Quote
                         </Link>
                     </Button>
-                    <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
+                    <Button size="lg" className="bg-white text-primary hover:bg-white/90">
                         <Calendar className="mr-2 h-5 w-5" />
                         Schedule Free Consultancy
                     </Button>
