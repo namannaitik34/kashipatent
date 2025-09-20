@@ -7,7 +7,7 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { Badge } from '@/components/ui/badge';
-import { Eye, FileText, Calendar } from 'lucide-react';
+import { Eye, FileText, Calendar, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 // Extend JSX to include model-viewer
@@ -28,9 +28,22 @@ declare global {
   }
 }
 
-export default function ServicePageClient({ service }: { service: Service }) {
+export default function ServicePageClient({ service, prevSlug, nextSlug }: { service: Service, prevSlug: string, nextSlug: string }) {
   return (
-    <div className="bg-background">
+    <div className="bg-background relative">
+        <div className="hidden lg:block">
+            <Button asChild variant="outline" size="icon" className="fixed left-4 top-1/2 -translate-y-1/2 z-40 rounded-full h-12 w-12 bg-background/50 hover:bg-background">
+                <Link href={`/services/${prevSlug}`} aria-label="Previous Service">
+                    <ChevronLeft className="h-6 w-6" />
+                </Link>
+            </Button>
+            <Button asChild variant="outline" size="icon" className="fixed right-4 top-1/2 -translate-y-1/2 z-40 rounded-full h-12 w-12 bg-background/50 hover:bg-background">
+                <Link href={`/services/${nextSlug}`} aria-label="Next Service">
+                    <ChevronRight className="h-6 w-6" />
+                </Link>
+            </Button>
+        </div>
+
       {/* Hero Section */}
       <section className="relative h-[60vh] w-full bg-black">
         <Image
@@ -219,5 +232,3 @@ export default function ServicePageClient({ service }: { service: Service }) {
     </div>
   );
 }
-
-    

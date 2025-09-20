@@ -1,5 +1,5 @@
 
-import { getServiceBySlug, type Service } from '@/lib/services';
+import { getServiceBySlug, services, type Service } from '@/lib/services';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import ServicePageClient from './ServicePageClient';
@@ -30,5 +30,10 @@ export default function ServicePage({ params }: ServicePageProps) {
     notFound();
   }
 
-  return <ServicePageClient service={service} />;
+  const currentIndex = services.findIndex((s) => s.slug === params.slug);
+  const prevService = services[currentIndex - 1] ?? services[services.length - 1];
+  const nextService = services[currentIndex + 1] ?? services[0];
+
+
+  return <ServicePageClient service={service} prevSlug={prevService.slug} nextSlug={nextService.slug} />;
 }
