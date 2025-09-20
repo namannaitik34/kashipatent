@@ -159,7 +159,7 @@ export default function OrderPage() {
                                     name="projectTitle"
                                     render={({ field }) => (
                                         <FormItem>
-                                        <FormLabel>Project Title / Invention Name</FormLabel>
+                                        <FormLabel>Innovation name (Reference/matter no.)</FormLabel>
                                         <FormControl>
                                             <Input placeholder="e.g., Automated Personal Drone" {...field} />
                                         </FormControl>
@@ -172,7 +172,7 @@ export default function OrderPage() {
                                     name="description"
                                     render={({ field }) => (
                                         <FormItem>
-                                        <FormLabel>Project Description</FormLabel>
+                                        <FormLabel>Instructions for drawing</FormLabel>
                                         <FormControl>
                                             <Textarea
                                             placeholder="Describe your invention, its function, and key components. The more detail, the better!"
