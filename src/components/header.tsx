@@ -112,6 +112,7 @@ export default function Header() {
             <SheetContent side="left" className="flex flex-col p-0">
               <SheetHeader className="p-4 border-b">
                 <Logo />
+                <SheetTitle className="sr-only">Mobile Menu</SheetTitle>
               </SheetHeader>
               <ScrollArea className="flex-grow">
                 <nav className="flex flex-col gap-4 p-4 text-lg font-medium">
