@@ -24,6 +24,7 @@ import { ChevronDown, Menu } from 'lucide-react';
 import { services } from '@/lib/services';
 import { cn } from '@/lib/utils';
 import { ScrollArea } from './ui/scroll-area';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from './ui/accordion';
 
 const NavLink = ({ href, children }: { href: string; children: React.ReactNode }) => {
   const pathname = usePathname();
@@ -53,7 +54,6 @@ export default function Header() {
   const navLinks = [
     { href: '/', label: 'Home' },
     { href: '/#about', label: 'About Us' },
-    { href: '/services', label: 'Services' },
     { href: '/#how-it-works', label: 'How It Works' },
     { href: '/#why-patents', label: 'Why Patents' },
     { href: '/#faq', label: 'FAQs' },
@@ -115,13 +115,13 @@ export default function Header() {
                 <Logo />
               </SheetHeader>
               <ScrollArea className="flex-grow">
-                <nav className="flex flex-col gap-4 p-6 text-lg font-medium">
+                <nav className="flex flex-col text-lg font-medium p-4">
                   {navLinks.map((link) => (
                       <Link
                         key={link.href}
                         href={link.href}
                         className={cn(
-                          'text-muted-foreground hover:text-foreground',
+                          'text-muted-foreground hover:text-foreground py-2',
                           pathname === link.href && 'text-foreground font-semibold'
                         )}
                         onClick={closeMobileMenu}
@@ -129,10 +129,47 @@ export default function Header() {
                         {link.label}
                       </Link>
                   ))}
+                  <Accordion type="single" collapsible className="w-full">
+                    <AccordionItem value="services" className="border-b-0">
+                      <AccordionTrigger className={cn(
+                          'py-2 text-lg font-medium text-muted-foreground hover:text-foreground hover:no-underline',
+                          pathname.startsWith('/services') && 'text-foreground font-semibold'
+                        )}>
+                        Services
+                      </AccordionTrigger>
+                      <AccordionContent className="pl-4">
+                        <div className="flex flex-col gap-2">
+                           {services.map((service) => (
+                            <Link
+                              key={service.slug}
+                              href={`/services/${service.slug}`}
+                              className={cn(
+                                'text-base text-muted-foreground hover:text-foreground',
+                                pathname === `/services/${service.slug}` && 'text-foreground font-semibold'
+                              )}
+                              onClick={closeMobileMenu}
+                            >
+                              {service.title}
+                            </Link>
+                          ))}
+                          <Link
+                              href="/services"
+                              className={cn(
+                                'text-base text-muted-foreground hover:text-foreground pt-2 border-t mt-2',
+                                pathname === '/services' && 'text-foreground font-semibold'
+                              )}
+                              onClick={closeMobileMenu}
+                            >
+                              All Services
+                            </Link>
+                        </div>
+                      </AccordionContent>
+                    </AccordionItem>
+                  </Accordion>
                   <Link
                     href="/contact"
                     className={cn(
-                      'text-muted-foreground hover:text-foreground',
+                      'text-muted-foreground hover:text-foreground py-2',
                       pathname === '/contact' && 'text-foreground font-semibold'
                     )}
                     onClick={closeMobileMenu}
