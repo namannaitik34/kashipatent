@@ -32,7 +32,7 @@ export default function ServicePageClient({ service, prevSlug, nextSlug, prevSer
   return (
     <div className="bg-background relative">
       {/* Hero Section */}
-      <section className="relative h-[60vh] w-full bg-black flex items-center justify-center">
+      <section className="relative h-[70vh] md:h-[60vh] w-full bg-black flex items-center justify-center">
         <Image
             src={service.image}
             alt={service.title}
@@ -41,28 +41,28 @@ export default function ServicePageClient({ service, prevSlug, nextSlug, prevSer
             data-ai-hint={service.imageHint}
             priority
         />
-        <div className="absolute inset-0 flex items-center justify-center">
-            <div className="container text-center text-white relative z-10 max-w-4xl">
+        <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white p-4">
+            <div className="container">
                 <Badge variant="secondary" className="mb-4 bg-white/20 text-white backdrop-blur-sm">Kashi Patent Drawings and Design Services</Badge>
                 <h1 className="font-headline text-4xl md:text-6xl font-bold">{service.title}</h1>
                 <p className="mt-4 max-w-3xl mx-auto text-lg text-white/90">{service.longDescription}</p>
                 <div className="mt-6 inline-block">
-                    <div className="bg-accent text-accent-foreground rounded-lg px-6 py-3 font-bold text-lg">
+                    <div className=" border border-white/30 bg-white/10 backdrop-blur-sm rounded-lg px-6 py-3 font-bold text-lg">
                         Starting at ${service.price} per {service.pricePer}
                     </div>
                 </div>
-                 <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-2xl mx-auto">
-                    <Button variant="outline" size="lg" className="bg-white/10 border-white/20 text-white hover:bg-white/20 hover:text-white backdrop-blur-sm">
+                 <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-2xl w-full mx-auto">
+                    <Button variant="outline" size="lg" className="bg-white/10 border-white/20 text-white hover:bg-white/20 backdrop-blur-sm">
                         <Eye className="mr-2 h-5 w-5" />
                         View Samples
                     </Button>
-                    <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
+                    <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground sm:col-span-1 lg:col-span-1">
                         <Link href="/order">
                             <FileText className="mr-2 h-5 w-5" />
                             Get Quote
                         </Link>
                     </Button>
-                    <Button size="lg" className="bg-white text-primary hover:bg-white/90">
+                    <Button size="lg" className="bg-white text-primary hover:bg-white/90 sm:col-span-2 lg:col-span-1">
                         <Calendar className="mr-2 h-5 w-5" />
                         Schedule Free Consultancy
                     </Button>
