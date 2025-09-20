@@ -233,14 +233,14 @@ export default function ServicePageClient({ service, prevSlug, nextSlug, prevSer
        {/* Next/Prev Service Navigation */}
       <section className="border-t">
         <div className="container py-8">
-          <div className="flex justify-between items-center">
-            <Button asChild variant="outline">
+          <div className="flex flex-col md:flex-row md:justify-between items-center gap-4">
+            <Button asChild variant="outline" className="w-full md:w-auto">
               <Link href={`/services/${prevSlug}`}>
                 <ArrowLeft className="mr-2 h-4 w-4" />
                 {prevService.title}
               </Link>
             </Button>
-            <Button asChild variant="outline">
+            <Button asChild variant="outline" className="w-full md:w-auto">
               <Link href={`/services/${nextSlug}`}>
                 {nextService.title}
                 <ArrowRight className="ml-2 h-4 w-4" />
