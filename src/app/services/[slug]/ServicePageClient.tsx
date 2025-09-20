@@ -7,7 +7,7 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { Badge } from '@/components/ui/badge';
-import { Eye, FileText, Calendar, ChevronLeft, ChevronRight, ArrowLeft, ArrowRight } from 'lucide-react';
+import { Eye, FileText, Calendar, ArrowLeft, ArrowRight, ShoppingCart } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 // Extend JSX to include model-viewer
@@ -31,19 +31,6 @@ declare global {
 export default function ServicePageClient({ service, prevSlug, nextSlug, prevService, nextService }: { service: Service, prevSlug: string, nextSlug: string, prevService: Service, nextService: Service }) {
   return (
     <div className="bg-background relative">
-        <div className="hidden lg:block">
-            <Button asChild variant="outline" size="icon" className="fixed left-4 top-1/2 -translate-y-1/2 z-40 rounded-full h-12 w-12 bg-background/50 hover:bg-background">
-                <Link href={`/services/${prevSlug}`} aria-label="Previous Service">
-                    <ChevronLeft className="h-6 w-6" />
-                </Link>
-            </Button>
-            <Button asChild variant="outline" size="icon" className="fixed right-4 top-1/2 -translate-y-1/2 z-40 rounded-full h-12 w-12 bg-background/50 hover:bg-background">
-                <Link href={`/services/${nextSlug}`} aria-label="Next Service">
-                    <ChevronRight className="h-6 w-6" />
-                </Link>
-            </Button>
-        </div>
-
       {/* Hero Section */}
       <section className="relative h-[60vh] w-full bg-black flex items-center justify-center">
         <Image
@@ -121,27 +108,35 @@ export default function ServicePageClient({ service, prevSlug, nextSlug, prevSer
             </div>
 
              {/* Right Column */}
-            <div className="lg:col-span-1">
-                 <Card className="sticky top-[100px] bg-muted/50 border-primary/20 shadow-lg">
-                    <CardHeader>
-                        <CardTitle className="font-headline text-2xl text-primary">Why Choose Kashi?</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                        <ul className="space-y-4">
-                            {whyChooseUsReasons.map((reason, index) => {
-                                const Icon = serviceIcons[reason.icon as keyof typeof serviceIcons];
-                                return (
-                                 <li key={index} className="flex items-start gap-3">
-                                    <div className="h-5 w-5 text-green-500 shrink-0 mt-1">
-                                        <Icon className="w-5 h-5" />
-                                    </div>
-                                    <span>{reason.text}</span>
-                                </li>
-                                )
-                            })}
-                        </ul>
-                    </CardContent>
-                 </Card>
+            <div className="lg:col-span-1 space-y-8">
+                 <div className="sticky top-28">
+                    <Card className="bg-muted/50 border-primary/20 shadow-lg">
+                        <CardHeader>
+                            <CardTitle className="font-headline text-2xl text-primary">Why Choose Kashi?</CardTitle>
+                        </CardHeader>
+                        <CardContent>
+                            <ul className="space-y-4">
+                                {whyChooseUsReasons.map((reason, index) => {
+                                    const Icon = serviceIcons[reason.icon as keyof typeof serviceIcons];
+                                    return (
+                                    <li key={index} className="flex items-start gap-3">
+                                        <div className="h-5 w-5 text-green-500 shrink-0 mt-1">
+                                            <Icon className="w-5 h-5" />
+                                        </div>
+                                        <span>{reason.text}</span>
+                                    </li>
+                                    )
+                                })}
+                            </ul>
+                        </CardContent>
+                    </Card>
+                    <Button asChild size="lg" className="w-full mt-6 bg-accent hover:bg-accent/90 text-accent-foreground text-lg py-7">
+                        <Link href={`/order?service=${service.slug}`}>
+                            <ShoppingCart className="mr-2 h-5 w-5" />
+                            Order This Service
+                        </Link>
+                    </Button>
+                </div>
             </div>
         </div>
       </div>
