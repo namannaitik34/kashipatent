@@ -45,7 +45,7 @@ export default function ServicePageClient({ service, prevSlug, nextSlug, prevSer
         </div>
 
       {/* Hero Section */}
-      <section className="relative h-[60vh] w-full bg-black">
+      <section className="relative h-[60vh] w-full bg-black flex items-center justify-center">
         <Image
             src={service.image}
             alt={service.title}
@@ -64,38 +64,32 @@ export default function ServicePageClient({ service, prevSlug, nextSlug, prevSer
                         Starting at ${service.price} per {service.pricePer}
                     </div>
                 </div>
+                 <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-2xl mx-auto">
+                    <Button variant="outline" size="lg" className="border-white/50 text-white hover:bg-white/10 hover:text-white backdrop-blur-sm">
+                        <Eye className="mr-2 h-5 w-5" />
+                        View Samples
+                    </Button>
+                    <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
+                        <Link href="/order">
+                            <FileText className="mr-2 h-5 w-5" />
+                            Get Quote
+                        </Link>
+                    </Button>
+                    <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
+                        <Calendar className="mr-2 h-5 w-5" />
+                        Schedule Free Consultancy
+                    </Button>
+                </div>
             </div>
         </div>
       </section>
-      
-       {/* Action Bar Section */}
-       <section className="border-b border-t bg-muted/30 sticky top-[80px] z-30">
-          <div className="container py-3">
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
-                  <Button variant="outline" size="lg" className="border-primary/50 text-primary hover:bg-primary/5 hover:text-primary">
-                      <Eye className="mr-2 h-5 w-5" />
-                      View Samples
-                  </Button>
-                  <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
-                      <Link href="/order">
-                          <FileText className="mr-2 h-5 w-5" />
-                          Get Quote
-                      </Link>
-                  </Button>
-                  <Button size="lg" className="bg-primary hover:bg-primary/90">
-                      <Calendar className="mr-2 h-5 w-5" />
-                      Schedule Free Consultancy
-                  </Button>
-              </div>
-          </div>
-      </section>
 
       {/* Content Section */}
-      <div className="container py-12 md:py-20">
+      <div className="container py-16 md:py-24">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             {/* Left Column */}
             <div className="lg:col-span-2">
-                 <div className="prose lg:prose-lg max-w-none text-foreground/90 space-y-8">
+                 <div className="prose lg:prose-xl max-w-none text-foreground/90 space-y-8">
                     <div>
                         <h2 className="font-headline text-3xl text-primary">What Are {service.title}?</h2>
                         <p>{service.longDescription}</p>
@@ -128,7 +122,7 @@ export default function ServicePageClient({ service, prevSlug, nextSlug, prevSer
 
              {/* Right Column */}
             <div className="lg:col-span-1">
-                 <Card className="sticky top-[160px] bg-muted/50 border-primary/20 shadow-lg">
+                 <Card className="sticky top-[100px] bg-muted/50 border-primary/20 shadow-lg">
                     <CardHeader>
                         <CardTitle className="font-headline text-2xl text-primary">Why Choose Kashi?</CardTitle>
                     </CardHeader>
@@ -153,7 +147,7 @@ export default function ServicePageClient({ service, prevSlug, nextSlug, prevSer
       </div>
       
       {/* Key Features Section */}
-      <section className="py-12 md:py-20 bg-muted/40">
+      <section className="py-16 md:py-24 bg-muted/40">
         <div className="container">
           <div className="text-center mb-12">
             <h2 className="font-headline text-3xl md:text-4xl font-bold">Key Features</h2>
@@ -211,7 +205,7 @@ export default function ServicePageClient({ service, prevSlug, nextSlug, prevSer
       )}
 
       {/* FAQ Section */}
-      <section className="py-12 md:py-20 bg-background">
+      <section className="py-16 md:py-24 bg-background">
         <div className="container max-w-4xl">
             <div className="text-center mb-12">
               <h2 className="font-headline text-3xl md:text-4xl font-bold">Frequently Asked Questions</h2>
@@ -252,3 +246,5 @@ export default function ServicePageClient({ service, prevSlug, nextSlug, prevSer
     </div>
   );
 }
+
+    
