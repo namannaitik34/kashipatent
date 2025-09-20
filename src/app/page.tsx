@@ -59,7 +59,7 @@ const workSamples = [
     hint: 'company logo',
     description: 'Developed a clean and distinctive logo, delivered in formats compliant with USPTO requirements for trademark registration.',
   },
-    {
+  {
     title: 'Robotic Arm Mechanism',
     category: 'Utility Patent',
     image: 'https://picsum.photos/600/400?random=5',
@@ -202,26 +202,26 @@ const showcaseImages = Array.from({ length: 80 }, (_, i) => ({
 }));
 
 const ShowcaseImage = ({ src, hint, yOffset = '-10%' }: { src: string, hint: string, yOffset?: string }) => {
-    const ref = useRef(null);
-    const { scrollYProgress } = useScroll({
-        target: ref,
-        offset: ['start end', 'end start'],
-    });
-    const y = useTransform(scrollYProgress, [0, 1], [yOffset, '10%']);
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ['start end', 'end start'],
+  });
+  const y = useTransform(scrollYProgress, [0, 1], [yOffset, '10%']);
 
-    return (
-        <div ref={ref} className="relative overflow-hidden aspect-[2/3]">
-            <motion.div style={{ y }} className="absolute inset-0">
-                <Image
-                    src={src}
-                    alt={hint}
-                    fill
-                    className="object-cover"
-                    data-ai-hint={hint}
-                />
-            </motion.div>
-        </div>
-    );
+  return (
+    <div ref={ref} className="relative overflow-hidden aspect-[2/3]">
+      <motion.div style={{ y }} className="absolute inset-0">
+        <Image
+          src={src}
+          alt={hint}
+          fill
+          className="object-cover"
+          data-ai-hint={hint}
+        />
+      </motion.div>
+    </div>
+  );
 };
 
 
@@ -237,7 +237,7 @@ export default function Home() {
         <HeroBackground />
         <FadeIn className="relative z-10 text-center p-4">
           <h1 className="font-headline text-5xl md:text-7xl font-bold text-primary">
-          Transforming Creative Concepts into Legally Protected Patents
+            Your Creativity Deserves Complete Legal Protection Today
           </h1>
 
           <p className="mt-4 text-lg md:text-xl max-w-3xl mx-auto text-muted-foreground">
@@ -255,78 +255,77 @@ export default function Home() {
         <section id="design-types" className="py-20 md:py-28 bg-muted/40">
           <div className="container mx-auto">
             <div className="text-center mb-16">
-              <h2 className="font-headline text-4xl font-bold">Protecting Your Intellectual Property</h2>
+              <h2 className="font-headline text-4xl font-bold">Protect Every Aspect of Your Invention</h2>
               <p className="mt-4 max-w-3xl mx-auto text-muted-foreground text-lg">
-                Understanding the difference between Utility and Design patents is key. We specialize in both to provide the exact protection your invention needs.
-              </p>
+                From how it works to how it looks, the right patent makes all the difference. We specialize in both Utility and Design patents to ensure complete protection.              </p>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
-                {/* Utility Patent Card */}
-                <Card className="flex flex-col text-center transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
-                    <CardHeader className="items-center">
-                        <div className="flex justify-center items-center h-20 w-20 rounded-full bg-primary/10 mb-4">
-                            <FunctionSquare className="w-10 h-10 text-primary" />
-                        </div>
-                        <CardTitle className="font-headline text-2xl">Utility Patents</CardTitle>
-                        <CardDescription>Protects how your invention <span className="font-bold">works</span> or is <span className='font-bold'>used</span>.</CardDescription>
-                    </CardHeader>
-                    <CardContent className="flex-grow space-y-6 px-8">
-                        <div className="text-left space-y-3">
-                           <p className="flex gap-3 items-start">
-                                <CheckCircle className="w-5 h-5 text-green-500 shrink-0 mt-1" />
-                                <span>Covers the functional aspects, mechanisms, and structure.</span>
-                           </p>
-                           <p className="flex gap-3 items-start">
-                                <CheckCircle className="w-5 h-5 text-green-500 shrink-0 mt-1" />
-                                <span>Provides broader, more robust protection for the core inventive concept.</span>
-                           </p>
-                           <p className="flex gap-3 items-start">
-                                <CheckCircle className="w-5 h-5 text-green-500 shrink-0 mt-1" />
-                                <span>Requires detailed diagrams, flowcharts, and schematics.</span>
-                           </p>
-                        </div>
-                        <p className="text-2xl font-bold text-primary">Starting from $20</p>
-                    </CardContent>
-                    <div className="p-6 mt-auto">
-                        <Button asChild variant="outline" className="w-full">
-                            <Link href="/services/utility-patent-drawing-services">Learn More</Link>
-                        </Button>
-                    </div>
-                </Card>
+              {/* Utility Patent Card */}
+              <Card className="flex flex-col text-center transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+                <CardHeader className="items-center">
+                  <div className="flex justify-center items-center h-20 w-20 rounded-full bg-primary/10 mb-4">
+                    <FunctionSquare className="w-10 h-10 text-primary" />
+                  </div>
+                  <CardTitle className="font-headline text-2xl">Utility Patents</CardTitle>
+                  <CardDescription>Protects how your invention <span className="font-bold">works</span> or is <span className='font-bold'>used</span>.</CardDescription>
+                </CardHeader>
+                <CardContent className="flex-grow space-y-6 px-8">
+                  <div className="text-left space-y-3">
+                    <p className="flex gap-3 items-start">
+                      <CheckCircle className="w-5 h-5 text-green-500 shrink-0 mt-1" />
+                      <span>Covers the functional aspects, mechanisms, and structure.</span>
+                    </p>
+                    <p className="flex gap-3 items-start">
+                      <CheckCircle className="w-5 h-5 text-green-500 shrink-0 mt-1" />
+                      <span>Provides broader, more robust protection for the core inventive concept.</span>
+                    </p>
+                    <p className="flex gap-3 items-start">
+                      <CheckCircle className="w-5 h-5 text-green-500 shrink-0 mt-1" />
+                      <span>Requires detailed diagrams, flowcharts, and schematics.</span>
+                    </p>
+                  </div>
+                  <p className="text-2xl font-bold text-primary">Starting from $20</p>
+                </CardContent>
+                <div className="p-6 mt-auto">
+                  <Button asChild variant="outline" className="w-full">
+                    <Link href="/services/utility-patent-drawing-services">Learn More</Link>
+                  </Button>
+                </div>
+              </Card>
 
-                {/* Design Patent Card */}
-                <Card className="flex flex-col text-center transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
-                    <CardHeader className="items-center">
-                        <div className="flex justify-center items-center h-20 w-20 rounded-full bg-accent/10 mb-4">
-                            <DraftingCompass className="w-10 h-10 text-accent" />
-                        </div>
-                        <CardTitle className="font-headline text-2xl">Design Patents</CardTitle>
-                        <CardDescription>Protects the unique, ornamental <span className="font-bold">look</span> of your product.</CardDescription>
-                    </CardHeader>
-                    <CardContent className="flex-grow space-y-6 px-8">
-                        <div className="text-left space-y-3">
-                            <p className="flex gap-3 items-start">
-                                <CheckCircle className="w-5 h-5 text-green-500 shrink-0 mt-1" />
-                                <span>Covers the aesthetic shape, configuration, and surface ornamentation.</span>
-                            </p>
-                            <p className="flex gap-3 items-start">
-                                <CheckCircle className="w-5 h-5 text-green-500 shrink-0 mt-1" />
-                                <span>Protects the visual characteristics of a product.</span>
-                            </p>
-                            <p className="flex gap-3 items-start">
-                                <CheckCircle className="w-5 h-5 text-green-500 shrink-0 mt-1" />
-                                <span>Requires specific views (front, back, top, bottom, sides, etc.).</span>
-                            </p>
-                        </div>
-                         <p className="text-2xl font-bold text-accent">Starting from $25</p>
-                    </CardContent>
-                    <div className="p-6 mt-auto">
-                        <Button asChild className="w-full bg-accent hover:bg-accent/90 text-accent-foreground">
-                            <Link href="/services/design-patent-drawing-services">Learn More</Link>
-                        </Button>
-                    </div>
-                </Card>
+              {/* Design Patent Card */}
+              <Card className="flex flex-col text-center transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+                <CardHeader className="items-center">
+                  <div className="flex justify-center items-center h-20 w-20 rounded-full bg-accent/10 mb-4">
+                    <DraftingCompass className="w-10 h-10 text-accent" />
+                  </div>
+                  <CardTitle className="font-headline text-2xl">Design Patents</CardTitle>
+                  <CardDescription>Protects the unique, ornamental <span className="font-bold">look</span> of your product.</CardDescription>
+                </CardHeader>
+                <CardContent className="flex-grow space-y-6 px-8">
+                  <div className="text-left space-y-3">
+                    <p className="flex gap-3 items-start">
+                      <CheckCircle className="w-5 h-5 text-green-500 shrink-0 mt-1" />
+                      <span>Covers the aesthetic shape, configuration, and surface ornamentation.</span>
+                    </p>
+                    <p className="flex gap-3 items-start">
+                      <CheckCircle className="w-5 h-5 text-green-500 shrink-0 mt-1" />
+                      <span>Protects the visual characteristics of a product.</span>
+                    </p>
+                    <p className="flex gap-3 items-start">
+                      <CheckCircle className="w-5 h-5 text-green-500 shrink-0 mt-1" />
+                      <span>Requires specific views (front, back, top, bottom, sides, etc.).</span>
+                    </p>
+                  </div>
+                  <p className="text-2xl font-bold text-accent">Starting from $25</p>
+                </CardContent>
+                <div className="p-6 mt-auto">
+                  <Button asChild className="w-full bg-accent hover:bg-accent/90 text-accent-foreground">
+                    <Link href="/services/design-patent-drawing-services">Learn More</Link>
+                  </Button>
+                </div>
+              </Card>
             </div>
           </div>
         </section>
@@ -346,26 +345,26 @@ export default function Home() {
           </div>
           <div className="flex overflow-x-auto space-x-8 pb-4 scrollbar-hide">
             <div className="flex-none pl-8" />
-              {workSamples.map((sample, index) => (
-                <div key={index} className="group relative overflow-hidden rounded-lg shadow-lg flex-none w-96">
-                  <Image
-                    src={sample.image}
-                    alt={sample.title}
-                    width={600}
-                    height={400}
-                    className="object-cover w-full h-full aspect-[4/3] transition-transform duration-500 ease-in-out group-hover:scale-110"
-                    data-ai-hint={sample.hint}
-                  />
-                  <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-                    <h3 className="text-white font-headline text-xl font-bold transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                      {sample.title}
-                    </h3>
-                    <p className="text-white/80 text-sm transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">
-                      {sample.category}
-                    </p>
-                  </div>
+            {workSamples.map((sample, index) => (
+              <div key={index} className="group relative overflow-hidden rounded-lg shadow-lg flex-none w-96">
+                <Image
+                  src={sample.image}
+                  alt={sample.title}
+                  width={600}
+                  height={400}
+                  className="object-cover w-full h-full aspect-[4/3] transition-transform duration-500 ease-in-out group-hover:scale-110"
+                  data-ai-hint={sample.hint}
+                />
+                <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                  <h3 className="text-white font-headline text-xl font-bold transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                    {sample.title}
+                  </h3>
+                  <p className="text-white/80 text-sm transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">
+                    {sample.category}
+                  </p>
                 </div>
-              ))}
+              </div>
+            ))}
             <div className="flex-none pr-8" />
           </div>
         </section>
@@ -394,7 +393,7 @@ export default function Home() {
                         className="object-cover transition-transform duration-300 group-hover/service:scale-105"
                         data-ai-hint={service.imageHint}
                       />
-                       <Badge className="absolute top-4 right-4 z-10" variant="default">
+                      <Badge className="absolute top-4 right-4 z-10" variant="default">
                         Starts at ${service.price}
                       </Badge>
                     </Link>
@@ -411,7 +410,7 @@ export default function Home() {
                 </Card>
               ))}
             </div>
-             <div className="flex items-center justify-center mt-12 space-x-4">
+            <div className="flex items-center justify-center mt-12 space-x-4">
               <Button asChild size="lg" variant="outline">
                 <Link href="/services">View All Services</Link>
               </Button>
@@ -423,34 +422,34 @@ export default function Home() {
         </section>
       </FadeIn>
 
-       {/* Design Showcase Section */}
+      {/* Design Showcase Section */}
       <section id="showcase" className="bg-muted/40 overflow-hidden">
         <div className="relative">
-            <div className="absolute inset-0 z-0">
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-                    {showcaseImages.map((img, index) => (
-                        <ShowcaseImage key={index} src={img.src} hint={img.hint} yOffset={`${(index % 4) * -5 - 10}%`} />
-                    ))}
-                </div>
+          <div className="absolute inset-0 z-0">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+              {showcaseImages.map((img, index) => (
+                <ShowcaseImage key={index} src={img.src} hint={img.hint} yOffset={`${(index % 4) * -5 - 10}%`} />
+              ))}
             </div>
-            <div className="relative z-10 flex items-center justify-center h-full min-h-[50vh] py-20 md:py-32">
-                <div className="container">
-                    <div className="bg-background/80 backdrop-blur-sm rounded-lg shadow-xl p-8 md:p-12 max-w-3xl mx-auto text-center">
-                        <h2 className="font-headline text-4xl font-bold text-foreground">A Showcase of Precision</h2>
-                        <p className="mt-4 text-muted-foreground">
-                            Witness the clarity and detail we bring to every project. Our drawings don't just meet standards—they set them.
-                        </p>
-                        <div className="mt-8">
-                            <Button asChild size="lg" variant="outline" className="border-primary/30 hover:bg-primary/5">
-                                <Link href="/#work">
-                                    <View className="mr-2" />
-                                    Explore Our Full Portfolio
-                                </Link>
-                            </Button>
-                        </div>
-                    </div>
+          </div>
+          <div className="relative z-10 flex items-center justify-center h-full min-h-[50vh] py-20 md:py-32">
+            <div className="container">
+              <div className="bg-background/80 backdrop-blur-sm rounded-lg shadow-xl p-8 md:p-12 max-w-3xl mx-auto text-center">
+                <h2 className="font-headline text-4xl font-bold text-foreground">A Showcase of Precision</h2>
+                <p className="mt-4 text-muted-foreground">
+                  Witness the clarity and detail we bring to every project. Our drawings don't just meet standards—they set them.
+                </p>
+                <div className="mt-8">
+                  <Button asChild size="lg" variant="outline" className="border-primary/30 hover:bg-primary/5">
+                    <Link href="/#work">
+                      <View className="mr-2" />
+                      Explore Our Full Portfolio
+                    </Link>
+                  </Button>
                 </div>
+              </div>
             </div>
+          </div>
         </div>
       </section>
 
@@ -505,7 +504,7 @@ export default function Home() {
           </div>
         </section>
       </FadeIn>
-      
+
       {/* Why Choose Us Section */}
       <FadeIn>
         <section id="why-choose-us" className="py-20 relative bg-background">
@@ -539,7 +538,7 @@ export default function Home() {
             </div>
             <div className="mt-12 text-center">
               <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
-                 <Link href="/order">Secure Your Design Now</Link>
+                <Link href="/order">Secure Your Design Now</Link>
               </Button>
             </div>
           </div>
@@ -562,7 +561,7 @@ export default function Home() {
                 <div className="space-y-12">
                   {howItWorksSteps.map((step, index) => (
                     <div key={index} className="flex items-start gap-6 relative">
-                       <div className="flex-shrink-0 w-8 h-8 bg-background border-2 border-primary text-primary rounded-full flex items-center justify-center font-bold text-lg ring-8 ring-muted/40 z-10">
+                      <div className="flex-shrink-0 w-8 h-8 bg-background border-2 border-primary text-primary rounded-full flex items-center justify-center font-bold text-lg ring-8 ring-muted/40 z-10">
                         {index + 1}
                       </div>
                       <div className="flex-grow pt-1">
@@ -581,14 +580,14 @@ export default function Home() {
                   <p className="text-muted-foreground mt-2 max-w-sm mx-auto">
                     Let's turn your idea into professional, compliant patent drawings.
                   </p>
-                   <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-                      <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
-                        <Link href="/order">Start Your Project</Link>
-                      </Button>
-                      <Button asChild size="lg" variant="outline">
-                        <Link href="/services">View Our Services</Link>
-                      </Button>
-                   </div>
+                  <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+                    <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
+                      <Link href="/order">Start Your Project</Link>
+                    </Button>
+                    <Button asChild size="lg" variant="outline">
+                      <Link href="/services">View Our Services</Link>
+                    </Button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -599,41 +598,41 @@ export default function Home() {
       {/* Why Patents Matter Section */}
       <FadeIn>
         <section id="why-patents" className="py-20 bg-background">
-            <div className="container mx-auto max-w-5xl">
-                <div className="text-center mb-12">
-                    <h2 className="font-headline text-4xl font-bold">Why Patents Matter</h2>
-                    <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
-                        A patent is more than a legal document; it's a powerful business tool. It protects your hard work, provides a competitive edge, and turns your ingenuity into a valuable asset.
-                    </p>
-                </div>
-                <Card className="bg-card shadow-xl">
-                    <CardContent className="p-8 md:p-12">
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
-                            <div className="text-center flex flex-col items-center">
-                                <div className="flex items-center justify-center h-16 w-16 rounded-full bg-primary/10 mb-4">
-                                    <Lock className="w-8 h-8 text-primary" />
-                                </div>
-                                <h3 className="font-headline text-xl font-semibold">Exclusive Rights</h3>
-                                <p className="mt-2 text-muted-foreground text-sm">A patent grants you the legal right to stop others from making, using, or selling your invention without permission.</p>
-                            </div>
-                            <div className="text-center flex flex-col items-center">
-                                <div className="flex items-center justify-center h-16 w-16 rounded-full bg-primary/10 mb-4">
-                                    <TrendingUp className="w-8 h-8 text-primary" />
-                                </div>
-                                <h3 className="font-headline text-xl font-semibold">Market Advantage</h3>
-                                <p className="mt-2 text-muted-foreground text-sm">By protecting your idea, you secure a unique position in the marketplace, preventing direct competition.</p>
-                            </div>
-                            <div className="text-center flex flex-col items-center">
-                                <div className="flex items-center justify-center h-16 w-16 rounded-full bg-primary/10 mb-4">
-                                    <Gem className="w-8 h-8 text-primary" />
-                                </div>
-                                <h3 className="font-headline text-xl font-semibold">Valuable Asset</h3>
-                                <p className="mt-2 text-muted-foreground text-sm">Patents can be bought, sold, or licensed, attracting investors and creating revenue streams for your business.</p>
-                            </div>
-                        </div>
-                    </CardContent>
-                </Card>
+          <div className="container mx-auto max-w-5xl">
+            <div className="text-center mb-12">
+              <h2 className="font-headline text-4xl font-bold">Why Patents Matter</h2>
+              <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
+                A patent is more than a legal document; it's a powerful business tool. It protects your hard work, provides a competitive edge, and turns your ingenuity into a valuable asset.
+              </p>
             </div>
+            <Card className="bg-card shadow-xl">
+              <CardContent className="p-8 md:p-12">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+                  <div className="text-center flex flex-col items-center">
+                    <div className="flex items-center justify-center h-16 w-16 rounded-full bg-primary/10 mb-4">
+                      <Lock className="w-8 h-8 text-primary" />
+                    </div>
+                    <h3 className="font-headline text-xl font-semibold">Exclusive Rights</h3>
+                    <p className="mt-2 text-muted-foreground text-sm">A patent grants you the legal right to stop others from making, using, or selling your invention without permission.</p>
+                  </div>
+                  <div className="text-center flex flex-col items-center">
+                    <div className="flex items-center justify-center h-16 w-16 rounded-full bg-primary/10 mb-4">
+                      <TrendingUp className="w-8 h-8 text-primary" />
+                    </div>
+                    <h3 className="font-headline text-xl font-semibold">Market Advantage</h3>
+                    <p className="mt-2 text-muted-foreground text-sm">By protecting your idea, you secure a unique position in the marketplace, preventing direct competition.</p>
+                  </div>
+                  <div className="text-center flex flex-col items-center">
+                    <div className="flex items-center justify-center h-16 w-16 rounded-full bg-primary/10 mb-4">
+                      <Gem className="w-8 h-8 text-primary" />
+                    </div>
+                    <h3 className="font-headline text-xl font-semibold">Valuable Asset</h3>
+                    <p className="mt-2 text-muted-foreground text-sm">Patents can be bought, sold, or licensed, attracting investors and creating revenue streams for your business.</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
         </section>
       </FadeIn>
 
@@ -684,6 +683,6 @@ const scrollbarHide = {
   }
 }
 
-    
 
-    
+
+
