@@ -32,7 +32,7 @@ export default function ServicePageClient({ service, prevSlug, nextSlug, prevSer
   return (
     <div className="bg-background relative">
       {/* Hero Section */}
-      <section className="relative h-[70vh] md:h-[60vh] w-full bg-black flex items-center justify-center">
+      <section className="relative h-auto md:h-auto w-full bg-black flex items-center justify-center py-16 md:py-24">
         <Image
             src={service.image}
             alt={service.title}
@@ -41,17 +41,19 @@ export default function ServicePageClient({ service, prevSlug, nextSlug, prevSer
             data-ai-hint={service.imageHint}
             priority
         />
-        <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white p-4">
-            <div className="container">
-                <Badge variant="secondary" className="mb-4 bg-white/20 text-white backdrop-blur-sm">Kashi Patent Drawings and Design Services</Badge>
-                <h1 className="font-headline text-4xl md:text-6xl font-bold">{service.title}</h1>
-                <p className="mt-4 max-w-3xl mx-auto text-lg text-white/90">{service.longDescription}</p>
-                <div className="mt-6 inline-block">
-                    <div className=" border border-white/30 bg-white/10 backdrop-blur-sm rounded-lg px-6 py-3 font-bold text-lg">
-                        Starting at ${service.price} per {service.pricePer}
+        <div className="relative z-10 flex flex-col items-start justify-center h-full text-left text-white p-4">
+            <div className="container flex flex-col items-start text-left gap-6">
+                <div className="flex flex-col items-start text-left gap-4">
+                    <Badge variant="secondary" className="bg-white/20 text-white backdrop-blur-sm">Kashi Patent Drawings and Design Services</Badge>
+                    <h1 className="font-headline text-4xl md:text-6xl font-bold">{service.title}</h1>
+                    <p className="mt-4 max-w-3xl text-lg text-white/90">{service.longDescription}</p>
+                    <div className="mt-6 inline-block">
+                        <div className=" border border-white/30 bg-white/10 backdrop-blur-sm rounded-lg px-6 py-3 font-bold text-lg">
+                            Starting at ${service.price} per {service.pricePer}
+                        </div>
                     </div>
                 </div>
-                 <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-2xl w-full mx-auto">
+                 <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full max-w-2xl">
                     <Button variant="outline" size="lg" className="bg-white/10 border-white/20 text-white hover:bg-white/20 backdrop-blur-sm">
                         <Eye className="mr-2 h-5 w-5" />
                         View Samples
