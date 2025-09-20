@@ -85,11 +85,11 @@ export default function ServicePageClient({ service, prevSlug, nextSlug, prevSer
       </section>
 
       {/* Content Section */}
-      <div className="container py-16 md:py-24">
+      <div className="container py-20 md:py-28">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             {/* Left Column */}
             <div className="lg:col-span-2">
-                 <div className="prose lg:prose-xl max-w-none text-foreground/90 space-y-8">
+                 <div className="prose lg:prose-xl max-w-none text-foreground/90 space-y-12">
                     <div>
                         <h2 className="font-headline text-3xl text-primary">What Are {service.title}?</h2>
                         <p>{service.longDescription}</p>
