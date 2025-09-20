@@ -7,9 +7,8 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { Badge } from '@/components/ui/badge';
-import { Check, Eye, FileText, Calendar, ChevronRight } from 'lucide-react';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import { Eye, FileText, Calendar } from 'lucide-react';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 // Extend JSX to include model-viewer
 declare global {
@@ -94,7 +93,9 @@ export default function ServicePageClient({ service }: { service: Service }) {
                         <ul className="list-none p-0 space-y-3">
                             {service.whatYoullGet.map((item, index) => (
                                 <li key={index} className="flex items-start gap-3">
-                                    <ChevronRight className="h-5 w-5 text-primary shrink-0 mt-1" />
+                                    <div className="h-5 w-5 text-primary shrink-0 mt-1">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-right"><path d="m9 18 6-6-6-6"/></svg>
+                                    </div>
                                     <span>{item}</span>
                                 </li>
                             ))}
@@ -121,11 +122,11 @@ export default function ServicePageClient({ service }: { service: Service }) {
                     <CardContent>
                         <ul className="space-y-4">
                             {whyChooseUsReasons.map((reason, index) => {
-                                const Icon = serviceIcons[reason.icon];
+                                const Icon = serviceIcons[reason.icon as keyof typeof serviceIcons];
                                 return (
                                  <li key={index} className="flex items-start gap-3">
                                     <div className="h-5 w-5 text-green-500 shrink-0 mt-1">
-                                        <Icon className="w-5 h-5 text-green-500" />
+                                        <Icon className="w-5 h-5" />
                                     </div>
                                     <span>{reason.text}</span>
                                 </li>
@@ -149,7 +150,7 @@ export default function ServicePageClient({ service }: { service: Service }) {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {service.keyFeatures.map((feature) => {
-                const Icon = serviceIcons[feature.icon];
+                const Icon = serviceIcons[feature.icon as keyof typeof serviceIcons];
                 return (
                 <Card key={feature.title} className="text-center p-6 flex flex-col items-center">
                     <div className="flex-shrink-0 flex justify-center items-center h-16 w-16 rounded-full bg-primary/10 mb-4">
@@ -205,18 +206,18 @@ export default function ServicePageClient({ service }: { service: Service }) {
                 Find answers to common questions about our {service.title}.
               </p>
             </div>
-            <Accordion type="single" collapsible className="w-full">
+            <div className="space-y-8">
               {service.faqs.map((faq, index) => (
-                <AccordionItem value={`item-${index}`} key={index}>
-                  <AccordionTrigger className="text-lg text-left">{faq.question}</AccordionTrigger>
-                  <AccordionContent className="text-base text-muted-foreground">
-                    {faq.answer}
-                  </AccordionContent>
-                </AccordionItem>
+                <div key={index} className="p-6 border rounded-lg bg-muted/50">
+                  <h3 className="text-lg font-semibold mb-2">{faq.question}</h3>
+                  <p className="text-base text-muted-foreground">{faq.answer}</p>
+                </div>
               ))}
-            </Accordion>
+            </div>
         </div>
       </section>
     </div>
   );
 }
+
+    
