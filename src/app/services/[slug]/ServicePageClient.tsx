@@ -30,7 +30,7 @@ declare global {
 
 export default function ServicePageClient({ service, prevSlug, nextSlug, prevService, nextService }: { service: Service, prevSlug: string, nextSlug: string, prevService: Service, nextService: Service }) {
   return (
-    <div className="bg-background relative">
+    <div className="bg-background relative pt-20">
       {/* Hero Section */}
       <section className="relative h-[60vh] w-full bg-black flex items-center justify-center">
         <Image
@@ -41,17 +41,17 @@ export default function ServicePageClient({ service, prevSlug, nextSlug, prevSer
             data-ai-hint={service.imageHint}
             priority
         />
-        <div className="absolute inset-0 flex items-center justify-center">
-            <div className="container text-start text-white relative z-10 ">
+        <div className="absolute inset-0 flex flex-col items-start justify-center">
+            <div className="container text-left text-white relative z-10 ">
                 <Badge variant="secondary" className="mb-4 bg-white/20 text-white backdrop-blur-sm">Kashi Patent Drawings and Design Services</Badge>
                 <h1 className="font-headline text-4xl md:text-6xl font-bold">{service.title}</h1>
-                <p className="mt-4 mx-auto text-lg text-white/90">{service.longDescription}</p>
+                <p className="mt-4 max-w-3xl text-lg text-white/90">{service.longDescription}</p>
                 <div className="mt-6 inline-block">
                     <div className=" border text-accent-foreground rounded-lg px-6 py-3 font-bold text-lg">
                         Starting at ${service.price} per {service.pricePer}
                     </div>
                 </div>
-                 <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-2xl mx-auto">
+                 <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-2xl">
                     <Button variant="outline" size="lg" className="bg-white/10 border-white/20 text-white hover:bg-white/20 hover:text-white backdrop-blur-sm">
                         <Eye className="mr-2 h-5 w-5" />
                         View Samples
@@ -76,7 +76,7 @@ export default function ServicePageClient({ service, prevSlug, nextSlug, prevSer
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             {/* Left Column */}
             <div className="lg:col-span-2">
-                 <div className="prose lg:prose-xl max-w-none text-foreground/90 space-y-102">
+                 <div className="prose lg:prose-xl max-w-none text-foreground/90 space-y-12">
                     <div>
                         <h2 className="font-headline text-3xl text-primary">What Are {service.title}?</h2>
                         <p>{service.longDescription}</p>
