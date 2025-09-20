@@ -2,7 +2,7 @@
 "use client";
 
 import type { Service } from '@/lib/services';
-import { whyChooseUsReasons } from '@/lib/services';
+import { whyChooseUsReasons, serviceIcons } from '@/lib/services';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
@@ -121,7 +121,7 @@ export default function ServicePageClient({ service }: { service: Service }) {
                     <CardContent>
                         <ul className="space-y-4">
                             {whyChooseUsReasons.map((reason, index) => {
-                                const Icon = reason.icon;
+                                const Icon = serviceIcons[reason.icon];
                                 return (
                                  <li key={index} className="flex items-start gap-3">
                                     <div className="h-5 w-5 text-green-500 shrink-0 mt-1">
@@ -149,7 +149,7 @@ export default function ServicePageClient({ service }: { service: Service }) {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {service.keyFeatures.map((feature) => {
-                const Icon = feature.icon;
+                const Icon = serviceIcons[feature.icon];
                 return (
                 <Card key={feature.title} className="text-center p-6 flex flex-col items-center">
                     <div className="flex-shrink-0 flex justify-center items-center h-16 w-16 rounded-full bg-primary/10 mb-4">

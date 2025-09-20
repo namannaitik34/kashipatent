@@ -1,6 +1,28 @@
 
-import { FileCheck2, Scale, Microscope, Award, BrainCircuit, Users, Clock, CheckCircle } from 'lucide-react';
-import type { ReactNode, ElementType } from 'react';
+import type { ElementType } from 'react';
+import {
+  FileCheck2,
+  Scale,
+  Microscope,
+  Award,
+  BrainCircuit,
+  Users,
+  Clock,
+  CheckCircle,
+} from 'lucide-react';
+
+export const serviceIcons = {
+  FileCheck2,
+  Scale,
+  Microscope,
+  Award,
+  BrainCircuit,
+  Users,
+  Clock,
+  CheckCircle,
+};
+
+export type ServiceIconName = keyof typeof serviceIcons;
 
 export type Service = {
   slug: string;
@@ -15,7 +37,7 @@ export type Service = {
   pricePer: string;
   modelSrc?: string;
   keyFeatures: {
-    icon: ElementType;
+    icon: ServiceIconName;
     title: string;
     description: string;
   }[];
@@ -49,22 +71,22 @@ export const services: Service[] = [
     pricePer: 'drawing',
     keyFeatures: [
       {
-        icon: FileCheck2,
+        icon: 'FileCheck2',
         title: 'USPTO/WIPO Compliance',
         description: 'Drawings are guaranteed to meet the strict guidelines of all major patent offices.',
       },
       {
-        icon: Scale,
+        icon: 'Scale',
         title: 'Unwavering Accuracy',
         description: 'Every component and mechanism is illustrated with meticulous attention to detail.',
       },
       {
-        icon: Microscope,
+        icon: 'Microscope',
         title: 'Clarity in Complexity',
         description: 'We excel at creating clear, easy-to-understand diagrams of even the most complex inventions.',
       },
       {
-        icon: Award,
+        icon: 'Award',
         title: 'Professional Quality',
         description: 'High-quality, professional-grade illustrations that strengthen your patent application.',
       },
@@ -109,22 +131,22 @@ export const services: Service[] = [
     pricePer: 'drawing',
     keyFeatures: [
       {
-        icon: FileCheck2,
+        icon: 'FileCheck2',
         title: 'PTO-Specific Views',
         description: 'We provide all seven standard views required for design patents: front, back, top, bottom, left, right, and perspective.',
       },
       {
-        icon: BrainCircuit,
+        icon: 'BrainCircuit',
         title: 'Surface Shading',
         description: 'Our expert illustrators use precise line shading to clearly define the contours and character of your product’s design.',
       },
       {
-        icon: Microscope,
+        icon: 'Microscope',
         title: 'Broken & Solid Lines',
         description: 'We correctly use broken and solid lines to distinguish between the claimed design and its surrounding environment.',
       },
       {
-        icon: Award,
+        icon: 'Award',
         title: 'Aesthetic Precision',
         description: 'Our drawings capture the exact ornamental appearance, ensuring your design is protected as broadly as possible.',
       },
@@ -167,22 +189,22 @@ export const services: Service[] = [
     pricePer: 'figure',
     keyFeatures: [
       {
-        icon: Scale,
+        icon: 'Scale',
         title: 'Precision Dimensions',
         description: 'Drawings include exact measurements and tolerances required for manufacturing.',
       },
       {
-        icon: BrainCircuit,
+        icon: 'BrainCircuit',
         title: 'Assembly Instructions',
         description: 'Exploded and sectional views make assembly clear and straightforward.',
       },
       {
-        icon: FileCheck2,
+        icon: 'FileCheck2',
         title: 'Industry Standards',
         description: 'All drawings conform to industry standards like ASME/ISO for universal clarity.',
       },
       {
-        icon: Users,
+        icon: 'Users',
         title: 'BOM & Part Lists',
         description: 'We can integrate or create a Bill of Materials (BOM) for complete production planning.',
       },
@@ -204,21 +226,21 @@ export const services: Service[] = [
   },
 ];
 
-export const whyChooseUsReasons: { icon: ElementType, text: string }[] = [
+export const whyChooseUsReasons: { icon: ServiceIconName, text: string }[] = [
   {
-    icon: Award,
+    icon: 'Award',
     text: '100% compliant with USPTO, WIPO, EPO, and all global standards'
   },
   {
-    icon: Clock,
+    icon: 'Clock',
     text: 'Fast turnaround (usually within 24-72 hours)'
   },
   {
-    icon: CheckCircle,
+    icon: 'CheckCircle',
     text: 'Unlimited revisions at no extra charge'
   },
   {
-    icon: Users,
+    icon: 'Users',
     text: 'Reviewed by both technical and legal experts'
   }
 ];
