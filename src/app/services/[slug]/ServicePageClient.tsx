@@ -7,7 +7,7 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { Badge } from '@/components/ui/badge';
-import { Eye, FileText, Calendar, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Eye, FileText, Calendar, ChevronLeft, ChevronRight, ArrowLeft, ArrowRight } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 // Extend JSX to include model-viewer
@@ -28,7 +28,7 @@ declare global {
   }
 }
 
-export default function ServicePageClient({ service, prevSlug, nextSlug }: { service: Service, prevSlug: string, nextSlug: string }) {
+export default function ServicePageClient({ service, prevSlug, nextSlug, prevService, nextService }: { service: Service, prevSlug: string, nextSlug: string, prevService: Service, nextService: Service }) {
   return (
     <div className="bg-background relative">
         <div className="hidden lg:block">
@@ -227,6 +227,26 @@ export default function ServicePageClient({ service, prevSlug, nextSlug }: { ser
                 </div>
               ))}
             </div>
+        </div>
+      </section>
+
+       {/* Next/Prev Service Navigation */}
+      <section className="border-t">
+        <div className="container py-8">
+          <div className="flex justify-between items-center">
+            <Button asChild variant="outline">
+              <Link href={`/services/${prevSlug}`}>
+                <ArrowLeft className="mr-2 h-4 w-4" />
+                {prevService.title}
+              </Link>
+            </Button>
+            <Button asChild variant="outline">
+              <Link href={`/services/${nextSlug}`}>
+                {nextService.title}
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
+          </div>
         </div>
       </section>
     </div>

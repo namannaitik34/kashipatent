@@ -35,5 +35,5 @@ export default function ServicePage({ params }: ServicePageProps) {
   const nextService = services[currentIndex + 1] ?? services[0];
 
 
-  return <ServicePageClient service={service} prevSlug={prevService.slug} nextSlug={nextService.slug} />;
+  return <ServicePageClient service={service} prevSlug={prevService.slug} nextSlug={nextService.slug} prevService={prevService} nextService={nextService} />;
 }
