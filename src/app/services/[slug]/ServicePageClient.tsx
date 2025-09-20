@@ -246,5 +246,3 @@ export default function ServicePageClient({ service, prevSlug, nextSlug, prevSer
     </div>
   );
 }
-
-    
