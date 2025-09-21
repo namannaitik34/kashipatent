@@ -143,7 +143,7 @@ export const services: Service[] = [
       {
         icon: 'Microscope',
         title: 'Broken & Solid Lines',
-        description: 'We correctly use broken and solid lines to distinguish between the claimed design and its surrounding environment.',
+        description: 'We use broken and solid lines to distinguish between the claimed design and its surrounding environment.',
       },
       {
         icon: 'Award',
