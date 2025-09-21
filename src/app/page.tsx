@@ -241,7 +241,7 @@ export default function Home() {
           </h1>
 
           <p className="mt-4 text-lg md:text-xl max-w-3xl mx-auto text-muted-foreground">
-          Transforming innovative ideas into patent drawings compliant with USPTO, EPO, WIPO (PCT), JPO, CNIPA, and other global patent offices — with unmatched accuracy and artistry. </p>
+          Transforming innovative ideas into patent drawings compliant with USPTO, EPO, WIPO , PCT, JPO, CNIPA, and other global patent offices — with unmatched accuracy and artistry. </p>
           <p className="mt-6 text-accent font-semibold text-2xl animate-pulse">Get 15% OFF on your first order! Limited Time Offer!</p>
           <Button asChild size="lg" className="mt-8 bg-accent hover:bg-accent/90 text-accent-foreground">
             <Link href="/order">Order Now</Link>
