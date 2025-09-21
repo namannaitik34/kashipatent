@@ -57,7 +57,7 @@ const workSamples = [
     category: 'Trademark',
     image: 'https://picsum.photos/600/400?random=4',
     hint: 'company logo',
-    description: 'Developed a clean and distinctive logo, delivered in formats compliant with USPTO requirements for trademark registration.',
+    description: 'Developed a clean and distinctive logo, delivered in formats compliant with USPTO, EPO, WIPO, PCT, JPO, CNIPA, and other global patent offices requirements for trademark registration.',
   },
   {
     title: 'Robotic Arm Mechanism',
@@ -129,7 +129,7 @@ const faqs = [
   },
   {
     question: "Are your drawings accepted by patent offices worldwide?",
-    answer: "Yes, our drawings are prepared to comply with the specific rules and standards of all patent offices, including the USPTO (United States Patent and Trademark Office), WIPO (World Intellectual Property Organization), EPO (European Patent Office), and many others."
+    answer: "Yes, our drawings are prepared to comply with the specific rules and standards of all patent offices, including the USPTO, EPO, WIPO, PCT, JPO, CNIPA, and other global patent jurisdictions."
   },
   {
     question: "What file formats do you deliver?",
@@ -681,7 +681,3 @@ const scrollbarHide = {
     }
   }
 }
-
-
-
-

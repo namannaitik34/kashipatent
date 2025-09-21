@@ -52,7 +52,7 @@ export const services: Service[] = [
     slug: 'utility-patent-drawing-services',
     title: 'Utility Patent Drawing Services',
     description: 'Precise and detailed drawings for your utility patent applications.',
-    longDescription: "Our Utility Patent Drawing service provides comprehensive illustrations that meet all USPTO requirements. We focus on clarity and accuracy to clearly depict your invention's structure, function, and components. From flowcharts to complex mechanical diagrams, we ensure every detail is captured.",
+    longDescription: "Our Utility Patent Drawing service provides comprehensive illustrations that meet all USPTO, EPO, WIPO, PCT, JPO, CNIPA, and other global patent jurisdiction requirements. We focus on clarity and accuracy to clearly depict your invention's structure, function, and components. From flowcharts to complex mechanical diagrams, we ensure every detail is captured.",
     whatYoullGet: [
         'All Required Views - Front, rear, top, bottom, left, right, and perspective views',
         'Detailed breakdowns of all mechanical components and parts',
@@ -72,8 +72,8 @@ export const services: Service[] = [
     keyFeatures: [
       {
         icon: 'FileCheck2',
-        title: 'USPTO/WIPO Compliance',
-        description: 'Drawings are guaranteed to meet the strict guidelines of all major patent offices.',
+        title: 'Global Compliance',
+        description: 'Drawings are guaranteed to meet the strict guidelines of USPTO, EPO, WIPO, PCT, JPO, CNIPA, and other global patent offices.',
       },
       {
         icon: 'Scale',
