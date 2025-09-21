@@ -81,7 +81,7 @@ const whyChooseUsFeatures = [
   {
     icon: <ShieldCheck className="w-8 h-8 text-white" />,
     title: 'Impeccable Quality',
-    description: 'Expertly crafted patent drawings that meet the highest USPTO standards.',
+    description: 'High-Quality Patent Illustrations Tailored for PTO Approval',
   },
   {
     icon: <HeartHandshake className="w-8 h-8 text-white" />,
@@ -101,7 +101,7 @@ const whyChooseUsFeatures = [
   {
     icon: <Star className="w-8 h-8 text-white" />,
     title: 'Satisfaction Guarantee',
-    description: 'Unlimited revisions at no extra cost. Complete satisfaction or you don\'t pay.',
+    description: 'Affordable Revision Packages for Complete Satisfaction',
   },
   {
     icon: <Clock className="w-8 h-8 text-white" />,
@@ -129,7 +129,7 @@ const faqs = [
   },
   {
     question: "Are your drawings accepted by patent offices worldwide?",
-    answer: "Yes, our drawings are prepared to comply with the specific rules and standards of major patent offices, including the USPTO (United States Patent and Trademark Office), WIPO (World Intellectual Property Organization), EPO (European Patent Office), and many others."
+    answer: "Yes, our drawings are prepared to comply with the specific rules and standards of all patent offices, including the USPTO (United States Patent and Trademark Office), WIPO (World Intellectual Property Organization), EPO (European Patent Office), and many others."
   },
   {
     question: "What file formats do you deliver?",
@@ -241,7 +241,7 @@ export default function Home() {
           </h1>
 
           <p className="mt-4 text-lg md:text-xl max-w-3xl mx-auto text-muted-foreground">
-            Transforming innovative ideas into USPTO-compliant patent drawings with unparalleled accuracy and artistry.
+            Transforming innovative ideas into USPTO-compliant patent drawings with unparalleled accuracy and artistry
           </p>
           <p className="mt-6 text-accent font-semibold text-2xl animate-pulse">Get 15% OFF on your first order! Limited Time Offer!</p>
           <Button asChild size="lg" className="mt-8 bg-accent hover:bg-accent/90 text-accent-foreground">
