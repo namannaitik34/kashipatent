@@ -26,9 +26,9 @@ export default function RootLayout({
         <Script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js" async />
       </head>
       <body className="font-sans antialiased bg-background text-foreground">
-        <div className="flex flex-col min-h-screen">
+        <div className="flex flex-col min-h-screen max-w-screen-2xl mx-auto">
           <Header />
-          <main className="flex-grow">
+          <main className="flex-grow pt-20">
              <FadeIn>{children}</FadeIn>
           </main>
           <div className="-mb-24">
