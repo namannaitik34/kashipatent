@@ -30,7 +30,7 @@ declare global {
 
 export default function ServicePageClient({ service, prevSlug, nextSlug, prevService, nextService }: { service: Service, prevSlug: string, nextSlug: string, prevService: Service, nextService: Service }) {
   return (
-    <div className="bg-background relative">
+    <div className="bg-background relative pt-20">
       {/* Hero Section */}
       <section className="relative h-[60vh] w-full bg-black flex items-center justify-center">
         <Image
@@ -142,6 +142,36 @@ export default function ServicePageClient({ service, prevSlug, nextSlug, prevSer
             </div>
         </div>
       </div>
+
+        {/* Examples Section */}
+        <section className="py-16 md:py-24 bg-muted/20">
+            <div className="container">
+                <div className="text-center mb-12">
+                    <h2 className="font-headline text-3xl md:text-4xl font-bold">Visualizing Excellence: A Glimpse of Our Work</h2>
+                    <p className="mt-4 max-w-2xl mx-auto text-muted-foreground">
+                        Here are a few examples showcasing the quality and precision we bring to our {service.title}.
+                    </p>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {service.examples.map((example, index) => (
+                        <div key={index} className="group relative overflow-hidden rounded-lg shadow-lg">
+                            <Image
+                                src={example.image}
+                                alt={example.title}
+                                width={600}
+                                height={400}
+                                className="object-cover w-full h-full aspect-[4/3] transition-transform duration-500 ease-in-out group-hover:scale-110"
+                                data-ai-hint={example.hint}
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+                            <div className="absolute bottom-0 left-0 p-4">
+                                <h3 className="text-white font-semibold text-lg">{example.title}</h3>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
       
       {/* Key Features Section */}
       <section className="py-16 md:py-24 bg-muted/40">

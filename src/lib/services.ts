@@ -36,6 +36,11 @@ export type Service = {
   price: number;
   pricePer: string;
   modelSrc?: string;
+  examples: {
+    title: string;
+    image: string;
+    hint: string;
+  }[];
   keyFeatures: {
     icon: ServiceIconName;
     title: string;
@@ -69,6 +74,23 @@ export const services: Service[] = [
     imageHint: 'technical schematic',
     price: 20,
     pricePer: 'drawing',
+    examples: [
+        {
+            title: 'Complex Gear Assembly',
+            image: 'https://picsum.photos/seed/serv1/600/400',
+            hint: 'gear assembly',
+        },
+        {
+            title: 'Medical Device Cutaway',
+            image: 'https://picsum.photos/seed/serv2/600/400',
+            hint: 'medical device',
+        },
+        {
+            title: 'Software Flowchart',
+            image: 'https://picsum.photos/seed/serv3/600/400',
+            hint: 'software flowchart',
+        },
+    ],
     keyFeatures: [
       {
         icon: 'FileCheck2',
@@ -129,6 +151,23 @@ export const services: Service[] = [
     imageHint: 'modern product',
     price: 25,
     pricePer: 'drawing',
+    examples: [
+        {
+            title: 'Ergonomic Handheld Device',
+            image: 'https://picsum.photos/seed/serv4/600/400',
+            hint: 'handheld device',
+        },
+        {
+            title: 'Unique Bottle Shape',
+            image: 'https://picsum.photos/seed/serv5/600/400',
+            hint: 'bottle design',
+        },
+        {
+            title: 'Futuristic Eyewear',
+            image: 'https://picsum.photos/seed/serv6/600/400',
+            hint: 'eyewear design',
+        },
+    ],
     keyFeatures: [
       {
         icon: 'FileCheck2',
@@ -187,6 +226,23 @@ export const services: Service[] = [
     imageHint: 'engineering plan',
     price: 34,
     pricePer: 'figure',
+    examples: [
+        {
+            title: 'Blueprint with GD&T',
+            image: 'https://picsum.photos/seed/serv7/600/400',
+            hint: 'technical blueprint',
+        },
+        {
+            title: 'Exploded View of an Engine',
+            image: 'https://picsum.photos/seed/serv8/600/400',
+            hint: 'engine exploded',
+        },
+        {
+            title: 'Architectural Plan',
+            image: 'https://picsum.photos/seed/serv9/600/400',
+            hint: 'architectural plan',
+        },
+    ],
     keyFeatures: [
       {
         icon: 'Scale',
