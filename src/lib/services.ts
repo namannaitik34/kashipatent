@@ -90,6 +90,41 @@ export const services: Service[] = [
             image: 'https://picsum.photos/seed/serv3/600/400',
             hint: 'software flowchart',
         },
+        {
+            title: 'Circuit Board Schematic',
+            image: 'https://picsum.photos/seed/serv10/600/400',
+            hint: 'circuit schematic',
+        },
+        {
+            title: 'Exploded View of a Motor',
+            image: 'https://picsum.photos/seed/serv11/600/400',
+            hint: 'motor exploded',
+        },
+        {
+            title: 'Hydraulic System Diagram',
+            image: 'https://picsum.photos/seed/serv12/600/400',
+            hint: 'hydraulic diagram',
+        },
+        {
+            title: 'Assembly Drawing',
+            image: 'https://picsum.photos/seed/serv13/600/400',
+            hint: 'assembly drawing',
+        },
+        {
+            title: 'Biotechnical Process',
+            image: 'https://picsum.photos/seed/serv14/600/400',
+            hint: 'biotech process',
+        },
+        {
+            title: 'Cross-Section of a Valve',
+            image: 'https://picsum.photos/seed/serv15/600/400',
+            hint: 'valve cross-section',
+        },
+        {
+            title: 'Communication Network',
+            image: 'https://picsum.photos/seed/serv16/600/400',
+            hint: 'network diagram',
+        },
     ],
     keyFeatures: [
       {
@@ -167,6 +202,41 @@ export const services: Service[] = [
             image: 'https://picsum.photos/seed/serv6/600/400',
             hint: 'eyewear design',
         },
+        {
+            title: 'Luxury Watch Face',
+            image: 'https://picsum.photos/seed/serv17/600/400',
+            hint: 'watch face',
+        },
+        {
+            title: 'Modern Chair Design',
+            image: 'https://picsum.photos/seed/serv18/600/400',
+            hint: 'chair design',
+        },
+        {
+            title: 'Kitchen Appliance Casing',
+            image: 'https://picsum.photos/seed/serv19/600/400',
+            hint: 'appliance casing',
+        },
+        {
+            title: 'Ornamental Jewelry',
+            image: 'https://picsum.photos/seed/serv20/600/400',
+            hint: 'jewelry design',
+        },
+        {
+            title: 'Automotive Headlight',
+            image: 'https://picsum.photos/seed/serv21/600/400',
+            hint: 'car headlight',
+        },
+        {
+            title: 'Computer Mouse',
+            image: 'https://picsum.photos/seed/serv22/600/400',
+            hint: 'computer mouse',
+        },
+        {
+            title: 'Sport Shoe Sole',
+            image: 'https://picsum.photos/seed/serv23/600/400',
+            hint: 'shoe sole',
+        },
     ],
     keyFeatures: [
       {
@@ -241,6 +311,41 @@ export const services: Service[] = [
             title: 'Architectural Plan',
             image: 'https://picsum.photos/seed/serv9/600/400',
             hint: 'architectural plan',
+        },
+        {
+            title: 'Product Assembly Guide',
+            image: 'https://picsum.photos/seed/serv24/600/400',
+            hint: 'assembly guide',
+        },
+        {
+            title: 'Injection Mold Design',
+            image: 'https://picsum.photos/seed/serv25/600/400',
+            hint: 'injection mold',
+        },
+        {
+            title: 'PCB Layout',
+            image: 'https://picsum.photos/seed/serv26/600/400',
+            hint: 'pcb layout',
+        },
+        {
+            title: 'Sheet Metal Fabrication',
+            image: 'https://picsum.photos/seed/serv27/600/400',
+            hint: 'sheet metal',
+        },
+        {
+            title: 'Mechanical Part Drawing',
+            image: 'https://picsum.photos/seed/serv28/600/400',
+            hint: 'mechanical part',
+        },
+        {
+            title: 'Electrical Wiring Diagram',
+            image: 'https://picsum.photos/seed/serv29/600/400',
+            hint: 'wiring diagram',
+        },
+        {
+            title: 'Piping and Instrumentation',
+            image: 'https://picsum.photos/seed/serv30/600/400',
+            hint: 'piping instrumentation',
         },
     ],
     keyFeatures: [
