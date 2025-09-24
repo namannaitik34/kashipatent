@@ -28,7 +28,7 @@ export default function RootLayout({
       <body className="font-sans antialiased bg-background text-foreground">
         <div className="flex flex-col min-h-screen max-w-screen-2xl mx-auto">
           <Header />
-          <main className="flex-grow pt-20">
+          <main className="flex-grow ">
              <FadeIn>{children}</FadeIn>
           </main>
           <div className="-mb-24">
